@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucia\\source\\repos\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj",
+      "projectUniqueName": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj",
       "projectName": "TP-1-LucianoCrocco",
-      "projectPath": "C:\\Users\\Lucia\\source\\repos\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj",
+      "projectPath": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj",
       "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucia\\source\\repos\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\obj\\",
+      "outputPath": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

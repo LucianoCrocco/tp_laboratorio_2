@@ -38,6 +38,33 @@ namespace Entidades
         }
         #endregion
 
+        #region Sobrecarga de Operadores
+        public static double operator +(Operando n1, Operando n2)
+        {
+            return n1.numero + n2.numero;
+        }
+
+        public static double operator -(Operando n1, Operando n2)
+        {
+            return n1.numero - n2.numero;
+        }
+
+        public static double operator *(Operando n1, Operando n2)
+        {
+            return n1.numero * n2.numero;
+        }
+
+        public static double operator /(Operando n1, Operando n2)
+        {
+            if(n2.numero != 0)
+            {
+                return n1.numero - n2.numero;
+            }
+            return double.MinValue;
+        }
+
+        #endregion
+
         #region Metodos
         private static double ValidarOperando(string strNumero)
         {
@@ -87,6 +114,32 @@ namespace Entidades
 
         public string DecimalBinario(double numero)
         {
+            string retorno = "Valor invalido";
+            if(numero < 0)
+            {
+                numero = numero * -1;
+            }
+
+            int resultado = (int)numero;
+            int aux;
+            do
+            {
+                aux = resultado % 2;
+                resultado /= 2;
+                retorno = aux.ToString() + retorno;
+            } while (resultado > 0);
+            
+            return retorno;
+        }
+
+        public string DecimalBinario(string numero)
+        {
+            string retorno = "Valor invalido";
+            if(double.TryParse(numero, out double auxDecimal))
+            {
+                retorno = DecimalBinario(auxDecimal);
+            }
+            return retorno;
         }
         #endregion
     }
