@@ -1,0 +1,93 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Entidades
+{
+    public class Operando
+    {
+        #region Atributos
+        private double numero;
+        #endregion
+
+        #region Constructores
+        public Operando()
+        {
+            this.numero = 0;
+        }
+        public Operando(double numero)
+        {
+            this.numero = numero;
+        }
+
+        public Operando(string numero)
+        {
+            this.Numero = numero;
+        }
+        #endregion
+
+        #region Setters y Getters
+        public string Numero
+        {
+            set
+            {
+                this.numero = ValidarOperando(value);
+            }
+        }
+        #endregion
+
+        #region Metodos
+        private static double ValidarOperando(string strNumero)
+        {
+            double retorno = 0;
+            if (EsBinario(strNumero) && double.TryParse(strNumero, out double auxNumero))
+            {
+                retorno = auxNumero;
+            }
+            return retorno;
+        }
+
+        private static bool EsBinario(string numero)
+        {
+            bool retorno = true;
+            foreach (char caracter in numero)
+            {
+                if (caracter != '1' && caracter != '0')
+                {
+                    retorno = false;
+                    break;
+                }
+            }
+
+            return retorno;
+        }
+
+        public string BinarioDecimal(string binario)
+        {
+            string retorno = "Valor invalido";
+            if (EsBinario(binario))
+            {
+                double auxNumero = 0;
+                double cantidadDeCaracteres = binario.Length;
+
+                foreach (char caracter in binario)
+                {
+                    cantidadDeCaracteres--;
+                    if (caracter == '1')
+                    {
+                        auxNumero += (int)Math.Pow(2, cantidadDeCaracteres);
+                    }
+                }
+                retorno = auxNumero.ToString();
+            }
+            return retorno;
+        }
+
+        public string DecimalBinario(double numero)
+        {
+        }
+        #endregion
+    }
+}
