@@ -51,10 +51,10 @@ namespace TP_1_LucianoCrocco
             "-",
             "/",
             "*"});
-            this.cmbOperador.Location = new System.Drawing.Point(280, 99);
+            this.cmbOperador.Location = new System.Drawing.Point(273, 99);
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(92, 33);
-            this.cmbOperador.TabIndex = 0;
+            this.cmbOperador.TabIndex = 1;
             // 
             // btnCerrar
             // 
@@ -62,7 +62,7 @@ namespace TP_1_LucianoCrocco
             this.btnCerrar.Location = new System.Drawing.Point(440, 191);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(149, 47);
-            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
@@ -72,9 +72,10 @@ namespace TP_1_LucianoCrocco
             this.btnLimpiar.Location = new System.Drawing.Point(250, 191);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(149, 47);
-            this.btnLimpiar.TabIndex = 2;
+            this.btnLimpiar.TabIndex = 5;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnOperar
             // 
@@ -82,9 +83,10 @@ namespace TP_1_LucianoCrocco
             this.btnOperar.Location = new System.Drawing.Point(42, 191);
             this.btnOperar.Name = "btnOperar";
             this.btnOperar.Size = new System.Drawing.Size(149, 47);
-            this.btnOperar.TabIndex = 3;
+            this.btnOperar.TabIndex = 4;
             this.btnOperar.Text = "Operar";
             this.btnOperar.UseVisualStyleBackColor = true;
+            this.btnOperar.Click += new System.EventHandler(this.btnOperar_Click);
             // 
             // btnConvertirABinario
             // 
@@ -92,9 +94,10 @@ namespace TP_1_LucianoCrocco
             this.btnConvertirABinario.Location = new System.Drawing.Point(64, 286);
             this.btnConvertirABinario.Name = "btnConvertirABinario";
             this.btnConvertirABinario.Size = new System.Drawing.Size(243, 47);
-            this.btnConvertirABinario.TabIndex = 4;
+            this.btnConvertirABinario.TabIndex = 7;
             this.btnConvertirABinario.Text = "Convertir a Binario";
             this.btnConvertirABinario.UseVisualStyleBackColor = true;
+            this.btnConvertirABinario.Click += new System.EventHandler(this.btnConvertirABinario_Click);
             // 
             // btnConvertirADecimal
             // 
@@ -102,7 +105,7 @@ namespace TP_1_LucianoCrocco
             this.btnConvertirADecimal.Location = new System.Drawing.Point(346, 286);
             this.btnConvertirADecimal.Name = "btnConvertirADecimal";
             this.btnConvertirADecimal.Size = new System.Drawing.Size(243, 47);
-            this.btnConvertirADecimal.TabIndex = 5;
+            this.btnConvertirADecimal.TabIndex = 8;
             this.btnConvertirADecimal.Text = "Convertir a Decimal";
             this.btnConvertirADecimal.UseVisualStyleBackColor = true;
             // 
@@ -123,7 +126,7 @@ namespace TP_1_LucianoCrocco
             this.lstOperaciones.Location = new System.Drawing.Point(606, 39);
             this.lstOperaciones.Name = "lstOperaciones";
             this.lstOperaciones.Size = new System.Drawing.Size(217, 349);
-            this.lstOperaciones.TabIndex = 7;
+            this.lstOperaciones.TabIndex = 3;
             // 
             // txtBoxNumero1
             // 
@@ -131,7 +134,7 @@ namespace TP_1_LucianoCrocco
             this.txtBoxNumero1.Location = new System.Drawing.Point(42, 100);
             this.txtBoxNumero1.Name = "txtBoxNumero1";
             this.txtBoxNumero1.Size = new System.Drawing.Size(149, 32);
-            this.txtBoxNumero1.TabIndex = 8;
+            this.txtBoxNumero1.TabIndex = 0;
             // 
             // txtBoxNumero2
             // 
@@ -139,7 +142,7 @@ namespace TP_1_LucianoCrocco
             this.txtBoxNumero2.Location = new System.Drawing.Point(440, 99);
             this.txtBoxNumero2.Name = "txtBoxNumero2";
             this.txtBoxNumero2.Size = new System.Drawing.Size(149, 32);
-            this.txtBoxNumero2.TabIndex = 9;
+            this.txtBoxNumero2.TabIndex = 2;
             // 
             // FormCalculadora
             // 

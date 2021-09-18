@@ -15,11 +15,11 @@ namespace Entidades
         #region Constructores
         public Operando()
         {
-            this.numero = 0;
+            this.Numero = "0";
         }
         public Operando(double numero)
         {
-            this.numero = numero;
+            this.Numero = numero.ToString();
         }
 
         public Operando(string numero)
@@ -58,7 +58,7 @@ namespace Entidades
         {
             if(n2.numero != 0)
             {
-                return n1.numero - n2.numero;
+                return n1.numero / n2.numero;
             }
             return double.MinValue;
         }
@@ -69,7 +69,7 @@ namespace Entidades
         private static double ValidarOperando(string strNumero)
         {
             double retorno = 0;
-            if (EsBinario(strNumero) && double.TryParse(strNumero, out double auxNumero))
+            if (double.TryParse(strNumero, out double auxNumero))
             {
                 retorno = auxNumero;
             }

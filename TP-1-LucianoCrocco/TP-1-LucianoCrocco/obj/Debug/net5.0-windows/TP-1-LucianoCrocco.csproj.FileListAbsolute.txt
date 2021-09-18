@@ -16,3 +16,6 @@ D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\TP-1-LucianoCrocco\obj\Debug\net5.
 D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\TP-1-LucianoCrocco\obj\Debug\net5.0-windows\ref\TP-1-LucianoCrocco.dll
 D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\TP-1-LucianoCrocco\obj\Debug\net5.0-windows\TP-1-LucianoCrocco.pdb
 D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\TP-1-LucianoCrocco\obj\Debug\net5.0-windows\TP-1-LucianoCrocco.genruntimeconfig.cache
+D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\TP-1-LucianoCrocco\bin\Debug\net5.0-windows\Entidades.dll
+D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\TP-1-LucianoCrocco\bin\Debug\net5.0-windows\Entidades.pdb
+D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\TP-1-LucianoCrocco\obj\Debug\net5.0-windows\TP-1-LucianoCrocco.csproj.CopyComplete
