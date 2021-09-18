@@ -21,11 +21,6 @@ namespace TP_1_LucianoCrocco
 
 
 
-        private void btnConvertirABinario_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnOperar_Click(object sender, EventArgs e)
         {
             string operador = "";
@@ -48,6 +43,7 @@ namespace TP_1_LucianoCrocco
 
             if (operar)
             {
+                btnConvertirADecimal.Enabled = false;
                 lblResultado.Text = Operar(txtBoxNumero1.Text, txtBoxNumero2.Text, operador).ToString();
                 lstOperaciones.Items.Add(txtBoxNumero1.Text + " " + operador + " " + txtBoxNumero2.Text + " " + "=" + " " + lblResultado.Text);
             }
@@ -78,6 +74,49 @@ namespace TP_1_LucianoCrocco
             cmbOperador.SelectedIndex = 0;
             lblResultado.Text = "RESULTADO";
             lstOperaciones.Items.Clear();
+            btnConvertirABinario.Enabled = true;
+            btnConvertirADecimal.Enabled = true;
+        }
+
+        private void btnConvertirABinario_Click(object sender, EventArgs e)
+        {
+            string resultado = Operando.DecimalBinario(lblResultado.Text);
+            if(double.TryParse(resultado, out double auxNumero))
+            {
+                btnConvertirABinario.Enabled = false;
+                btnConvertirADecimal.Enabled = true;
+            }
+            lblResultado.Text = Operando.DecimalBinario(lblResultado.Text);
+        }
+
+        private void btnConvertirADecimal_Click(object sender, EventArgs e)
+        {
+            string resultado = Operando.BinarioDecimal(lblResultado.Text);
+            if(double.TryParse(resultado, out double auxNumero))
+            {
+                btnConvertirABinario.Enabled = true;
+                btnConvertirADecimal.Enabled = false;
+            }
+            lblResultado.Text = Operando.BinarioDecimal(lblResultado.Text);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("¿Esta seguro de querer salir?", "Salir",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Dispose();
+            }
+        }
+
+        private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Dispose();
+            } else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

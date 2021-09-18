@@ -91,7 +91,7 @@ namespace Entidades
             return retorno;
         }
 
-        public string BinarioDecimal(string binario)
+        public static string BinarioDecimal(string binario)
         {
             string retorno = "Valor invalido";
             if (EsBinario(binario))
@@ -112,9 +112,9 @@ namespace Entidades
             return retorno;
         }
 
-        public string DecimalBinario(double numero)
+        public static string DecimalBinario(double numero)
         {
-            string retorno = "Valor invalido";
+            string retorno = "";
             if(numero < 0)
             {
                 numero = numero * -1;
@@ -132,7 +132,7 @@ namespace Entidades
             return retorno;
         }
 
-        public string DecimalBinario(string numero)
+        public static string DecimalBinario(string numero)
         {
             string retorno = "Valor invalido";
             if(double.TryParse(numero, out double auxDecimal))
