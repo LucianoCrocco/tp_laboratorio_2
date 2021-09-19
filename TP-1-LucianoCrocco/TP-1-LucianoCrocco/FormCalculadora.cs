@@ -20,7 +20,11 @@ namespace TP_1_LucianoCrocco
         }
 
 
-
+        /// <summary>
+        /// Muestra la operacion entre los numeros ingresados y su operando a traves del label Resultado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
             string operador = "";
@@ -44,12 +48,20 @@ namespace TP_1_LucianoCrocco
             if (operar)
             {
                 btnConvertirADecimal.Enabled = false;
+                btnConvertirABinario.Enabled = true;
                 lblResultado.Text = Operar(txtBoxNumero1.Text, txtBoxNumero2.Text, operador).ToString();
-                lstOperaciones.Items.Add(txtBoxNumero1.Text + " " + operador + " " + txtBoxNumero2.Text + " " + "=" + " " + lblResultado.Text);
+                lstOperaciones.Items.Add(txtBoxNumero1.Text + " " + cmbOperador.SelectedItem.ToString() + " " + txtBoxNumero2.Text + " " + "=" + " " + lblResultado.Text);
             }
             
         }
 
+        /// <summary>
+        /// Realiza la operacion entre ambos numeros recibidos, segun el operador seleccionado
+        /// </summary>
+        /// <param name="numero1"></param>
+        /// <param name="numero2"></param>
+        /// <param name="operador"></param>
+        /// <returns></returns>
         private static double Operar(string numero1, string numero2, string operador)
         {
             Operando operandoUno = new Operando(numero1);
@@ -59,6 +71,11 @@ namespace TP_1_LucianoCrocco
             return Calculadora.Operar(operandoUno, operandoDos, miOperador);
         }
 
+        /// <summary>
+        /// Limpia la informacion en pantalla de la calculadora, devuelve sus valores al estado inicial.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("¿Esta seguro que desea limpiar la informacion de la calculadora?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -66,7 +83,9 @@ namespace TP_1_LucianoCrocco
                 Limpiar();
             }
         }
-
+        /// <summary>
+        /// Realiza la accion de limpieza de la calculadora
+        /// </summary>
         private void Limpiar()
         {
             txtBoxNumero1.Text = "";
@@ -78,6 +97,11 @@ namespace TP_1_LucianoCrocco
             btnConvertirADecimal.Enabled = true;
         }
 
+        /// <summary>
+        /// Convierte, si es posible, el numero Decimal en el label Resultado a Binario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             string resultado = Operando.DecimalBinario(lblResultado.Text);
@@ -89,6 +113,11 @@ namespace TP_1_LucianoCrocco
             lblResultado.Text = Operando.DecimalBinario(lblResultado.Text);
         }
 
+        /// <summary>
+        /// Convierte, si es posible, el numero Binario en el label Resultado a Decimal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             string resultado = Operando.BinarioDecimal(lblResultado.Text);
@@ -100,6 +129,11 @@ namespace TP_1_LucianoCrocco
             lblResultado.Text = Operando.BinarioDecimal(lblResultado.Text);
         }
 
+        /// <summary>
+        /// Si se acciona el boton preguntara al usuario si realmente quiere cerrar la calculadora. Dependiendo de su respuesta (YESNO) cierra el form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("¿Esta seguro de querer salir?", "Salir",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -108,6 +142,11 @@ namespace TP_1_LucianoCrocco
             }
         }
 
+        /// <summary>
+        /// Si se sucede el evento de que el usuario quiera salir de la UI a través de la barra superior del sistema, pregunta si realmente quiere salir de la calculadora. Dependiendo de su respuesta (YESNO) cierra el form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Esta seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

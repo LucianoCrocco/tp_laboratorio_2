@@ -115,7 +115,7 @@ namespace TP_1_LucianoCrocco
             // 
             this.lblResultado.AutoSize = true;
             this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblResultado.Location = new System.Drawing.Point(462, 39);
+            this.lblResultado.Location = new System.Drawing.Point(440, 39);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(118, 28);
             this.lblResultado.TabIndex = 6;
