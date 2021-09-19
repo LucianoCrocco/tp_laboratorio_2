@@ -35,11 +35,11 @@ namespace Entidades
         /// <summary>
         /// Valida que el operador recibido sea valido, si este es no es '/', '*' y '-' devolvera por default el operador '+'.
         /// </summary>
-        /// <param name="Operador"></param>
+        /// <param name="operador"></param>
         /// <returns></returns>
-        private static char ValidarOperador(char Operador)
+        private static char ValidarOperador(char operador)
         {
-            switch (Operador)
+            switch (operador)
             {
                 case '/':
                     return '/';

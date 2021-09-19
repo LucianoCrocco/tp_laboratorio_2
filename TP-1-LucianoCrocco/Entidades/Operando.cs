@@ -31,10 +31,10 @@ namespace Entidades
         /// <summary>
         /// Constructor de un la clase Operando, recibe un numero de tipo string.
         /// </summary>
-        /// <param name="numero"></param>
-        public Operando(string numero)
+        /// <param name="strNumero"></param>
+        public Operando(string strNumero)
         {
-            this.Numero = numero;
+            this.Numero = strNumero;
         }
         #endregion
 
@@ -120,12 +120,12 @@ namespace Entidades
         /// <summary>
         /// Valida que el valor recibido a traves del parametro numero sea un numero binario (compuesto solo por 1 y 0), si lo es retorna true, caso contrario retorna false
         /// </summary>
-        /// <param name="numero"></param>
+        /// <param name="binario"></param>
         /// <returns></returns>
-        private static bool EsBinario(string numero)
+        private static bool EsBinario(string binario)
         {
             bool retorno = true;
-            foreach (char caracter in numero)
+            foreach (char caracter in binario)
             {
                 if (caracter != '1' && caracter != '0')
                 {
