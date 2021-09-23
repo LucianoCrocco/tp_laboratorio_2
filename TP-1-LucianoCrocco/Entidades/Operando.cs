@@ -16,9 +16,9 @@ namespace Entidades
         /// <summary>
         /// Constructor por defecto de la clase operando, inicializa el numero en 0
         /// </summary>
-        public Operando()
+        public Operando() : this(0)
         {
-            this.Numero = "0";
+            /*this.Numero = "0";*/ //Error.. Se tiene que reutilizar el constructor. Es valido poner this(0) o simplemente el constructor vacio, es preferible el constructor vacio.
         }
         /// <summary>
         /// Constructor de un la clase Operando, recibe un numero de tipo double
@@ -26,7 +26,8 @@ namespace Entidades
         /// <param name="numero"></param>
         public Operando(double numero)
         {
-            this.Numero = numero.ToString();
+            //this.Numero = numero.ToString(); -> Mas optimizado con el ejemplo debajo.
+            this.numero = numero;
         }
         /// <summary>
         /// Constructor de un la clase Operando, recibe un numero de tipo string.
@@ -109,11 +110,13 @@ namespace Entidades
         /// <returns></returns>
         private static double ValidarOperando(string strNumero)
         {
-            double retorno = 0;
-            if (double.TryParse(strNumero, out double auxNumero))
-            {
-                retorno = auxNumero;
-            }
+            /* double retorno = 0; Error.. el tryParse va a inicializar ese out double "variable" en 0, no hace falta hacer esto. La variable sea true o false existe igual
+             if (double.TryParse(strNumero, out double auxNumero))
+             {
+                 retorno = auxNumero;
+             }
+             return retorno;*/
+            double.TryParse(strNumero, out double retorno);//Correcion
             return retorno;
         }
 
