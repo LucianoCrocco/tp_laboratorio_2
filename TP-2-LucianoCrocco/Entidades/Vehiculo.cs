@@ -37,7 +37,7 @@ namespace Entidades
         }
         #endregion
 
-        #region Getters y Setters
+        #region Propiedades
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
@@ -76,7 +76,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
-            return (v1.chasis == v2.chasis);
+            return v1.chasis == v2.chasis;
         }
         /// <summary>
         /// Dos vehiculos son distintos si su chasis es distinto
@@ -86,7 +86,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return (v1.chasis == v2.chasis);
+            return !(v1.chasis == v2.chasis);
         }
 
         public override bool Equals(object obj)

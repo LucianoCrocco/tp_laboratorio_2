@@ -11,13 +11,15 @@ namespace Entidades
     /// </summary>
     public sealed class Taller
     {
-        List<Vehiculo> vehiculos;
-        int espacioDisponible;
+        #region Atributos
+        private List<Vehiculo> vehiculos;
+        private int espacioDisponible;
 
         public enum ETipo
         {
             Ciclomotor, Sedan, SUV, Todos
         }
+        #endregion
 
         #region "Constructores"
         private Taller()
@@ -64,13 +66,22 @@ namespace Entidades
                     switch (tipo)
                     {
                         case ETipo.Ciclomotor:
-                            sb.AppendLine(v.Mostrar());
+                            if(v.GetType() == typeof(Ciclomotor))
+                            {
+                                sb.AppendLine(v.Mostrar());
+                            }
                             break;
                         case ETipo.Sedan:
-                            sb.AppendLine(v.Mostrar());
+                            if(v is Sedan)
+                            {
+                                sb.AppendLine(v.Mostrar());
+                            }
                             break;
                         case ETipo.SUV:
-                            sb.AppendLine(v.Mostrar());
+                            if(v.GetType() == typeof(Suv))
+                            {
+                                sb.AppendLine(v.Mostrar());
+                            }
                             break;
                         default:
                             sb.AppendLine(v.Mostrar());
@@ -92,14 +103,17 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
-            foreach (Vehiculo v in taller.vehiculos)
+            if(taller.espacioDisponible > taller.vehiculos.Count)
             {
-                if (v == vehiculo)
+                foreach (Vehiculo v in taller.vehiculos)
                 {
-                    return taller;
+                    if (v == vehiculo)
+                    {
+                        return taller;
+                    }
                 }
+                taller.vehiculos.Add(vehiculo);
             }
-            taller.vehiculos.Add(vehiculo);
             return taller;
         }
         /// <summary>

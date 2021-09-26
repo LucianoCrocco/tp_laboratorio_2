@@ -8,11 +8,14 @@ namespace Entidades
 {
     public class Suv : Vehiculo
     {
+        #region Constructores
         public Suv(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         {
         }
+        #endregion
 
+        #region Propiedades
         /// <summary>
         /// SUV son 'Grande'
         /// </summary>
@@ -23,7 +26,9 @@ namespace Entidades
                 return ETamanio.Grande;
             }
         }
+        #endregion
 
+        #region Metodos
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -31,10 +36,11 @@ namespace Entidades
             sb.AppendLine("SUV");
             sb.AppendLine(base.Mostrar());
             sb.AppendLine($"TAMAÑO : {this.Tamanio}");
-            sb.AppendLine("");
             sb.AppendLine("---------------------");
 
             return sb.ToString();
         }
+        #endregion
+
     }
 }

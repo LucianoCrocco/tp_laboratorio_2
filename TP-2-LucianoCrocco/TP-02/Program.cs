@@ -17,7 +17,7 @@ namespace TP_02_2018
             Console.SetWindowSize(Console.LargestWindowWidth / 2, Console.LargestWindowHeight - 2);
 
             // Nombre del alumno
-            Console.Title = "";
+            Console.Title = "Luciano Agustin Crocco 2C";
 
             Taller taller = new Taller(6);
 
