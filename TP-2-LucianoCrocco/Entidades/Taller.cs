@@ -22,10 +22,18 @@ namespace Entidades
         #endregion
 
         #region "Constructores"
+        /// <summary>
+        /// Constructor privado que inicializa la lista de Vehiculos
+        /// </summary>
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
+
+        /// <summary>
+        /// Construsctor que incializa la clase Taller
+        /// </summary>
+        /// <param name="espacioDisponible">Cantidad de vehiculos máximos en el taller</param>
         public Taller(int espacioDisponible)
             :this()
         {

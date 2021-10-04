@@ -18,7 +18,7 @@ namespace Entidades
 
         #region Constructores
         /// <summary>
-        /// Por defecto, TIPO será CuatroPuertas
+        /// Por defecto, TIPO será CuatroPuertas. Constructor sin especificar el tipo
         /// </summary>
         /// <param name="marca"></param>
         /// <param name="chasis"></param>
@@ -28,7 +28,13 @@ namespace Entidades
         {
             this.tipo = ETipo.CuatroPuertas;
         }
-
+        /// <summary>
+        /// Constructor que especifica el tipo de vehiculo.
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
             :base(chasis, marca, color)
         {
@@ -51,6 +57,10 @@ namespace Entidades
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Muestra los datos de la Sedan.
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

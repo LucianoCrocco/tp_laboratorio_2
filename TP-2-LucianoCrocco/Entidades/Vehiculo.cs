@@ -29,6 +29,13 @@ namespace Entidades
         #endregion
 
         #region Constructores
+
+        /// <summary>
+        /// Constructor que inicializa los atributos de nuestro Vehiculo
+        /// </summary>
+        /// <param name="chasis"></param>
+        /// <param name="marca"></param>
+        /// <param name="color"></param>
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
@@ -56,6 +63,10 @@ namespace Entidades
         #endregion
 
         #region Sobrecarga de Operadores
+        /// <summary>
+        /// Devuelve un string con los datos de los atributos de Vehiculo.
+        /// </summary>
+        /// <param name="p"></param>
         public static explicit operator string(Vehiculo p)
         {
             StringBuilder sb = new StringBuilder();
