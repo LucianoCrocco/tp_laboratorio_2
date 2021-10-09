@@ -71,10 +71,13 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine($"Tipo de Vehiculo: {p.GetType().Name.ToUpper()}");
             sb.Append($"CHASIS: {p.chasis}\r\n");
-            sb.Append($"MARCA : {p.marca.ToString()}\r\n");
-            sb.Append($"COLOR : {p.color.ToString()}\r\n");
-            sb.AppendLine("---------------------");
+            sb.Append($"MARCA : {p.marca}\r\n");
+            sb.Append($"COLOR : {p.color}\r\n");
+            sb.AppendLine("---------------------\n");
+            sb.Append($"TAMAÑO: {p.Tamanio}");
+
 
             return sb.ToString();
         }
@@ -97,7 +100,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return !(v1.chasis == v2.chasis);
+            return !(v1 == v2);
         }
 
         public override bool Equals(object obj)

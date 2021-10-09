@@ -24,9 +24,8 @@ namespace Entidades
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
-            : base(chasis, marca, color)
+            : this(marca, chasis, color, ETipo.CuatroPuertas)
         {
-            this.tipo = ETipo.CuatroPuertas;
         }
         /// <summary>
         /// Constructor que especifica el tipo de vehiculo.
@@ -65,10 +64,9 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("SEDAN");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendLine($"TAMAÑO : {this.Tamanio}");
-            sb.AppendLine("TIPO : " + this.tipo);
+            
+            sb.Append(base.Mostrar());
+            sb.AppendLine("\nTIPO : " + this.tipo);
             sb.AppendLine("---------------------");
 
             return sb.ToString();
