@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "TP-1-LucianoCrocco/1.0.0": {
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "runtime": {
+          "TP-1-LucianoCrocco.dll": {}
+        }
+      },
+      "Entidades/1.0.0": {
+        "runtime": {
+          "Entidades.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TP-1-LucianoCrocco/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entidades/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
