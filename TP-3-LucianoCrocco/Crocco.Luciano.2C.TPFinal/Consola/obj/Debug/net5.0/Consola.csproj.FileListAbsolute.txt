@@ -1,0 +1,16 @@
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.exe
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.deps.json
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.runtimeconfig.json
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.runtimeconfig.dev.json
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.dll
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\ref\Consola.dll
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.pdb
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.csproj.AssemblyReference.cache
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.AssemblyInfoInputs.cache
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.AssemblyInfo.cs
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.csproj.CoreCompileInputs.cache
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.dll
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\ref\Consola.dll
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.pdb
+C:\Users\Lucia\source\repos\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.genruntimeconfig.cache
