@@ -29,27 +29,41 @@ namespace Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEscuderias = new System.Windows.Forms.Button();
+            this.btnCarrera = new System.Windows.Forms.Button();
+            this.btnEscuderia = new System.Windows.Forms.Button();
             this.btnPilotos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnEscuderias
+            // btnCarrera
             // 
-            this.btnEscuderias.Location = new System.Drawing.Point(120, 110);
-            this.btnEscuderias.Name = "btnEscuderias";
-            this.btnEscuderias.Size = new System.Drawing.Size(75, 23);
-            this.btnEscuderias.TabIndex = 0;
-            this.btnEscuderias.Text = "Escuderias";
-            this.btnEscuderias.UseVisualStyleBackColor = true;
+            this.btnCarrera.Font = new System.Drawing.Font("Mongolian Baiti", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCarrera.Location = new System.Drawing.Point(12, 77);
+            this.btnCarrera.Name = "btnCarrera";
+            this.btnCarrera.Size = new System.Drawing.Size(185, 84);
+            this.btnCarrera.TabIndex = 0;
+            this.btnCarrera.Text = "Carrera";
+            this.btnCarrera.UseVisualStyleBackColor = true;
+            // 
+            // btnEscuderia
+            // 
+            this.btnEscuderia.Font = new System.Drawing.Font("Mongolian Baiti", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEscuderia.Location = new System.Drawing.Point(12, 167);
+            this.btnEscuderia.Name = "btnEscuderia";
+            this.btnEscuderia.Size = new System.Drawing.Size(185, 84);
+            this.btnEscuderia.TabIndex = 1;
+            this.btnEscuderia.Text = "Escuderia";
+            this.btnEscuderia.UseVisualStyleBackColor = true;
             // 
             // btnPilotos
             // 
-            this.btnPilotos.Location = new System.Drawing.Point(318, 110);
+            this.btnPilotos.Font = new System.Drawing.Font("Mongolian Baiti", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPilotos.Location = new System.Drawing.Point(12, 257);
             this.btnPilotos.Name = "btnPilotos";
-            this.btnPilotos.Size = new System.Drawing.Size(75, 23);
-            this.btnPilotos.TabIndex = 1;
+            this.btnPilotos.Size = new System.Drawing.Size(185, 84);
+            this.btnPilotos.TabIndex = 2;
             this.btnPilotos.Text = "Pilotos";
             this.btnPilotos.UseVisualStyleBackColor = true;
+            this.btnPilotos.Click += new System.EventHandler(this.btnPilotos_Click);
             // 
             // FrmPrincipal
             // 
@@ -57,16 +71,18 @@ namespace Formularios
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnPilotos);
-            this.Controls.Add(this.btnEscuderias);
+            this.Controls.Add(this.btnEscuderia);
+            this.Controls.Add(this.btnCarrera);
             this.Name = "FrmPrincipal";
-            this.Text = "Form1";
+            this.Text = "Asociacion Corredores Turismo Carretera";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnEscuderias;
+        private System.Windows.Forms.Button btnCarrera;
+        private System.Windows.Forms.Button btnEscuderia;
         private System.Windows.Forms.Button btnPilotos;
     }
 }

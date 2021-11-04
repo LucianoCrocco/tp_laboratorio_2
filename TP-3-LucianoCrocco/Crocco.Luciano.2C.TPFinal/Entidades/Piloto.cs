@@ -18,13 +18,15 @@ namespace Entidades
         #endregion
 
         #region Constructores
-        public Piloto (string nombre, string apellido, int edad, ESexo sexo, int numeroDeCompeticion)
+
+        public Piloto (string nombre, string apellido, int edad, ESexo sexo, int numeroDeCompeticion, bool competidorNacional)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.Edad = edad;
             this.Sexo = sexo;
             this.NumeroCompeticion = numeroDeCompeticion;
+            this.CompetidorNacional = competidorNacional;
         }
         #endregion
 
@@ -101,27 +103,6 @@ namespace Entidades
                 return this.competidorNacional;
             }
         }
-        #endregion
-
-        #region Sobrecarga operadores
-        public static bool operator ==(Piloto p1, Piloto p2)
-        {
-            if(p1 is not null && p2 is not null)
-            {
-                if(p1.NumeroCompeticion == p2.NumeroCompeticion)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public static bool operator !=(Piloto p1, Piloto p2)
-        {
-            return !(p1 == p2);
-        }
-
-
 
         #endregion
 

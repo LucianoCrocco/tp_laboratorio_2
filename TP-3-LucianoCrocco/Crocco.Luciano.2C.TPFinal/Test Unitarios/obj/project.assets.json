@@ -6119,11 +6119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\Test Unitarios\\Test Unitarios.csproj",
+      "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Test Unitarios\\Test Unitarios.csproj",
       "projectName": "Test Unitarios",
-      "projectPath": "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\Test Unitarios\\Test Unitarios.csproj",
+      "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Test Unitarios\\Test Unitarios.csproj",
       "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\Test Unitarios\\obj\\",
+      "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Test Unitarios\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",

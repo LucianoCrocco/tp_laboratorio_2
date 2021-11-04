@@ -8,22 +8,20 @@ namespace Entidades
         #region Atributos
         protected string nombreEscuderia;
         protected int cantidadPilotos;
-        protected ETipoCompeticion tipoCompeticionInscripto;
-        protected List<Piloto> pilotos;
+        protected List<Piloto> pilotosEnEscuderia;
         #endregion
 
         #region Constructores
 
         private Escuderia()
         {
-            this.pilotos = new List<Piloto>();
+            this.pilotosEnEscuderia = new List<Piloto>();
         }
-        public Escuderia(string nombre, int cantidadPilotos, ETipoCompeticion tipoCompeticion)
+        public Escuderia(string nombre, int cantidadPilotos)
             :this()
         {
             this.NombreEscuderia = nombre;
             this.CantidadPilotos = cantidadPilotos;
-            this.TipoCompeticionInscripto = tipoCompeticion;
         }
         #endregion
 
@@ -50,16 +48,31 @@ namespace Entidades
                 this.cantidadPilotos = value;
             }
         }
-        public ETipoCompeticion TipoCompeticionInscripto
+
+        public List<Piloto> Pilotos
         {
-            get {
-                return this.tipoCompeticionInscripto;
-            }
-            set
+            get
             {
-                this.tipoCompeticionInscripto = value;
+                return this.pilotosEnEscuderia;
             }
         }
         #endregion
+
+        public static bool operator ==(Escuderia e1, Escuderia e2)
+        {
+            if(e1 is not null && e2 is not null)
+            {
+                if(e1.NombreEscuderia == e2.NombreEscuderia)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool operator !=(Escuderia e1, Escuderia e2)
+        {
+            return !(e1 == e2);
+        }
+
     }
 }

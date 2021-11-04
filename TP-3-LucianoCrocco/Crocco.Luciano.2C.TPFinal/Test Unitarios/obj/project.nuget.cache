@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZCmaRmuA0WpOcVyZGGYuxZzbl7zD6kCEKR14qRSDJqiQdvwCWfzxkK91nUA+q4GxDRWJxWD8V58WtS5RTJzU/w==",
+  "dgSpecHash": "OoIspek9iZaw7Jzt58NPlRaHJrbYDva/S4txjLla6xlBpFBwuuGBdRMO7m50xK7xJfDqzmtd1fBz4oiCuJVa4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\Test Unitarios\\Test Unitarios.csproj",
+  "projectFilePath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Test Unitarios\\Test Unitarios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucia\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Lucia\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

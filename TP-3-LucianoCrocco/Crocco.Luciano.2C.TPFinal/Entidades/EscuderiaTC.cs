@@ -14,7 +14,7 @@ namespace Entidades
 
         #region Constructores
         public EscuderiaTC(string nombre, int cantidadPilotos, EMarcaVehiculoTC fabricanteVehiculo)
-            :base(nombre, cantidadPilotos, ETipoCompeticion.TurismoCarretera)
+            :base(nombre, cantidadPilotos)
         {
             this.marcaVehiculo = fabricanteVehiculo;
         }

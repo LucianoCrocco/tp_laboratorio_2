@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj": {}
+    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj": {
+    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj",
+        "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj",
         "projectName": "ArchivosYSerializacion",
-        "projectPath": "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj",
+        "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj",
         "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lucia\\source\\repos\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\obj\\",
+        "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
