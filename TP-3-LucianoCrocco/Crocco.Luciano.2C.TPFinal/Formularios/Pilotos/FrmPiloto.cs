@@ -42,38 +42,55 @@ namespace Formularios
         #region Estadisticas
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
-            frmEstadisticaPiloto = new FrmPilotoEstadistica(pilotosCargados);
-            frmEstadisticaPiloto.ShowDialog();
+            if(pilotosCargados.Count > 0)
+            {
+                frmEstadisticaPiloto = new FrmPilotoEstadistica(pilotosCargados);
+                frmEstadisticaPiloto.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay pilotos cargados en la lista", "Aleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
 
         #region Guardar pilotos
         private void btnGuardarLista_Click(object sender, EventArgs e)
         {
-            try
+            if (pilotosCargados.Count > 0)
             {
-                path = $"{Environment.CurrentDirectory}\\ListaPilotos.xml";
-                if (File.Exists(path))
+                try
                 {
-                    if(MessageBox.Show("Ya se encuentra creado un archivo de pilotos, ¿desea sobreescribirlo?", "Cuidado", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    path = $"{Environment.CurrentDirectory}\\ListaPilotos.xml";
+                    if (File.Exists(path))
+                    {
+                        if (MessageBox.Show("Ya se encuentra creado un archivo de pilotos, ¿desea sobreescribirlo?", "Cuidado", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                        {
+                            serializacion.Guardar(pilotosCargados, path, false);
+                            MessageBox.Show($"Archivo correctamente guardado en: {path}", "Guardado correcto", MessageBoxButtons.OK ,MessageBoxIcon.Information);
+                        }
+                    }
+                    else
                     {
                         serializacion.Guardar(pilotosCargados, path, false);
-                        MessageBox.Show($"Archivo correctamente guardado en: {path}");
+                        MessageBox.Show($"Archivo correctamente guardado en: {path}", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                } else
-                {
-                    serializacion.Guardar(pilotosCargados, path, false);
-                    MessageBox.Show($"Archivo correctamente guardado en: {path}");
+
                 }
-                
-            } catch(GuardarSerializacionException ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (GuardarSerializacionException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex )
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No hay pilotos cargados en la lista", "Aleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
         #endregion
 
@@ -84,19 +101,22 @@ namespace Formularios
             openFileDialog.Title = "Seleccione el archivo a abrir";
             openFileDialog.Filter = "Archivos XML (.xml) |*.xml||*.*";
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if((pilotosCargados.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea Continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || pilotosCargados.Count == 0) 
             {
-                path = openFileDialog.FileName;
-                try
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    this.pilotosCargados = serializacion.Leer(path);
-                    Refrescar(pilotosCargados);
-                    MessageBox.Show("Archivo cargado correctamente");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    path = openFileDialog.FileName;
+                    try
+                    {
+                        this.pilotosCargados = serializacion.Leer(path);
+                        Refrescar(pilotosCargados);
+                        MessageBox.Show("Archivo cargado correctamente");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }            
             }
         }
         #endregion

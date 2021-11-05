@@ -13,12 +13,12 @@ namespace Formularios
 {
     public partial class FrmPilotoEstadistica : Form
     {
-        List<Piloto> pilotosCargados;
+        //List<Piloto> pilotosCargados;
         PromedioPilotos promedio;
         public FrmPilotoEstadistica(List<Piloto> pilotos)
         {
             InitializeComponent();
-            pilotosCargados = pilotos;
+           //pilotosCargados = pilotos;
             promedio = new PromedioPilotos(pilotos);
         }
 
@@ -30,13 +30,13 @@ namespace Formularios
         private void btnMaximo_Click(object sender, EventArgs e)
         {
             Limpiar();
-            rchEstadisticas.Text = promedio.MaximoEdad() + "\n" + promedio.MaximoNacionalidad() + "\n" + promedio.MaximoSexo();
+            rchEstadisticas.Text = promedio.MaximoEdad() + "\n" + promedio.MaximoNacionalidad() + "\n" + promedio.MaximoSexo() + "\n" + promedio.MaximoNroCompeticion();
         }
 
         private void btnMinimo_Click(object sender, EventArgs e)
         {
             Limpiar();
-            rchEstadisticas.Text = promedio.MinimoEdad() + "\n" + promedio.MinimoNacionalidad() + "\n" + promedio.MinimoSexo();
+            rchEstadisticas.Text = promedio.MinimoEdad() + "\n" + promedio.MinimoNacionalidad() + "\n" + promedio.MinimoSexo() + "\n" + promedio.MinimoNroCompeticion();
         }
 
         public void Limpiar()

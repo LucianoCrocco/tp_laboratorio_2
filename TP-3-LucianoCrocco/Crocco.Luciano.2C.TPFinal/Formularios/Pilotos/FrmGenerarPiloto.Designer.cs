@@ -163,7 +163,7 @@ namespace Formularios
             this.nroCompeticion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nroCompeticion.Location = new System.Drawing.Point(185, 181);
             this.nroCompeticion.Maximum = new decimal(new int[] {
-            500,
+            555,
             0,
             0,
             0});
@@ -171,7 +171,7 @@ namespace Formularios
             this.nroCompeticion.Size = new System.Drawing.Size(62, 27);
             this.nroCompeticion.TabIndex = 10;
             this.nroCompeticion.Value = new decimal(new int[] {
-            15,
+            1,
             0,
             0,
             0});
@@ -219,6 +219,7 @@ namespace Formularios
             this.Controls.Add(this.lblNombre);
             this.Name = "FrmGenerarPiloto";
             this.Text = "FrmGenerarPiloto";
+            this.Load += new System.EventHandler(this.FrmGenerarPiloto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nroEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nroCompeticion)).EndInit();
             this.ResumeLayout(false);

@@ -38,7 +38,7 @@ namespace Formularios
             // rchEstadisticas
             // 
             this.rchEstadisticas.Enabled = false;
-            this.rchEstadisticas.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rchEstadisticas.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rchEstadisticas.Location = new System.Drawing.Point(9, 41);
             this.rchEstadisticas.Name = "rchEstadisticas";
             this.rchEstadisticas.Size = new System.Drawing.Size(593, 165);

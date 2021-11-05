@@ -53,5 +53,13 @@ namespace Formularios
         }
         #endregion
 
+        private void FrmGenerarPiloto_Load(object sender, EventArgs e)
+        {
+            if(pilotosLista.Count > nroCompeticion.Maximum)
+            {
+                MessageBox.Show("Se alcanzo el maximo de pilotos posibles para cargar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+        }
     }
 }

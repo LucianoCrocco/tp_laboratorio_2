@@ -108,7 +108,7 @@ namespace Formularios
             this.Controls.Add(this.lstPilotos);
             this.Controls.Add(this.btnGenerarPiloto);
             this.Name = "FrmPiloto";
-            this.Text = "FrmPiloto";
+            this.Text = "Informacion de Pilotos";
             this.ResumeLayout(false);
             this.PerformLayout();
 

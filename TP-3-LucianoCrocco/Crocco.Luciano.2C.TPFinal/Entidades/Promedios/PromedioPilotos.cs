@@ -29,6 +29,18 @@ namespace Entidades
             }
             return $"La edad maxima registrada en la lista de pilotos es de {maximo} años";
         }
+        public string MaximoNroCompeticion()
+        {
+            int maximo = int.MinValue;
+            foreach (Piloto item in lista)
+            {
+                if (item.NumeroCompeticion > maximo)
+                {
+                    maximo = item.NumeroCompeticion;
+                }
+            }
+            return $"El numero de competicion mas grande elegido fue el {maximo}";
+        }
         public string MaximoSexo()
         {
             string retorno = String.Empty;
@@ -115,7 +127,18 @@ namespace Entidades
             return $"La edad minima registrada en la lista de pilotos es de {minimo} años";
         }
 
-        
+        public string MinimoNroCompeticion()
+        {
+            int minimo = int.MaxValue;
+            foreach (Piloto item in lista)
+            {
+                if (item.NumeroCompeticion < minimo)
+                {
+                    minimo = item.NumeroCompeticion;
+                }
+            }
+            return $"El numero de competicion mas chico elegido fue el {minimo}";
+        }
 
         public string MinimoSexo()
         {
