@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Formularios
 {
@@ -14,15 +15,19 @@ namespace Formularios
     {
         FrmEscuderia frmEscuderia;
         FrmPiloto frmPiloto;
+        List<Piloto> pilotos;
+        List<Escuderia> escuderias;
         public FrmPrincipal()
         {
             InitializeComponent();
             frmEscuderia = new FrmEscuderia();
+            pilotos = new List<Piloto>();
+            escuderias = new List<Escuderia>();
         }
 
         private void btnPilotos_Click(object sender, EventArgs e)
         {
-            frmPiloto = new FrmPiloto();
+            frmPiloto = new FrmPiloto(pilotos);
             frmPiloto.Show();
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Excepciones;
 
 namespace Entidades
 {
@@ -19,6 +20,7 @@ namespace Entidades
 
         #region Constructores
 
+        public Piloto() { }
         public Piloto (string nombre, string apellido, int edad, ESexo sexo, int numeroDeCompeticion, bool competidorNacional)
         {
             this.Nombre = nombre;
@@ -40,7 +42,17 @@ namespace Entidades
             }
             set
             {
-                this.nombre = value;
+                try 
+                {
+                    if (Piloto.ValidarNombre(value))
+                    {
+                        this.nombre = value;
+                    }
+                }
+                catch (CaracteresInvalidoException ex)
+                {
+                    throw new CaracteresInvalidoException("El nombre ingresado es invalido", ex);
+                } 
             }
         }
 
@@ -52,7 +64,17 @@ namespace Entidades
             }
             set
             {
-                this.apellido = value;
+                try
+                {
+                    if (Piloto.ValidarNombre(value))
+                    {
+                        this.apellido = value;
+                    }
+                }
+                catch (CaracteresInvalidoException ex)
+                {
+                    throw new CaracteresInvalidoException("El apellido ingresado es invalido", ex);
+                }
             }
         }
 
@@ -106,5 +128,68 @@ namespace Entidades
 
         #endregion
 
+        #region Sobrecargas
+        public static bool operator == (Piloto p1, Piloto p2)
+        {
+            if(p1 is not null && p2 is not null)
+            {
+                if(p1.NumeroCompeticion == p2.NumeroCompeticion)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool operator !=(Piloto p1, Piloto p2)
+        {
+            return !(p1 == p2);
+        }
+
+        public static List<Piloto> operator +(List<Piloto> pilotos, Piloto p1)
+        {
+            if(pilotos is not null && p1 is not null)
+            {
+                foreach(Piloto item in pilotos)
+                {
+                    if(item == p1)
+                    {
+                        throw new PilotoRepetidoException("El piloto ya se encuentra en la lista");
+                    }
+                }
+                pilotos.Add(p1);
+            }
+
+            return pilotos;
+        }
+        #endregion
+
+        #region Metodos
+        public string MostrarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{this.Nombre} {this.Apellido}, {this.Edad} años, sexo {this.Sexo}, numero de competicion: {this.NumeroCompeticion}, ¿es argentino?: {(this.CompetidorNacional ? "Si":"NO")}");
+            return sb.ToString();
+        }
+
+        public static bool ValidarNombre(string value)
+        {
+            if (String.IsNullOrWhiteSpace(value))
+            {
+                throw new CaracteresInvalidoException("Los cadena de caracteres ingresados se encuentra vacia");
+            } 
+            else
+            {
+                foreach(char caracter in value)
+                {
+                    if((caracter < 65 || caracter > 90) && (caracter < 97 || caracter > 122))
+                    {
+                        throw new CaracteresInvalidoException("Los cadena de caracteres ingresados contiene caracteres invalidos");
+                    }
+                }
+            }
+            return true;
+        }
+        #endregion
     }
 }

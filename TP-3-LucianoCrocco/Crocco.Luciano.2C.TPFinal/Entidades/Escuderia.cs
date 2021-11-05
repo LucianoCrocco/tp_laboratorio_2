@@ -58,21 +58,32 @@ namespace Entidades
         }
         #endregion
 
-        public static bool operator ==(Escuderia e1, Escuderia e2)
+        #region Sobrecarga operadores
+        public static bool operator ==(Escuderia escuderia, Piloto piloto)
         {
-            if(e1 is not null && e2 is not null)
+            if(escuderia is not null && piloto is not null)
             {
-                if(e1.NombreEscuderia == e2.NombreEscuderia)
+                foreach(Piloto item in escuderia.Pilotos)
                 {
-                    return true;
+                    if(item == piloto)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
         }
-        public static bool operator !=(Escuderia e1, Escuderia e2)
+        public static bool operator !=(Escuderia escuderia, Piloto piloto)
         {
-            return !(e1 == e2);
+            return !(escuderia == piloto);
         }
 
+        public override bool Equals(object obj)
+        {
+            Escuderia escuderia = obj as Escuderia;
+
+            return this.NombreEscuderia == escuderia.NombreEscuderia;
+        }
+        #endregion
     }
 }

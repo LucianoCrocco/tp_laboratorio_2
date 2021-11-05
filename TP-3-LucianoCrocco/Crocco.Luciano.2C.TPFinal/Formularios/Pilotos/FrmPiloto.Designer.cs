@@ -29,102 +29,97 @@ namespace Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridPilotos = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Extranjero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGenerarPiloto = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPilotos)).BeginInit();
+            this.lstPilotos = new System.Windows.Forms.ListBox();
+            this.lblListaPilotos = new System.Windows.Forms.Label();
+            this.btnGuardarLista = new System.Windows.Forms.Button();
+            this.btnCargarLista = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // dataGridPilotos
-            // 
-            this.dataGridPilotos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPilotos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre,
-            this.Apellido,
-            this.Edad,
-            this.Sexo,
-            this.Numero,
-            this.Extranjero});
-            this.dataGridPilotos.Location = new System.Drawing.Point(12, 12);
-            this.dataGridPilotos.Name = "dataGridPilotos";
-            this.dataGridPilotos.RowTemplate.Height = 25;
-            this.dataGridPilotos.Size = new System.Drawing.Size(647, 210);
-            this.dataGridPilotos.TabIndex = 0;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Edad
-            // 
-            this.Edad.HeaderText = "Edad";
-            this.Edad.Name = "Edad";
-            this.Edad.ReadOnly = true;
-            // 
-            // Sexo
-            // 
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero de Competicion";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // Extranjero
-            // 
-            this.Extranjero.HeaderText = "Extranjero";
-            this.Extranjero.Name = "Extranjero";
-            this.Extranjero.ReadOnly = true;
             // 
             // btnGenerarPiloto
             // 
-            this.btnGenerarPiloto.Location = new System.Drawing.Point(665, 12);
+            this.btnGenerarPiloto.Location = new System.Drawing.Point(665, 101);
             this.btnGenerarPiloto.Name = "btnGenerarPiloto";
             this.btnGenerarPiloto.Size = new System.Drawing.Size(138, 45);
             this.btnGenerarPiloto.TabIndex = 1;
-            this.btnGenerarPiloto.Text = "Cargar Nuevo Piloto";
+            this.btnGenerarPiloto.Text = "Generar Nuevo Piloto";
             this.btnGenerarPiloto.UseVisualStyleBackColor = true;
             this.btnGenerarPiloto.Click += new System.EventHandler(this.btnGenerarPiloto_Click);
+            // 
+            // lstPilotos
+            // 
+            this.lstPilotos.FormattingEnabled = true;
+            this.lstPilotos.ItemHeight = 15;
+            this.lstPilotos.Location = new System.Drawing.Point(12, 42);
+            this.lstPilotos.Name = "lstPilotos";
+            this.lstPilotos.Size = new System.Drawing.Size(647, 214);
+            this.lstPilotos.TabIndex = 2;
+            // 
+            // lblListaPilotos
+            // 
+            this.lblListaPilotos.AutoSize = true;
+            this.lblListaPilotos.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblListaPilotos.Location = new System.Drawing.Point(12, 9);
+            this.lblListaPilotos.Name = "lblListaPilotos";
+            this.lblListaPilotos.Size = new System.Drawing.Size(446, 30);
+            this.lblListaPilotos.TabIndex = 3;
+            this.lblListaPilotos.Text = "LISTA DE PILOTOS CARGADOS EN EL SISTEMA";
+            // 
+            // btnGuardarLista
+            // 
+            this.btnGuardarLista.Location = new System.Drawing.Point(665, 152);
+            this.btnGuardarLista.Name = "btnGuardarLista";
+            this.btnGuardarLista.Size = new System.Drawing.Size(138, 45);
+            this.btnGuardarLista.TabIndex = 4;
+            this.btnGuardarLista.Text = "Guardar Lista de Pilotos";
+            this.btnGuardarLista.UseVisualStyleBackColor = true;
+            this.btnGuardarLista.Click += new System.EventHandler(this.btnGuardarLista_Click);
+            // 
+            // btnCargarLista
+            // 
+            this.btnCargarLista.Location = new System.Drawing.Point(665, 203);
+            this.btnCargarLista.Name = "btnCargarLista";
+            this.btnCargarLista.Size = new System.Drawing.Size(138, 45);
+            this.btnCargarLista.TabIndex = 5;
+            this.btnCargarLista.Text = "Cargar Lista de Pilotos";
+            this.btnCargarLista.UseVisualStyleBackColor = true;
+            this.btnCargarLista.Click += new System.EventHandler(this.btnCargarLista_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Location = new System.Drawing.Point(665, 50);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(138, 45);
+            this.btnEstadisticas.TabIndex = 6;
+            this.btnEstadisticas.Text = "Estadisticas";
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // FrmPiloto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 232);
+            this.ClientSize = new System.Drawing.Size(809, 269);
+            this.Controls.Add(this.btnEstadisticas);
+            this.Controls.Add(this.btnCargarLista);
+            this.Controls.Add(this.btnGuardarLista);
+            this.Controls.Add(this.lblListaPilotos);
+            this.Controls.Add(this.lstPilotos);
             this.Controls.Add(this.btnGenerarPiloto);
-            this.Controls.Add(this.dataGridPilotos);
             this.Name = "FrmPiloto";
             this.Text = "FrmPiloto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPilotos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridPilotos;
         private System.Windows.Forms.Button btnGenerarPiloto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Extranjero;
+        private System.Windows.Forms.ListBox lstPilotos;
+        private System.Windows.Forms.Label lblListaPilotos;
+        private System.Windows.Forms.Button btnGuardarLista;
+        private System.Windows.Forms.Button btnCargarLista;
+        private System.Windows.Forms.Button btnEstadisticas;
     }
 }
