@@ -14,10 +14,12 @@ namespace Formularios
     public partial class FrmEscuderia : Form
     {
         List<Escuderia> escuderias;
-        public FrmEscuderia()
+        List<Piloto> pilotos;
+        public FrmEscuderia(List<Escuderia> escuderias, List<Piloto> pilotos)
         {
             InitializeComponent();
-            escuderias = new List<Escuderia>();
+            this.escuderias = escuderias;
+            this.pilotos = pilotos;
         }
     }
 }

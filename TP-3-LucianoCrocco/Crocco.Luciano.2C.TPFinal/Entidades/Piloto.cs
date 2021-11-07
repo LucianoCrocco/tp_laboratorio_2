@@ -186,7 +186,7 @@ namespace Entidades
         public string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{this.Nombre} {this.Apellido}, {this.Edad} años, sexo {this.Sexo}, numero de competicion: {this.NumeroCompeticion}, ¿es argentino?: {(this.CompetidorNacional ? "Si":"NO")}");
+            sb.AppendLine($"{this.Nombre} {this.Apellido}, {this.Edad} años, sexo: {this.Sexo}, numero de competicion: {this.NumeroCompeticion}, ¿es argentino?: {(this.CompetidorNacional ? "Si":"No")}");
             return sb.ToString();
         }
 

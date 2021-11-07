@@ -20,7 +20,6 @@ namespace Formularios
         public FrmPrincipal()
         {
             InitializeComponent();
-            frmEscuderia = new FrmEscuderia();
             pilotos = new List<Piloto>();
             escuderias = new List<Escuderia>();
         }
@@ -28,7 +27,13 @@ namespace Formularios
         private void btnPilotos_Click(object sender, EventArgs e)
         {
             frmPiloto = new FrmPiloto(pilotos);
-            frmPiloto.Show();
+            frmPiloto.ShowDialog();
+        }
+
+        private void btnEscuderia_Click(object sender, EventArgs e)
+        {
+            frmEscuderia = new FrmEscuderia(escuderias, pilotos);
+            frmEscuderia.ShowDialog();
         }
     }
 }

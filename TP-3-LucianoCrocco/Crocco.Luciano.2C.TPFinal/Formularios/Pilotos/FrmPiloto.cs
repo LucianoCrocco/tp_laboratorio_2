@@ -20,6 +20,7 @@ namespace Formularios
         FrmGenerarPiloto frmGenerarPiloto;
         FrmPilotoEstadistica frmEstadisticaPiloto;
         Serializacion<List<Piloto>> serializacion;
+        OpenFileDialog openFileDialog;
         public static ListBox ListBoxRef;
         string path;
 
@@ -92,11 +93,11 @@ namespace Formularios
         #region Cargar Pilotos
         private void btnCargarLista_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Seleccione el archivo a abrir";
             openFileDialog.Filter = "Archivos XML (.xml) |*.xml||*.*";
 
-            if((pilotosCargados.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea Continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || pilotosCargados.Count == 0) 
+            if((pilotosCargados.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || pilotosCargados.Count == 0) 
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {

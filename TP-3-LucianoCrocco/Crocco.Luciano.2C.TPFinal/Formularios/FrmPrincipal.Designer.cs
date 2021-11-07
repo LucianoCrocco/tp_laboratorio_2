@@ -36,17 +36,18 @@ namespace Formularios
             // btnEscuderia
             // 
             this.btnEscuderia.Font = new System.Drawing.Font("Mongolian Baiti", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEscuderia.Location = new System.Drawing.Point(12, 96);
+            this.btnEscuderia.Location = new System.Drawing.Point(12, 118);
             this.btnEscuderia.Name = "btnEscuderia";
             this.btnEscuderia.Size = new System.Drawing.Size(185, 84);
             this.btnEscuderia.TabIndex = 1;
             this.btnEscuderia.Text = "Escuderia";
             this.btnEscuderia.UseVisualStyleBackColor = true;
+            this.btnEscuderia.Click += new System.EventHandler(this.btnEscuderia_Click);
             // 
             // btnPilotos
             // 
             this.btnPilotos.Font = new System.Drawing.Font("Mongolian Baiti", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPilotos.Location = new System.Drawing.Point(203, 96);
+            this.btnPilotos.Location = new System.Drawing.Point(215, 118);
             this.btnPilotos.Name = "btnPilotos";
             this.btnPilotos.Size = new System.Drawing.Size(185, 84);
             this.btnPilotos.TabIndex = 2;
@@ -58,10 +59,14 @@ namespace Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(412, 214);
             this.Controls.Add(this.btnPilotos);
             this.Controls.Add(this.btnEscuderia);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asociacion Corredores Turismo Carretera";
             this.ResumeLayout(false);
 

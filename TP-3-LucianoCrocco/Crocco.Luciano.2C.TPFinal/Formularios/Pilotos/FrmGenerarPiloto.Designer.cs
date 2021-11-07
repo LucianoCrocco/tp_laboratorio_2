@@ -219,7 +219,7 @@ namespace Formularios
             this.Controls.Add(this.lblNombre);
             this.Name = "FrmGenerarPiloto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmGenerarPiloto";
+            this.Text = "Carga de un Piloto";
             this.Load += new System.EventHandler(this.FrmGenerarPiloto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nroEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nroCompeticion)).EndInit();
