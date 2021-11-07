@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Security;
 
 namespace ArchivosYSerializacion
 {
@@ -19,11 +20,22 @@ namespace ArchivosYSerializacion
                     sw.WriteLine(dato);
                     sw.Close();
                 }
+                catch (PathTooLongException ex)
+                {
+                    throw new PathTooLongException("El path ingresado supera la longitud maxima", ex);
+                }
+                catch (SecurityException ex)
+                {
+                    throw new SecurityException("El path ingresado requiere permisos de administrador", ex);
+                }
+                catch (NotSupportedException ex)
+                {
+                    throw new NotSupportedException("La extension ingresada no puede ser guardada en el sistema", ex);
+                }
                 catch (Exception)
                 {
                     throw;
                 }
-
             } else
             {
                 throw new Exception("El PATH ingresado esta vacio!");

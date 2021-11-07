@@ -213,7 +213,75 @@ namespace Entidades
         #endregion
 
             #region Promedio
-            #endregion
+        public string PromedioEdad()
+        {
+            int acumulador = 0;
+            float resultado = 0;
+            foreach (Piloto item in lista)
+            {
+                acumulador += item.Edad;
+            }
+            resultado = (float) acumulador / this.lista.Count;
+            return $"El promedio de edad entre los pilotos de la lista es de {resultado} años";
+        }
+
+        public string PromedioSexo()
+        {
+            int contadorMasc = 0;
+            int contadorFem = 0;
+            int contadorOtro = 0;
+
+            foreach (Piloto item in lista)
+            {
+                switch (item.Sexo)
+                {
+                    case ESexo.Masculino:
+                        contadorMasc++;
+                        break;
+                    case ESexo.Femenino:
+                        contadorFem++;
+                        break;
+                    default:
+                        contadorOtro++;
+                        break;
+                }
+            }
+            return $"El {contadorMasc * 100 / this.lista.Count}% es de sexo masculino, con un total de {contadorMasc} ocurrencias. El {contadorFem * 100 / this.lista.Count}% es de sexo femenino, con un total de {contadorFem} ocurrencias. El {contadorOtro * 100 / this.lista.Count}% es de otro sexo, con un total de {contadorOtro} ocurrencias.";
+        }
+
+        public string PromedioNacionalidad()
+        {
+            int contadorNac = 0;
+            int contadorOtro = 0;
+
+            foreach (Piloto item in lista)
+            {
+                switch (item.CompetidorNacional)
+                {
+                    case true:
+                        contadorNac++;
+                        break;
+                    default:
+                        contadorOtro++;
+                        break;
+                }
+            }
+            return $"El {contadorNac * 100 / this.lista.Count}% son pilotos nacionales, con un total de {contadorNac} ocurrencias. El {contadorOtro * 100 / this.lista.Count}% son pilotos extranjeros, con un total de {contadorOtro} ocurrencias.";
+        }
+
+        public string PromedioNumeroElegido()
+        {
+            int acumulador = 0;
+            float resultado = 0;
+            foreach (Piloto item in lista)
+            {
+                acumulador += item.NumeroCompeticion;
+            }
+            resultado = (float)acumulador / this.lista.Count;
+            return $"El numero de competicion promedio elegido por los pilotos es el numero {resultado}";
+        }
+        #endregion
+
         #endregion
     }
 }

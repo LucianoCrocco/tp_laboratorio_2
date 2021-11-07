@@ -270,7 +270,14 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj"
+              },
+              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
+                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -55,6 +55,7 @@ namespace Formularios
             this.lstPilotos.Name = "lstPilotos";
             this.lstPilotos.Size = new System.Drawing.Size(647, 214);
             this.lstPilotos.TabIndex = 2;
+            this.lstPilotos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPilotos_MouseDoubleClick);
             // 
             // lblListaPilotos
             // 
@@ -107,8 +108,13 @@ namespace Formularios
             this.Controls.Add(this.lblListaPilotos);
             this.Controls.Add(this.lstPilotos);
             this.Controls.Add(this.btnGenerarPiloto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPiloto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informacion de Pilotos";
+            this.Load += new System.EventHandler(this.FrmPiloto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

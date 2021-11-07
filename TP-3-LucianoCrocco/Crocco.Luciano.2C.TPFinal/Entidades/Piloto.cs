@@ -162,6 +162,24 @@ namespace Entidades
 
             return pilotos;
         }
+
+        public static List<Piloto> operator -(List<Piloto> pilotos, Piloto p1)
+        {
+            if (pilotos is not null && p1 is not null)
+            {
+                foreach (Piloto item in pilotos)
+                {
+                    if (item == p1)
+                    {
+                        pilotos.Remove(item);
+                        return pilotos;
+                    }
+                }
+                throw new PilotoNoEncontradoException("El piloto no se encuentra en la lista");
+            }
+
+            return pilotos;
+        }
         #endregion
 
         #region Metodos
@@ -189,6 +207,18 @@ namespace Entidades
                 }
             }
             return true;
+        }
+
+        public static string MostrarTodosListaPilotos(List<Piloto> pilotos)
+        {
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("\n\tLista de pilotos cargados en el sistema");
+            foreach(Piloto item in pilotos)
+            {
+                sb.Append(item.MostrarDatos());
+            }
+            return sb.ToString();
         }
         #endregion
     }

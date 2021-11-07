@@ -46,6 +46,10 @@ namespace Formularios
                 {
                     MessageBox.Show(ex.Message);
                 }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             } else
             {
                 MessageBox.Show("Rellene todos los campos antes de continuar!");

@@ -30,6 +30,10 @@ namespace Formularios
             ListBoxRef = this.lstPilotos;
             serializacion = new Serializacion<List<Piloto>>();
         }
+        private void FrmPiloto_Load(object sender, EventArgs e)
+        {
+            Refrescar(pilotosCargados);
+        }
 
         #region Generar Piloto
         private void btnGenerarPiloto_Click(object sender, EventArgs e)
@@ -62,20 +66,11 @@ namespace Formularios
                 try
                 {
                     path = $"{Environment.CurrentDirectory}\\ListaPilotos.xml";
-                    if (File.Exists(path))
-                    {
-                        if (MessageBox.Show("Ya se encuentra creado un archivo de pilotos, ¿desea sobreescribirlo?", "Cuidado", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                        {
-                            serializacion.Guardar(pilotosCargados, path, false);
-                            MessageBox.Show($"Archivo correctamente guardado en: {path}", "Guardado correcto", MessageBoxButtons.OK ,MessageBoxIcon.Information);
-                        }
-                    }
-                    else
+                    if((File.Exists(path) && MessageBox.Show("Ya se encuentra creado un archivo de pilotos, ¿desea sobreescribirlo?", "Cuidado", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) || !File.Exists(path))
                     {
                         serializacion.Guardar(pilotosCargados, path, false);
                         MessageBox.Show($"Archivo correctamente guardado en: {path}", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
                 }
                 catch (GuardarSerializacionException ex)
                 {
@@ -121,6 +116,38 @@ namespace Formularios
         }
         #endregion
 
+        #region Borrar Piloto
+        private void lstPilotos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if(pilotosCargados.Count < 1)
+            {
+                MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            } else
+            {
+                try
+                {
+                    pilotosCargados -= pilotosCargados[lstPilotos.SelectedIndex];
+                    Refrescar(pilotosCargados);
+                }
+                catch (PilotoNoEncontradoException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("El index seleccionado se encuentra fuera del rango de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+           
+        }
+        #endregion
+
         #region Metodos
         public static void Refrescar(List<Piloto> pilotos)
         {
@@ -131,5 +158,6 @@ namespace Formularios
             }
         }
         #endregion
+
     }
 }
