@@ -13,6 +13,9 @@ namespace Entidades
         #endregion
 
         #region Constructores
+
+        public EscuderiaTC() { }
+
         public EscuderiaTC(string nombre, int cantidadPilotos, EMarcaVehiculoTC fabricanteVehiculo)
             :base(nombre, cantidadPilotos)
         {
@@ -31,6 +34,16 @@ namespace Entidades
             {
                 this.marcaVehiculo = value;
             }
+        }
+        #endregion
+
+        #region Metodos
+        public override string MostrarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(base.MostrarDatos());
+            sb.AppendLine($" La marca elegida por la escuderia es {this.MarcaVehiculoTC}");
+            return sb.ToString();
         }
         #endregion
     }

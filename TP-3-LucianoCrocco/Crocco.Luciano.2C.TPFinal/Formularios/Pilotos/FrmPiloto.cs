@@ -19,7 +19,7 @@ namespace Formularios
         List<Piloto> pilotosCargados;
         FrmGenerarPiloto frmGenerarPiloto;
         FrmPilotoEstadistica frmEstadisticaPiloto;
-        Serializacion<List<Piloto>> serializacion;
+        SerializacionXML<List<Piloto>> serializacion;
         OpenFileDialog openFileDialog;
         public static ListBox ListBoxRef;
         string path;
@@ -29,7 +29,7 @@ namespace Formularios
             InitializeComponent();
             pilotosCargados = listaPilotos;
             ListBoxRef = this.lstPilotos;
-            serializacion = new Serializacion<List<Piloto>>();
+            serializacion = new SerializacionXML<List<Piloto>>();
         }
         private void FrmPiloto_Load(object sender, EventArgs e)
         {
@@ -84,7 +84,7 @@ namespace Formularios
             }
             else
             {
-                MessageBox.Show("No hay pilotos cargados en la lista", "Aleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay pilotos cargados en la lista", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -96,6 +96,7 @@ namespace Formularios
             openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Seleccione el archivo a abrir";
             openFileDialog.Filter = "Archivos XML (.xml) |*.xml||*.*";
+            List<Piloto> auxList;
 
             if((pilotosCargados.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || pilotosCargados.Count == 0) 
             {
@@ -104,7 +105,13 @@ namespace Formularios
                     path = openFileDialog.FileName;
                     try
                     {
-                        this.pilotosCargados = serializacion.Leer(path);
+                        auxList = serializacion.Leer(path);
+                        this.pilotosCargados.Clear();
+                        //Si no hago esto se pierde la referencia en memoria cuando CLR borra los objetos que se utilizaron para serializar.
+                        foreach(Piloto item in auxList)
+                        {
+                            this.pilotosCargados.Add(item);
+                        }
                         Refrescar(pilotosCargados);
                         MessageBox.Show("Archivo cargado correctamente");
                     }

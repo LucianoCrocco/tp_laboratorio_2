@@ -116,13 +116,13 @@ namespace Entidades
 
         public bool CompetidorNacional
         {
-            set
-            {
-                this.competidorNacional = value;
-            }
             get
             {
                 return this.competidorNacional;
+            }
+            set
+            {
+                this.competidorNacional = value;
             }
         }
 

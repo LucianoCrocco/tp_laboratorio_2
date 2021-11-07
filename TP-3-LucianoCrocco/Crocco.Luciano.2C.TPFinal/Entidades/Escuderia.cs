@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+using Excepciones;
 
 namespace Entidades
 {
@@ -12,14 +14,12 @@ namespace Entidades
         #endregion
 
         #region Constructores
+        public Escuderia() { }
 
-        private Escuderia()
-        {
-            this.pilotosEnEscuderia = new List<Piloto>();
-        }
         public Escuderia(string nombre, int cantidadPilotos)
             :this()
         {
+            this.pilotosEnEscuderia = new List<Piloto>();
             this.NombreEscuderia = nombre;
             this.CantidadPilotos = cantidadPilotos;
         }
@@ -55,10 +55,21 @@ namespace Entidades
             {
                 return this.pilotosEnEscuderia;
             }
+            set
+            {
+                this.pilotosEnEscuderia = value;
+            }
         }
         #endregion
 
         #region Sobrecarga operadores
+        public override bool Equals(object obj)
+        {
+            Escuderia escuderia = obj as Escuderia;
+
+            return this.NombreEscuderia == escuderia.NombreEscuderia;
+        }
+
         public static bool operator ==(Escuderia escuderia, Piloto piloto)
         {
             if(escuderia is not null && piloto is not null)
@@ -78,11 +89,82 @@ namespace Entidades
             return !(escuderia == piloto);
         }
 
-        public override bool Equals(object obj)
+        public static List<Escuderia> operator +(List<Escuderia> escuderias, Escuderia e1)
         {
-            Escuderia escuderia = obj as Escuderia;
+            if (escuderias is not null && e1 is not null)
+            {
+                foreach (Escuderia item in escuderias)
+                {
+                    if (item.Equals(e1))
+                    {
+                        throw new EscuderiaRepetidaException("La escuderia ya se encuentra en la lista");
+                    }
+                }
+                escuderias.Add(e1);
+            }
 
-            return this.NombreEscuderia == escuderia.NombreEscuderia;
+            return escuderias;
+        }
+
+        public static List<Escuderia> operator -(List<Escuderia> escuderias, Escuderia e1)
+        {
+            if (escuderias is not null && e1 is not null)
+            {
+                foreach (Escuderia item in escuderias)
+                {
+                    if (item.Equals(e1))
+                    {
+                        escuderias.Remove(item);
+                        return escuderias;
+                    }
+                }
+                throw new EscuderiaNoEncontradaException("La escuderia no se encuentra en la lista");
+            }
+            return escuderias;
+        }
+
+        public static bool operator +(Escuderia escuderia, Piloto piloto)
+        {
+            if(escuderia is not null && piloto is not null)
+            {
+                foreach(Piloto item in escuderia.Pilotos)
+                {
+                    if(item == piloto)
+                    {
+                        throw new PilotoRepetidoException("El piloto ya se encuentra en la lista de la escuderia");
+                    }
+                }
+                escuderia.Pilotos.Add(piloto);
+            }
+
+            return true;
+        }
+
+        public static bool operator -(Escuderia escuderia, Piloto piloto)
+        {
+            if (escuderia is not null && piloto is not null)
+            {
+                foreach (Piloto item in escuderia.Pilotos)
+                {
+                    if (item == piloto)
+                    {
+                        escuderia.Pilotos.Remove(item);
+                        return true;
+                    }
+                }
+                throw new PilotoNoEncontradoException("El piloto no se encuentra en la lista de la escuderia");
+            }
+
+            return true;
+        }
+        #endregion
+
+        #region Metodos
+        public virtual string MostrarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"Escuderia {this.NombreEscuderia}, con asientos disponibles para {this.CantidadPilotos} pilotos.");
+            return sb.ToString();
         }
         #endregion
     }

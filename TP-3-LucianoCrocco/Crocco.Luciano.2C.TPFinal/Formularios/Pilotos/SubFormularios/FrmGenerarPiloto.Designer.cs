@@ -147,6 +147,7 @@ namespace Formularios
             // 
             // cmbSexo
             // 
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
@@ -178,6 +179,7 @@ namespace Formularios
             // 
             // cmbNacionalidad
             // 
+            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNacionalidad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbNacionalidad.FormattingEnabled = true;
             this.cmbNacionalidad.Items.AddRange(new object[] {
