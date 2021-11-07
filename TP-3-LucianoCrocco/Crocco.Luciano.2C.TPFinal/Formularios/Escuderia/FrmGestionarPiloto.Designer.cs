@@ -1,7 +1,7 @@
 ﻿
 namespace Formularios
 {
-    partial class FrmCargarPiloto
+    partial class FrmGestionarPiloto
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@ namespace Formularios
             this.lstPilotosDisponibles.Name = "lstPilotosDisponibles";
             this.lstPilotosDisponibles.Size = new System.Drawing.Size(776, 184);
             this.lstPilotosDisponibles.TabIndex = 0;
+            this.lstPilotosDisponibles.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPilotosDisponibles_MouseDoubleClick);
             // 
             // lstPilotosDeLaEscuderia
             // 
@@ -52,6 +53,7 @@ namespace Formularios
             this.lstPilotosDeLaEscuderia.Name = "lstPilotosDeLaEscuderia";
             this.lstPilotosDeLaEscuderia.Size = new System.Drawing.Size(776, 184);
             this.lstPilotosDeLaEscuderia.TabIndex = 1;
+            this.lstPilotosDeLaEscuderia.SelectedIndexChanged += new System.EventHandler(this.lstPilotosDeLaEscuderia_SelectedIndexChanged);
             // 
             // lblPilotosEscuderia
             // 
@@ -73,7 +75,7 @@ namespace Formularios
             this.label1.TabIndex = 3;
             this.label1.Text = "Pilotos listados en el sistema para ocupar asientos";
             // 
-            // FrmCargarPiloto
+            // FrmGestionarPiloto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +84,9 @@ namespace Formularios
             this.Controls.Add(this.lblPilotosEscuderia);
             this.Controls.Add(this.lstPilotosDeLaEscuderia);
             this.Controls.Add(this.lstPilotosDisponibles);
-            this.Name = "FrmCargarPiloto";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FrmGestionarPiloto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCargarPiloto";
             this.Load += new System.EventHandler(this.FrmCargarPiloto_Load);
             this.ResumeLayout(false);

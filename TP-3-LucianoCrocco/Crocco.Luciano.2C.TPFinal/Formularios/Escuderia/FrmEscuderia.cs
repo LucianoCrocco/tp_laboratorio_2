@@ -17,30 +17,32 @@ namespace Formularios
     public partial class FrmEscuderia<T> : Form
         where T : Escuderia
     {
-        FrmGenerarEscuderiaTC frmGenerarEscuderiaTC;
-        FrmCargarPiloto frmCargarPiloto;
-        List<Escuderia> escuderias;
-        List<Piloto> pilotos;
-        public static ListBox ListBoxRef;
-        OpenFileDialog openFileDialog;
-        List<T> escuderiasActuales;
-        SerializacionJSON<List<T>> serializacion;
-        string path;
+        #region Atributos
+        private FrmGenerarEscuderiaTC frmGenerarEscuderiaTC;
+        private FrmGestionarPiloto frmCargarPiloto;
+        private FrmPilotoEstadistica frmEstadisticasIndividuales;
+        private List<Escuderia> escuderias;
+        private List<Piloto> pilotos;
+        private static ListBox ListBoxRef;
+        private OpenFileDialog openFileDialog;
+        private List<T> escuderiasActuales;
+        private SerializacionJSON<List<T>> serializacion;
+        private string path;
+        #endregion
 
         public FrmEscuderia(List<Escuderia> escuderias, List<Piloto> pilotos)
         {
             InitializeComponent();
             this.escuderias = escuderias;
             this.pilotos = pilotos;
-            ListBoxRef = this.lstEscuderias;
             this.serializacion = new SerializacionJSON<List<T>>();
             escuderiasActuales = new List<T>();
+            ListBoxRef = this.lstEscuderias;
         }
 
         private void FrmEscuderia_Load(object sender, EventArgs e)
         {
             Refrescar(this.escuderias);
-
         }
 
         #region Guardar escuderia
@@ -50,10 +52,11 @@ namespace Formularios
             {
                 try
                 {
-                    path = $"{Environment.CurrentDirectory}\\ListaEscuderias.json";
+                    path = $"{Environment.CurrentDirectory}\\Lista{typeof(T).Name}.json";
                     if ((File.Exists(path) && MessageBox.Show("Ya se encuentra creado un archivo de escuderias, ¿desea sobreescribirlo?", "Cuidado", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) || !File.Exists(path))
                     {
-                        foreach(T escuderia in this.escuderias)
+                        this.escuderiasActuales.Clear();
+                        foreach (T escuderia in this.escuderias)
                         {
                             this.escuderiasActuales.Add(escuderia);
                         }
@@ -83,7 +86,7 @@ namespace Formularios
             openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Seleccione el archivo a abrir";
             openFileDialog.Filter = "Archivos Json (.json) |*.json||*.*";
-            List<T> auxList;
+            List<T> auxList = null;
 
             if ((escuderias.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || escuderias.Count == 0)
             {
@@ -93,7 +96,7 @@ namespace Formularios
                     try
                     {
                         auxList = ((IArchivo<List<T>>)serializacion).Leer(path);
-                        this.BorrarEscuderiaActules();
+                        FrmEscuderia<T>.BorrarEscuderiaActules(escuderias);
                         foreach (T item in auxList)
                         {
                             this.escuderias.Add(item);
@@ -119,21 +122,23 @@ namespace Formularios
         }
         #endregion
 
-        private void btnCargarPilotos_Click(object sender, EventArgs e)
+        #region Gestionar Pilotos
+        private void btnGestionarPilotos_Click(object sender, EventArgs e)
         {
             if(lstEscuderias.SelectedIndex > -1)
             {
-                MessageBox.Show(lstEscuderias.SelectedIndex.ToString());
-                frmCargarPiloto = new FrmCargarPiloto(escuderias, pilotos, lstEscuderias.SelectedIndex);
+                frmCargarPiloto = new FrmGestionarPiloto(escuderias, pilotos, lstEscuderias.SelectedIndex);
                 frmCargarPiloto.ShowDialog();
             } else
             {
                 MessageBox.Show("Seleccione una escuderia de la lista para cargarle un piloto");
             }
         }
+        #endregion
 
+        #region Borrar Escuderia
 
-        private void lstEscuderias_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void btnBorrarEscuderia_Click(object sender, EventArgs e)
         {
             if (escuderias.Count < 1)
             {
@@ -160,26 +165,50 @@ namespace Formularios
                     MessageBox.Show(ex.Message);
                 }
             }
-
         }
+        #endregion
 
         #region Metodos
         public static void Refrescar(List<Escuderia> escuderias)
         {
-            FrmEscuderia<T>.ListBoxRef.Items.Clear();
-            foreach (EscuderiaTC item in escuderias)
+            if (escuderias is not null && ListBoxRef is not null)
             {
-                FrmEscuderia<T>.ListBoxRef.Items.Add(item.MostrarDatos());
+                ListBoxRef.Items.Clear();
+                foreach (T item in escuderias)
+                {
+                    ListBoxRef.Items.Add(item.MostrarDatos());
+                }
             }
         }
 
-        public void BorrarEscuderiaActules()
+        public static void BorrarEscuderiaActules(List<Escuderia> escuderias)
         {
-            foreach(T escuderia in this.escuderias)
+            /*Collection was modified; enumeration operation may not execute.
+            Hago una lista paralela del tipo generico lanzado por el formulario (Es lo que me importa remover)
+            Una vez copiadas todas las ocurrencias voy a poder remover los items que coincidan con el generico de mi escuderia principal donde tengo distintos tipos.*/
+            List<T> auxList = new List<T>();
+            foreach(T item in escuderias)
             {
-                escuderias.Remove(escuderia);
+                auxList.Add(item);
+            }
+            foreach(T item in auxList)
+            {
+                escuderias.Remove(item);
             }
         }
         #endregion
+
+        private void btnEstadisticasIndividuales_Click(object sender, EventArgs e)
+        {
+            if (lstEscuderias.SelectedIndex > -1)
+            {
+                frmEstadisticasIndividuales = new FrmPilotoEstadistica(this.escuderias[lstEscuderias.SelectedIndex].Pilotos);
+                frmEstadisticasIndividuales.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una escuderia de la lista generar las estadisticas individuales");
+            }
+        }
     }
 }

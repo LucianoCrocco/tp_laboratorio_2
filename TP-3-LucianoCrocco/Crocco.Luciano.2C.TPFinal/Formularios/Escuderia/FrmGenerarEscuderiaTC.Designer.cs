@@ -139,7 +139,9 @@ namespace Formularios
             this.Controls.Add(this.nroCarrera);
             this.Controls.Add(this.txtBoxNombre);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmGenerarEscuderiaTC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGenerarEscuderia";
             ((System.ComponentModel.ISupportInitialize)(this.nroAsientos)).EndInit();
             this.ResumeLayout(false);

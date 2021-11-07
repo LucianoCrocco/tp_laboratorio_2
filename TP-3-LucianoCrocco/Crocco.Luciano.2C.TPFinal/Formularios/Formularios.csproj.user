@@ -7,7 +7,7 @@
     <Compile Update="Escuderia\FrmGenerarEscuderiaTC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Escuderia\FrmCargarPiloto.cs">
+    <Compile Update="Escuderia\FrmGestionarPiloto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pilotos\SubFormularios\FrmPilotoEstadistica.cs">

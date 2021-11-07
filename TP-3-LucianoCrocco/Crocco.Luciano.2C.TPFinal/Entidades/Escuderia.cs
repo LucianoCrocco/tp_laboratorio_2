@@ -63,12 +63,6 @@ namespace Entidades
         #endregion
 
         #region Sobrecarga operadores
-        public override bool Equals(object obj)
-        {
-            Escuderia escuderia = obj as Escuderia;
-
-            return this.NombreEscuderia == escuderia.NombreEscuderia;
-        }
 
         public static bool operator ==(Escuderia escuderia, Piloto piloto)
         {
@@ -88,18 +82,35 @@ namespace Entidades
         {
             return !(escuderia == piloto);
         }
-
-        public static List<Escuderia> operator +(List<Escuderia> escuderias, Escuderia e1)
+        public static bool operator ==(List<Escuderia> escuderias, Escuderia e1)
         {
             if (escuderias is not null && e1 is not null)
             {
                 foreach (Escuderia item in escuderias)
                 {
-                    if (item.Equals(e1))
+                    if (item.NombreEscuderia == e1.NombreEscuderia)
                     {
-                        throw new EscuderiaRepetidaException("La escuderia ya se encuentra en la lista");
+                        return true;
                     }
                 }
+            }
+            return false;
+        }
+
+        public static bool operator !=(List<Escuderia> escuderias, Escuderia e1)
+        {
+            return !(escuderias == e1);
+        }
+
+        public static List<Escuderia> operator +(List<Escuderia> escuderias, Escuderia e1)
+        {
+            if (escuderias is not null && e1 is not null)
+            {
+                if (escuderias == e1)
+                {
+                    throw new EscuderiaRepetidaException("La escuderia ya se encuentra en la lista");
+                }
+                
                 escuderias.Add(e1);
             }
 
@@ -110,13 +121,10 @@ namespace Entidades
         {
             if (escuderias is not null && e1 is not null)
             {
-                foreach (Escuderia item in escuderias)
+                if (escuderias == e1)
                 {
-                    if (item.Equals(e1))
-                    {
-                        escuderias.Remove(item);
-                        return escuderias;
-                    }
+                    escuderias.Remove(e1);
+                    return escuderias;
                 }
                 throw new EscuderiaNoEncontradaException("La escuderia no se encuentra en la lista");
             }

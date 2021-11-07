@@ -129,6 +129,7 @@ namespace Entidades
         #endregion
 
         #region Sobrecargas
+
         public static bool operator == (Piloto p1, Piloto p2)
         {
             if(p1 is not null && p2 is not null)
