@@ -13,7 +13,6 @@ namespace Formularios
 {
     public partial class FrmPrincipal : Form
     {
-        FrmEscuderiaTC frmEscuderia;
         FrmPiloto frmPiloto;
         List<Piloto> pilotos;
         List<Escuderia> escuderias;
@@ -32,21 +31,8 @@ namespace Formularios
 
         private void btnEscuderia_Click(object sender, EventArgs e)
         {
-            frmEscuderia = new FrmEscuderiaTC(escuderias, pilotos);
+            FrmEscuderia <EscuderiaTC> frmEscuderia = new FrmEscuderia<EscuderiaTC>(escuderias, pilotos);
             frmEscuderia.ShowDialog();
         }
-
-        #region Metodos
-        public static void BorrarAutosTC(List<Escuderia> escuderia)
-        {
-            if(escuderia is not null)
-            {
-                foreach(EscuderiaTC item in escuderia)
-                {
-                    escuderia.Remove(item);
-                }
-            }
-        }
-        #endregion
     }
 }

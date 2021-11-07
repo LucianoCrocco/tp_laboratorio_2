@@ -14,26 +14,27 @@ using System.IO;
 
 namespace Formularios
 {
-    public partial class FrmEscuderiaTC : Form
+    public partial class FrmEscuderia<T> : Form
+        where T : Escuderia
     {
         FrmGenerarEscuderiaTC frmGenerarEscuderiaTC;
-        FrmCargarPilotoTC frmCargarPiloto;
+        FrmCargarPiloto frmCargarPiloto;
         List<Escuderia> escuderias;
         List<Piloto> pilotos;
-        List<EscuderiaTC> escuderiasTurismoCarretera;
-        SerializacionJSON<List<EscuderiaTC>> serializacionTC;
         public static ListBox ListBoxRef;
         OpenFileDialog openFileDialog;
+        List<T> escuderiasActuales;
+        SerializacionJSON<List<T>> serializacion;
         string path;
 
-        public FrmEscuderiaTC(List<Escuderia> escuderias, List<Piloto> pilotos)
+        public FrmEscuderia(List<Escuderia> escuderias, List<Piloto> pilotos)
         {
             InitializeComponent();
             this.escuderias = escuderias;
             this.pilotos = pilotos;
             ListBoxRef = this.lstEscuderias;
-            this.serializacionTC = new SerializacionJSON<List<EscuderiaTC>>();
-            escuderiasTurismoCarretera = new List<EscuderiaTC>();
+            this.serializacion = new SerializacionJSON<List<T>>();
+            escuderiasActuales = new List<T>();
         }
 
         private void FrmEscuderia_Load(object sender, EventArgs e)
@@ -42,21 +43,21 @@ namespace Formularios
 
         }
 
-        #region Guardar escuderia TC
+        #region Guardar escuderia
         private void btnGuardarLista_Click(object sender, EventArgs e)
         {
             if (escuderias.Count > 0)
             {
                 try
                 {
-                    path = $"{Environment.CurrentDirectory}\\ListaEscuderiasTurismoCarretera.json";
+                    path = $"{Environment.CurrentDirectory}\\ListaEscuderias.json";
                     if ((File.Exists(path) && MessageBox.Show("Ya se encuentra creado un archivo de escuderias, ¿desea sobreescribirlo?", "Cuidado", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) || !File.Exists(path))
                     {
-                        foreach(EscuderiaTC escuderiaTC in this.escuderias)
+                        foreach(T escuderia in this.escuderias)
                         {
-                            this.escuderiasTurismoCarretera.Add(escuderiaTC);
+                            this.escuderiasActuales.Add(escuderia);
                         }
-                        ((IArchivo<List<EscuderiaTC>>)serializacionTC).Guardar(this.escuderiasTurismoCarretera, path,false);
+                        ((IArchivo<List<T>>)serializacion).Guardar(this.escuderiasActuales, path,false);
                         MessageBox.Show($"Archivo correctamente guardado en: {path}", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -76,13 +77,13 @@ namespace Formularios
         }
         #endregion
 
-        #region Cargar escuderia TC
+        #region Cargar escuderia
         private void btnCargarLista_Click(object sender, EventArgs e)
         {
             openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Seleccione el archivo a abrir";
             openFileDialog.Filter = "Archivos Json (.json) |*.json||*.*";
-            List<EscuderiaTC> auxList;
+            List<T> auxList;
 
             if ((escuderias.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || escuderias.Count == 0)
             {
@@ -91,9 +92,9 @@ namespace Formularios
                     path = openFileDialog.FileName;
                     try
                     {
-                        auxList = ((IArchivo<List<EscuderiaTC>>)serializacionTC).Leer(path);
-                        FrmPrincipal.BorrarAutosTC(escuderias);
-                        foreach (EscuderiaTC item in auxList)
+                        auxList = ((IArchivo<List<T>>)serializacion).Leer(path);
+                        this.BorrarEscuderiaActules();
+                        foreach (T item in auxList)
                         {
                             this.escuderias.Add(item);
                         }
@@ -120,9 +121,10 @@ namespace Formularios
 
         private void btnCargarPilotos_Click(object sender, EventArgs e)
         {
-            if(lstEscuderias.SelectedIndex > 0)
+            if(lstEscuderias.SelectedIndex > -1)
             {
-                frmCargarPiloto = new FrmCargarPilotoTC(escuderias, pilotos, lstEscuderias.SelectedIndex);
+                MessageBox.Show(lstEscuderias.SelectedIndex.ToString());
+                frmCargarPiloto = new FrmCargarPiloto(escuderias, pilotos, lstEscuderias.SelectedIndex);
                 frmCargarPiloto.ShowDialog();
             } else
             {
@@ -136,7 +138,6 @@ namespace Formularios
             if (escuderias.Count < 1)
             {
                 MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else
             {
@@ -165,10 +166,18 @@ namespace Formularios
         #region Metodos
         public static void Refrescar(List<Escuderia> escuderias)
         {
-            FrmEscuderiaTC.ListBoxRef.Items.Clear();
+            FrmEscuderia<T>.ListBoxRef.Items.Clear();
             foreach (EscuderiaTC item in escuderias)
             {
-                FrmEscuderiaTC.ListBoxRef.Items.Add(item.MostrarDatos());
+                FrmEscuderia<T>.ListBoxRef.Items.Add(item.MostrarDatos());
+            }
+        }
+
+        public void BorrarEscuderiaActules()
+        {
+            foreach(T escuderia in this.escuderias)
+            {
+                escuderias.Remove(escuderia);
             }
         }
         #endregion

@@ -29,7 +29,7 @@ namespace Formularios
                 {
                     Escuderia escuderia = new EscuderiaTC(txtBoxNombre.Text, (int)nroAsientos.Value, (EMarcaVehiculoTC)cmbFabricante.SelectedIndex);
                     escuderias += escuderia;
-                    FrmEscuderiaTC.Refrescar(escuderias);
+                    FrmEscuderia<Escuderia>.Refrescar(escuderias);
                 }
                 catch(EscuderiaRepetidaException ex)
                 {

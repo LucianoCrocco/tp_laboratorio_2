@@ -1,7 +1,7 @@
 ﻿
 namespace Formularios
 {
-    partial class FrmCargarPilotoTC
+    partial class FrmCargarPiloto
     {
         /// <summary>
         /// Required designer variable.

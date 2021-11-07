@@ -1,7 +1,7 @@
 ﻿
 namespace Formularios
 {
-    partial class FrmEscuderiaTC
+    partial class FrmEscuderia<T>
     {
         /// <summary>
         /// Required designer variable.
@@ -56,9 +56,9 @@ namespace Formularios
             this.lblListaEscuderia.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblListaEscuderia.Location = new System.Drawing.Point(12, 9);
             this.lblListaEscuderia.Name = "lblListaEscuderia";
-            this.lblListaEscuderia.Size = new System.Drawing.Size(740, 30);
+            this.lblListaEscuderia.Size = new System.Drawing.Size(483, 30);
             this.lblListaEscuderia.TabIndex = 4;
-            this.lblListaEscuderia.Text = "LISTA DE ESCUDERIAS DEL TURISMO CARRETERA CARGADAS EN EL SISTEMA";
+            this.lblListaEscuderia.Text = "LISTA DE ESCUDERIAS CARGADAS EN EL SISTEMA";
             // 
             // btnEstadisticasGenerales
             // 
@@ -127,7 +127,7 @@ namespace Formularios
             this.btnBorrarPilotos.Text = "Borrar pilotos de una escuderia";
             this.btnBorrarPilotos.UseVisualStyleBackColor = true;
             // 
-            // FrmEscuderiaTC
+            // FrmEscuderia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,7 +141,7 @@ namespace Formularios
             this.Controls.Add(this.btnEstadisticasGenerales);
             this.Controls.Add(this.lblListaEscuderia);
             this.Controls.Add(this.lstEscuderias);
-            this.Name = "FrmEscuderiaTC";
+            this.Name = "FrmEscuderia";
             this.Text = "FrmEscuderia";
             this.Load += new System.EventHandler(this.FrmEscuderia_Load);
             this.ResumeLayout(false);

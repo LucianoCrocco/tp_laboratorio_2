@@ -11,13 +11,13 @@ using Entidades;
 using Excepciones;
 namespace Formularios
 {
-    public partial class FrmCargarPilotoTC : Form
+    public partial class FrmCargarPiloto : Form
     {
         List<Escuderia> escuderias; 
         List<Piloto> pilotos; 
         int index;
 
-        public FrmCargarPilotoTC(List<Escuderia> escuderias, List<Piloto> pilotos, int index)
+        public FrmCargarPiloto(List<Escuderia> escuderias, List<Piloto> pilotos, int index)
         {
             InitializeComponent();
             this.escuderias = escuderias;
