@@ -174,6 +174,18 @@ namespace Entidades
             sb.Append($"Escuderia {this.NombreEscuderia}, con asientos disponibles para {this.CantidadPilotos} pilotos.");
             return sb.ToString();
         }
+
+        public static string MostrarTodosListaEscuderia(List<Escuderia> escuderia, string tipo)
+        {
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"\n\tLista de {tipo} cargados en el sistema");
+            foreach (Escuderia item in escuderia)
+            {
+                sb.Append(item.MostrarDatos());
+            }
+            return sb.ToString();
+        }
         #endregion
     }
 }

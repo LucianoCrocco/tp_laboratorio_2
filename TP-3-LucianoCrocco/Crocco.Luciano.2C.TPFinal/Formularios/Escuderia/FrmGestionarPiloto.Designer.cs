@@ -53,7 +53,7 @@ namespace Formularios
             this.lstPilotosDeLaEscuderia.Name = "lstPilotosDeLaEscuderia";
             this.lstPilotosDeLaEscuderia.Size = new System.Drawing.Size(776, 184);
             this.lstPilotosDeLaEscuderia.TabIndex = 1;
-            this.lstPilotosDeLaEscuderia.SelectedIndexChanged += new System.EventHandler(this.lstPilotosDeLaEscuderia_SelectedIndexChanged);
+            this.lstPilotosDeLaEscuderia.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPilotosDeLaEscuderia_MouseDoubleClick);
             // 
             // lblPilotosEscuderia
             // 

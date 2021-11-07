@@ -13,9 +13,9 @@ namespace Formularios
 {
     public partial class FrmGestionarPiloto : Form
     {
-        List<Escuderia> escuderias; 
-        List<Piloto> pilotos; 
-        int index;
+        private List<Escuderia> escuderias;
+        private List<Piloto> pilotos;
+        private int index;
 
         public FrmGestionarPiloto(List<Escuderia> escuderias, List<Piloto> pilotos, int index)
         {
@@ -93,15 +93,13 @@ namespace Formularios
 
         }
 
-        private void lstPilotosDeLaEscuderia_SelectedIndexChanged(object sender, EventArgs e)
+        private void lstPilotosDeLaEscuderia_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
             {
-                
                 this.escuderias[index].Pilotos.Remove(this.escuderias[index].Pilotos[lstPilotosDeLaEscuderia.SelectedIndex]);
                 this.ListaPilotosDisponibles();
                 this.ListaPilotosEscuderia();
-                
             }
             catch (ArgumentOutOfRangeException)
             {

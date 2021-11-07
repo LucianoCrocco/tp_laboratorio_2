@@ -14,7 +14,7 @@ namespace Formularios
 {
     public partial class FrmGenerarEscuderiaTC : Form
     {
-        List<Escuderia> escuderias;
+        private List<Escuderia> escuderias;
         public FrmGenerarEscuderiaTC(List<Escuderia> escuderias)
         {
             InitializeComponent();

@@ -16,13 +16,13 @@ namespace Formularios
 {
     public partial class FrmPiloto : Form
     {
-        List<Piloto> pilotosCargados;
-        FrmGenerarPiloto frmGenerarPiloto;
-        FrmPilotoEstadistica frmEstadisticaPiloto;
-        SerializacionXML<List<Piloto>> serializacion;
-        OpenFileDialog openFileDialog;
+        private List<Piloto> pilotosCargados;
+        private FrmGenerarPiloto frmGenerarPiloto;
+        private FrmPilotoEstadistica frmEstadisticaPiloto;
+        private SerializacionXML<List<Piloto>> serializacion;
+        private OpenFileDialog openFileDialog;
         public static ListBox ListBoxRef;
-        string path;
+        private string path;
 
         public FrmPiloto(List<Piloto> listaPilotos)
         {

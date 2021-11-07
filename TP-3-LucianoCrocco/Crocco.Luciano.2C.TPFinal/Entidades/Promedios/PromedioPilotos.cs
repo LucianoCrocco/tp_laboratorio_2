@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class PromedioPilotos
     {
-        List<Piloto> lista;
+        private List<Piloto> lista;
         public PromedioPilotos(List<Piloto> listaPilotos)
         {
             this.lista = listaPilotos;

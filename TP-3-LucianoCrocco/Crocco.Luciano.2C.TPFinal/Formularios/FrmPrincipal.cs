@@ -13,9 +13,9 @@ namespace Formularios
 {
     public partial class FrmPrincipal : Form
     {
-        FrmPiloto frmPiloto;
-        List<Piloto> pilotos;
-        List<Escuderia> escuderias;
+        private FrmPiloto frmPiloto;
+        private List<Piloto> pilotos;
+        private List<Escuderia> escuderias;
         public FrmPrincipal()
         {
             InitializeComponent();

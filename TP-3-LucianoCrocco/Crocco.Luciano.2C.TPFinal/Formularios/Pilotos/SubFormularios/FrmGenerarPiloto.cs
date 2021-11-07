@@ -14,7 +14,7 @@ namespace Formularios
 {
     public partial class FrmGenerarPiloto : Form
     {
-        List<Piloto> pilotosLista;
+        private List<Piloto> pilotosLista;
         public FrmGenerarPiloto(List<Piloto> pilotos)
         {
             InitializeComponent();

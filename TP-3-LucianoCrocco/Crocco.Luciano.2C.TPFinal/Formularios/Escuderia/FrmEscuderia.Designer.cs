@@ -67,6 +67,7 @@ namespace Formularios
             this.btnEstadisticasGenerales.TabIndex = 7;
             this.btnEstadisticasGenerales.Text = "Estadisticas Generales";
             this.btnEstadisticasGenerales.UseVisualStyleBackColor = true;
+            this.btnEstadisticasGenerales.Click += new System.EventHandler(this.btnEstadisticasGenerales_Click);
             // 
             // btnGenerarEscuderia
             // 

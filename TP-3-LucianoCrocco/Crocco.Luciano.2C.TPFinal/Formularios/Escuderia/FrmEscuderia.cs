@@ -21,6 +21,7 @@ namespace Formularios
         private FrmGenerarEscuderiaTC frmGenerarEscuderiaTC;
         private FrmGestionarPiloto frmCargarPiloto;
         private FrmPilotoEstadistica frmEstadisticasIndividuales;
+        private FrmEscuderiaEstadisticaTC frmEscuderiaEstadisticaTC;
         private List<Escuderia> escuderias;
         private List<Piloto> pilotos;
         private static ListBox ListBoxRef;
@@ -202,12 +203,32 @@ namespace Formularios
         {
             if (lstEscuderias.SelectedIndex > -1)
             {
-                frmEstadisticasIndividuales = new FrmPilotoEstadistica(this.escuderias[lstEscuderias.SelectedIndex].Pilotos);
-                frmEstadisticasIndividuales.ShowDialog();
+                if (this.escuderias[lstEscuderias.SelectedIndex].Pilotos.Count > 0)
+                {
+                    frmEstadisticasIndividuales = new FrmPilotoEstadistica(this.escuderias[lstEscuderias.SelectedIndex].Pilotos);
+                    frmEstadisticasIndividuales.ShowDialog();
+                } else
+                {
+                    MessageBox.Show("La escuderia seleccionada no posee pilotos cargados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione una escuderia de la lista generar las estadisticas individuales");
+            }
+        }
+
+        private void btnEstadisticasGenerales_Click(object sender, EventArgs e)
+        {
+            if(escuderias.Count > 0){
+                if(typeof(T) == typeof(EscuderiaTC)){
+                    frmEscuderiaEstadisticaTC = new FrmEscuderiaEstadisticaTC(this.escuderias);
+                    frmEscuderiaEstadisticaTC.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay escuderias cargadas para generar estadisticas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

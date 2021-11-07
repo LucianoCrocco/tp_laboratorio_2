@@ -15,8 +15,8 @@ namespace Formularios
 {
     public partial class FrmPilotoEstadistica : Form
     {
-        PromedioPilotos promedio;
-        List<Piloto> pilotos;
+        private PromedioPilotos promedio;
+        private List<Piloto> pilotos;
         public FrmPilotoEstadistica(List<Piloto> pilotos)
         {
             InitializeComponent();
