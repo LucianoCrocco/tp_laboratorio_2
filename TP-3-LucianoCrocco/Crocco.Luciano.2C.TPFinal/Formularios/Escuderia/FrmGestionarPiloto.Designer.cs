@@ -87,7 +87,7 @@ namespace Formularios
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmGestionarPiloto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCargarPiloto";
+            this.Text = "Cargar pilotos a la escuderia";
             this.Load += new System.EventHandler(this.FrmCargarPiloto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

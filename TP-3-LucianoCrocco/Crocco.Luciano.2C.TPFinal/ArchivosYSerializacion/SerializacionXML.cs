@@ -17,7 +17,12 @@ namespace ArchivosYSerializacion
         XmlSerializer serializarObjeto;
         XmlTextReader leerObjeto;
 
-
+        /// <summary>
+        /// Serializa un dato y guarda un archivo de tipo XML.
+        /// </summary>
+        /// <param name="dato">Dato a serializar</param>
+        /// <param name="path">Ruta de guardado</param>
+        /// <param name="append">Guarda el dato desde la ultima linea del path, si el archivo exieste.</param>
         public void Guardar(T dato, string path, bool append)
         {
             try
@@ -33,6 +38,11 @@ namespace ArchivosYSerializacion
             }
         }
 
+        /// <summary>
+        /// Deserializa un archivo XML.
+        /// </summary>
+        /// <param name="path">Ruta donde se encuentra el archivo a leer.</param>
+        /// <returns></returns>
         public T Leer(string path)
         {
             T generico;

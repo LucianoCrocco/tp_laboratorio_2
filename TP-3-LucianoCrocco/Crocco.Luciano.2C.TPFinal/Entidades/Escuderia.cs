@@ -14,8 +14,16 @@ namespace Entidades
         #endregion
 
         #region Constructores
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
         public Escuderia() { }
 
+        /// <summary>
+        /// Constructor con parametros de una Escuderia
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="cantidadPilotos"></param>
         public Escuderia(string nombre, int cantidadPilotos)
             :this()
         {
@@ -63,7 +71,12 @@ namespace Entidades
         #endregion
 
         #region Sobrecarga operadores
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="escuderia"></param>
+        /// <param name="piloto"></param>
+        /// <returns></returns>
         public static bool operator ==(Escuderia escuderia, Piloto piloto)
         {
             if(escuderia is not null && piloto is not null)

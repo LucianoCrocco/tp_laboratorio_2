@@ -142,7 +142,7 @@ namespace Formularios
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmGenerarEscuderiaTC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmGenerarEscuderia";
+            this.Text = "Creacion de una Escuderia";
             ((System.ComponentModel.ISupportInitialize)(this.nroAsientos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

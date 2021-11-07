@@ -10,7 +10,12 @@ namespace ArchivosYSerializacion
 {
     public class ArchivoTexto : IArchivo<string>
     {
-
+        /// <summary>
+        /// Guarda un archivo de texto
+        /// </summary>
+        /// <param name="dato">Dato a guardar</param>
+        /// <param name="path">Ruta de guardado</param>
+        /// <param name="append">Genera los datos del archivo de 0 o agrega la informacion al final del ya existente.</param>
         public void Guardar(string dato, string path, bool append)
         {
             if (!String.IsNullOrWhiteSpace(path)){
@@ -42,6 +47,11 @@ namespace ArchivosYSerializacion
             }
         }
 
+        /// <summary>
+        /// Lee un archivo de texto
+        /// </summary>
+        /// <param name="path">Ruta de lectura</param>
+        /// <returns>Devuelve un string con los datos leidos hasta el final del archivo seleccionado</returns>
         public string Leer(string path)
         {
             string retorno = String.Empty;

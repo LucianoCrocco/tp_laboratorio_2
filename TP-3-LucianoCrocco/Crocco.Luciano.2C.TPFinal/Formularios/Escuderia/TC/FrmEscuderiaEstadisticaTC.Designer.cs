@@ -114,7 +114,7 @@ namespace Formularios
             this.MinimizeBox = false;
             this.Name = "FrmEscuderiaEstadisticaTC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEstadisticasEscuderia";
+            this.Text = "Estadisticas generales de las escuderias";
             this.ResumeLayout(false);
             this.PerformLayout();
 

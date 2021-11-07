@@ -12,6 +12,12 @@ namespace ArchivosYSerializacion
     public class SerializacionJSON<T> : IArchivo<T>
     {
         ArchivoTexto archivoTexto = new ArchivoTexto();
+        /// <summary>
+        /// Serializa un archivo JSON.
+        /// </summary>
+        /// <param name="dato">Dato a serializar</param>
+        /// <param name="path">Ruta de guardado</param>
+        /// <param name="append">Guarda el dato desde la ultima linea del path, si el archivo exieste.</param>
         void IArchivo<T>.Guardar(T dato, string path, bool append)
         {
             string aux;
@@ -26,6 +32,11 @@ namespace ArchivosYSerializacion
             }
         }
 
+        /// <summary>
+        /// Deserializa un archivo JSON.
+        /// </summary>
+        /// <param name="path">Ruta donde se encuentra el archivo a leer.</param>
+        /// <returns>Retorna un string con los datos deserializados.</returns>
         T IArchivo<T>.Leer(string path)
         {
             T generico;
