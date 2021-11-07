@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class PromedioPilotos
+    public class EstadisticasPilotos
     {
         private List<Piloto> lista;
-        public PromedioPilotos(List<Piloto> listaPilotos)
+        /// <summary>
+        /// Constructor por defecto para realizar el promedio de pilotos
+        /// </summary>
+        /// <param name="listaPilotos">Lista de pilotos a la cual se debe promediar</param>
+        public EstadisticasPilotos(List<Piloto> listaPilotos)
         {
             this.lista = listaPilotos;
         }
@@ -17,6 +21,10 @@ namespace Entidades
         #region Metodos
 
             #region Maximos
+        /// <summary>
+        /// Busca la edad maxima dentro de la lista de pilotos
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string MaximoEdad()
         {
             int maximo = int.MinValue;
@@ -29,6 +37,10 @@ namespace Entidades
             }
             return $"La edad maxima registrada en la lista de pilotos es de {maximo} años";
         }
+        /// <summary>
+        /// Busca la edad maxima dentro de la lista de pilotos
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string MaximoNroCompeticion()
         {
             int maximo = int.MinValue;
@@ -41,6 +53,11 @@ namespace Entidades
             }
             return $"El numero de competicion mas grande elegido fue el {maximo}";
         }
+
+        /// <summary>
+        /// Busca el sexo predominante en la lista de pilotos
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string MaximoSexo()
         {
             string retorno = String.Empty;
@@ -79,6 +96,10 @@ namespace Entidades
             return retorno;
         }
 
+        /// <summary>
+        /// Busca la nacionalidad predominante en la lista de pilotos
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string MaximoNacionalidad()
         {
             string retorno = String.Empty;
@@ -109,11 +130,14 @@ namespace Entidades
             }
             return retorno;
         }
-            #endregion
+        #endregion
 
             #region Minimos
 
-
+        /// <summary>
+        /// Busca la edad minima dentro de la lista de pilotos
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string MinimoEdad()
         {
             int minimo = int.MaxValue;
@@ -127,6 +151,10 @@ namespace Entidades
             return $"La edad minima registrada en la lista de pilotos es de {minimo} años";
         }
 
+        /// <summary>
+        /// Busca el numero de competicion mas chico dentro de la lista de pilotos
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string MinimoNroCompeticion()
         {
             int minimo = int.MaxValue;
@@ -140,6 +168,10 @@ namespace Entidades
             return $"El numero de competicion mas chico elegido fue el {minimo}";
         }
 
+        /// <summary>
+        /// Busca el sexo menos predominante en la lista de pilotos
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string MinimoSexo()
         {
             string retorno = String.Empty;
@@ -179,7 +211,10 @@ namespace Entidades
         }
 
 
-
+        /// <summary>
+        /// Busca la nacionliadad menos predominante en la lista de pilotos
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string MinimoNacionalidad()
         {
             string retorno = String.Empty;
@@ -213,72 +248,106 @@ namespace Entidades
         #endregion
 
             #region Promedio
+
+        /// <summary>
+        /// Busca el promedio de edad entre los pilotos de la lista.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string PromedioEdad()
         {
-            int acumulador = 0;
-            float resultado = 0;
-            foreach (Piloto item in lista)
+            if(lista.Count > 0)
             {
-                acumulador += item.Edad;
+                int acumulador = 0;
+                float resultado = 0;
+                foreach (Piloto item in lista)
+                {
+                    acumulador += item.Edad;
+                }
+                resultado = (float)acumulador / this.lista.Count;
+                return $"El promedio de edad entre los pilotos de la lista es de {resultado} años";
             }
-            resultado = (float) acumulador / this.lista.Count;
-            return $"El promedio de edad entre los pilotos de la lista es de {resultado} años";
+            return $"La lista se encuentra vacia, no se puede realizar el promedio de edad entre los pilotos.";
         }
 
+        /// <summary>
+        /// Busca el sexo promedio elegido entre los pilotos de la lista.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string PromedioSexo()
         {
-            int contadorMasc = 0;
-            int contadorFem = 0;
-            int contadorOtro = 0;
-
-            foreach (Piloto item in lista)
+            if(lista.Count > 0)
             {
-                switch (item.Sexo)
+                int contadorMasc = 0;
+                int contadorFem = 0;
+                int contadorOtro = 0;
+
+                foreach (Piloto item in lista)
                 {
-                    case ESexo.Masculino:
-                        contadorMasc++;
-                        break;
-                    case ESexo.Femenino:
-                        contadorFem++;
-                        break;
-                    default:
-                        contadorOtro++;
-                        break;
+                    switch (item.Sexo)
+                    {
+                        case ESexo.Masculino:
+                            contadorMasc++;
+                            break;
+                        case ESexo.Femenino:
+                            contadorFem++;
+                            break;
+                        default:
+                            contadorOtro++;
+                            break;
+                    }
                 }
+                return $"El {contadorMasc * 100 / this.lista.Count}% es de sexo masculino, con un total de {contadorMasc} ocurrencias. El {contadorFem * 100 / this.lista.Count}% es de sexo femenino, con un total de {contadorFem} ocurrencias. El {contadorOtro * 100 / this.lista.Count}% es de otro sexo, con un total de {contadorOtro} ocurrencias.";
             }
-            return $"El {contadorMasc * 100 / this.lista.Count}% es de sexo masculino, con un total de {contadorMasc} ocurrencias. El {contadorFem * 100 / this.lista.Count}% es de sexo femenino, con un total de {contadorFem} ocurrencias. El {contadorOtro * 100 / this.lista.Count}% es de otro sexo, con un total de {contadorOtro} ocurrencias.";
+            return $"La lista se encuentra vacia, no se puede realizar el promedio del sexo elegido entre los pilotos.";
         }
 
+        /// <summary>
+        /// Busca la nacionalidad promedio elegida entre los pilotos de la lista.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string PromedioNacionalidad()
         {
-            int contadorNac = 0;
-            int contadorOtro = 0;
-
-            foreach (Piloto item in lista)
+            if(lista.Count > 0)
             {
-                switch (item.CompetidorNacional)
+                int contadorNac = 0;
+                int contadorOtro = 0;
+
+                foreach (Piloto item in lista)
                 {
-                    case true:
-                        contadorNac++;
-                        break;
-                    default:
-                        contadorOtro++;
-                        break;
+                    switch (item.CompetidorNacional)
+                    {
+                        case true:
+                            contadorNac++;
+                            break;
+                        default:
+                            contadorOtro++;
+                            break;
+                    }
                 }
+                return $"El {contadorNac * 100 / this.lista.Count}% son pilotos nacionales, con un total de {contadorNac} ocurrencias. El {contadorOtro * 100 / this.lista.Count}% son pilotos extranjeros, con un total de {contadorOtro} ocurrencias.";
             }
-            return $"El {contadorNac * 100 / this.lista.Count}% son pilotos nacionales, con un total de {contadorNac} ocurrencias. El {contadorOtro * 100 / this.lista.Count}% son pilotos extranjeros, con un total de {contadorOtro} ocurrencias.";
+            return $"La lista se encuentra vacia, no se puede realizar el promedio de la nacionalidad elegida entre los pilotos.";
         }
 
+        /// <summary>
+        /// Busca el promedio del numero de competicion elegido entre los pilotos de la lista.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string PromedioNumeroElegido()
         {
-            int acumulador = 0;
-            float resultado = 0;
-            foreach (Piloto item in lista)
+            if(lista.Count > 0)
             {
-                acumulador += item.NumeroCompeticion;
+                int acumulador = 0;
+                float resultado = 0;
+                foreach (Piloto item in lista)
+                {
+                    acumulador += item.NumeroCompeticion;
+                }
+                resultado = (float)acumulador / this.lista.Count;
+                return $"El numero de competicion promedio elegido por los pilotos es el numero {resultado}";
+
             }
-            resultado = (float)acumulador / this.lista.Count;
-            return $"El numero de competicion promedio elegido por los pilotos es el numero {resultado}";
+            return $"La lista se encuentra vacia, no se puede realizar el promedio del numero de competicion elegido entre los pilotos.";
         }
         #endregion
 

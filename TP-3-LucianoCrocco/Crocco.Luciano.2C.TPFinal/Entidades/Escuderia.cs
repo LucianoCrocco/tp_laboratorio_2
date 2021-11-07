@@ -15,15 +15,15 @@ namespace Entidades
 
         #region Constructores
         /// <summary>
-        /// Constructor por defecto
+        /// Constructor por defecto de Escuderia
         /// </summary>
         public Escuderia() { }
 
         /// <summary>
         /// Constructor con parametros de una Escuderia
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="cantidadPilotos"></param>
+        /// <param name="nombre">Nombre de la escuderia</param>
+        /// <param name="cantidadPilotos">Cantidad de pilotos que pueden ocupar asientos en la escuderia.</param>
         public Escuderia(string nombre, int cantidadPilotos)
             :this()
         {
@@ -72,11 +72,11 @@ namespace Entidades
 
         #region Sobrecarga operadores
         /// <summary>
-        /// 
+        /// Busca con la lista de pilotos de la escuderia el piloto pasado por parametros
         /// </summary>
         /// <param name="escuderia"></param>
         /// <param name="piloto"></param>
-        /// <returns></returns>
+        /// <returns>True si el piloto se encuentra en la lista, false si no se encuentra</returns>
         public static bool operator ==(Escuderia escuderia, Piloto piloto)
         {
             if(escuderia is not null && piloto is not null)
@@ -91,10 +91,22 @@ namespace Entidades
             }
             return false;
         }
+        /// <summary>
+        /// Busca con la lista de pilotos de la escuderia el piloto pasado por parametros
+        /// </summary>
+        /// <param name="escuderia"></param>
+        /// <param name="piloto"></param>
+        /// <returns>False si el piloto se encuentra en la lista, true si no se encuentra</returns>
         public static bool operator !=(Escuderia escuderia, Piloto piloto)
         {
             return !(escuderia == piloto);
         }
+        /// <summary>
+        /// Compara una lista de escuderias con la escuderia recibida por parametros. Dos escuderias son iguales si comparten el mismo nombre.
+        /// </summary>
+        /// <param name="escuderias"></param>
+        /// <param name="e1"></param>
+        /// <returns>True si la escuderia se encuentra en la lista, false si no se encuentra</returns>
         public static bool operator ==(List<Escuderia> escuderias, Escuderia e1)
         {
             if (escuderias is not null && e1 is not null)
@@ -109,12 +121,23 @@ namespace Entidades
             }
             return false;
         }
-
+        /// <summary>
+        /// Compara una lista de escuderias con la escuderia recibida por parametros. Dos escuderias son distintas si no comparten el mismo nombre.
+        /// </summary>
+        /// <param name="escuderias"></param>
+        /// <param name="e1"></param>
+        /// <returns>False si la escuderia se encuentra en la lista, true si no se encuentra</returns>
         public static bool operator !=(List<Escuderia> escuderias, Escuderia e1)
         {
             return !(escuderias == e1);
         }
 
+        /// <summary>
+        /// Añade una escuderia a una lista de escuderias
+        /// </summary>
+        /// <param name="escuderias"></param>
+        /// <param name="e1"></param>
+        /// <returns>La lista con los cambios realizados.</returns>
         public static List<Escuderia> operator +(List<Escuderia> escuderias, Escuderia e1)
         {
             if (escuderias is not null && e1 is not null)
@@ -129,7 +152,12 @@ namespace Entidades
 
             return escuderias;
         }
-
+        /// <summary>
+        /// Borra una escuderia a una lista de escuderias
+        /// </summary>
+        /// <param name="escuderias">Lista de escuderias</param>
+        /// <param name="e1">Escuderia a borrar</param>
+        /// <returns>La lista con los cambios realizados.</returns>
         public static List<Escuderia> operator -(List<Escuderia> escuderias, Escuderia e1)
         {
             if (escuderias is not null && e1 is not null)
@@ -144,6 +172,12 @@ namespace Entidades
             return escuderias;
         }
 
+        /// <summary>
+        /// Suma a la lista de pilotos de una escuderia un piloto
+        /// </summary>
+        /// <param name="escuderia"></param>
+        /// <param name="piloto"></param>
+        /// <returns>True si pudo añadir a la lista el piloto, exception si el piloto ya de encuentra en la lista</returns>
         public static bool operator +(Escuderia escuderia, Piloto piloto)
         {
             if(escuderia is not null && piloto is not null)
@@ -161,6 +195,12 @@ namespace Entidades
             return true;
         }
 
+        /// <summary>
+        /// Borra de la lista de pilotos de una escuderia un piloto
+        /// </summary>
+        /// <param name="escuderia"></param>
+        /// <param name="piloto"></param>
+        /// <returns>True si pudo borrar de la lista el piloto, exception si el piloto no se encuentra en la lista</returns>
         public static bool operator -(Escuderia escuderia, Piloto piloto)
         {
             if (escuderia is not null && piloto is not null)
@@ -181,6 +221,10 @@ namespace Entidades
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Muestra los datos de la escuderia
+        /// </summary>
+        /// <returns>Mensaje con los datos de la escuderia</returns>
         public virtual string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -188,6 +232,12 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Muestra todos las escuderias contenidas en una lista
+        /// </summary>
+        /// <param name="escuderia">Lista de Escuderias con mis escuderias</param>
+        /// <param name="tipo">Tipo de escuderia</param>
+        /// <returns>Mensaje con la lista de las escuderias.</returns>
         public static string MostrarTodosListaEscuderia(List<Escuderia> escuderia, string tipo)
         {
 

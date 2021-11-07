@@ -14,13 +14,13 @@ namespace Formularios
 {
     public partial class FrmEscuderiaEstadisticaTC : Form
     {
-        private PromedioTC promedio;
+        private EstadisticasTC promedio;
         private List<Escuderia> escuderia;
         public FrmEscuderiaEstadisticaTC(List<Escuderia> escuderia)
         {
             InitializeComponent();
             this.escuderia = escuderia;
-            promedio = new PromedioTC(this.escuderia);
+            promedio = new EstadisticasTC(this.escuderia);
         }
 
         private void btnMaximo_Click(object sender, EventArgs e)

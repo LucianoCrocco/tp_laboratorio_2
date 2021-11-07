@@ -15,12 +15,12 @@ namespace Formularios
 {
     public partial class FrmPilotoEstadistica : Form
     {
-        private PromedioPilotos promedio;
+        private EstadisticasPilotos promedio;
         private List<Piloto> pilotos;
         public FrmPilotoEstadistica(List<Piloto> pilotos)
         {
             InitializeComponent();
-            promedio = new PromedioPilotos(pilotos);
+            promedio = new EstadisticasPilotos(pilotos);
             this.pilotos = pilotos;
         }
 

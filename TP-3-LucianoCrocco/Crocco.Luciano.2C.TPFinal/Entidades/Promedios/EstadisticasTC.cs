@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class PromedioTC : PromedioEscuderias
+    public class EstadisticasTC : EstadisticasEscuderias
     {
-        public PromedioTC(List<Escuderia> listaEscuderias) : base(listaEscuderias)
+        public EstadisticasTC(List<Escuderia> listaEscuderias) : base(listaEscuderias)
         {
         }
 

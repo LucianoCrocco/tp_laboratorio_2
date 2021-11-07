@@ -19,8 +19,19 @@ namespace Entidades
         #endregion
 
         #region Constructores
-
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
         public Piloto() { }
+        /// <summary>
+        /// Constructor parametrizado
+        /// </summary>
+        /// <param name="nombre">Nombre del piloto</param>
+        /// <param name="apellido">Apellido del piloto</param>
+        /// <param name="edad">Edad del piloto</param>
+        /// <param name="sexo">Sexo del piloto</param>
+        /// <param name="numeroDeCompeticion">Numero de competicion elegido por el piloto</param>
+        /// <param name="competidorNacional">Argentino o Extranjero</param>
         public Piloto (string nombre, string apellido, int edad, ESexo sexo, int numeroDeCompeticion, bool competidorNacional)
         {
             this.Nombre = nombre;
@@ -129,7 +140,12 @@ namespace Entidades
         #endregion
 
         #region Sobrecargas
-
+        /// <summary>
+        /// Compara dos pilotos. Dos pilotos son iguales si comparten el mismo numero de competicion.
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <returns>True si son iguales, false si no lo son.</returns>
         public static bool operator == (Piloto p1, Piloto p2)
         {
             if(p1 is not null && p2 is not null)
@@ -142,11 +158,23 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Compara dos pilotos. Dos pilotos son distintos si no comparten el mismo numero de competicion.
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <returns>False si son iguales, true si no lo son.</returns>
         public static bool operator !=(Piloto p1, Piloto p2)
         {
             return !(p1 == p2);
         }
 
+        /// <summary>
+        /// Suma a la lista de pilotos un piloto
+        /// </summary>
+        /// <param name="pilotos"></param>
+        /// <param name="p1"></param>
+        /// <returns>La lista con los cambios realizados</returns>
         public static List<Piloto> operator +(List<Piloto> pilotos, Piloto p1)
         {
             if(pilotos is not null && p1 is not null)
@@ -163,7 +191,12 @@ namespace Entidades
 
             return pilotos;
         }
-
+        /// <summary>
+        /// Borra de la lista de pilotos un piloto
+        /// </summary>
+        /// <param name="pilotos"></param>
+        /// <param name="p1"></param>
+        /// <returns>La lista con los cambios realizados</returns>
         public static List<Piloto> operator -(List<Piloto> pilotos, Piloto p1)
         {
             if (pilotos is not null && p1 is not null)
@@ -184,6 +217,10 @@ namespace Entidades
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Muestra los datos de un piloto.
+        /// </summary>
+        /// <returns>Mensaje con los datos del piloto.</returns>
         public string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -191,6 +228,11 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Valida que el nombre ingresado contenga los caracteres correctos.
+        /// </summary>
+        /// <param name="value">Valor a comparar</param>
+        /// <returns>True si los caracteres se encuentran en el rango correcto.</returns>
         public static bool ValidarNombre(string value)
         {
             if (String.IsNullOrWhiteSpace(value))
@@ -210,6 +252,11 @@ namespace Entidades
             return true;
         }
 
+        /// <summary>
+        /// Muestra todos los pilotos contenidas en una lista.
+        /// </summary>
+        /// <param name="pilotos"></param>
+        /// <returns>Mensaje con la lista de las escuderias.</returns>
         public static string MostrarTodosListaPilotos(List<Piloto> pilotos)
         {
 

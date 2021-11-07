@@ -13,9 +13,17 @@ namespace Entidades
         #endregion
 
         #region Constructores
-
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
         public EscuderiaTC() { }
 
+        /// <summary>
+        /// Constructor parametrizado
+        /// </summary>
+        /// <param name="nombre">Nombre de la escuderia</param>
+        /// <param name="cantidadPilotos">Cantidad de pilotos</param>
+        /// <param name="fabricanteVehiculo">Marca que motoriza la escuderia</param>
         public EscuderiaTC(string nombre, int cantidadPilotos, EMarcaVehiculoTC fabricanteVehiculo)
             :base(nombre, cantidadPilotos)
         {
@@ -38,6 +46,10 @@ namespace Entidades
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Muestra los datos de una escuderia del TC
+        /// </summary>
+        /// <returns>Mensaje con los datos de la escuderia del TC</returns>
         public override string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
