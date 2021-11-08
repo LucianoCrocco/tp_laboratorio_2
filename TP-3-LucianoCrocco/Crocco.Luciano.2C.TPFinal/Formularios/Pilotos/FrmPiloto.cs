@@ -16,6 +16,7 @@ namespace Formularios
 {
     public partial class FrmPiloto : Form
     {
+        #region Atributos
         private List<Piloto> pilotosCargados;
         private FrmGenerarPiloto frmGenerarPiloto;
         private FrmPilotoEstadistica frmEstadisticaPiloto;
@@ -23,7 +24,12 @@ namespace Formularios
         private OpenFileDialog openFileDialog;
         public static ListBox ListBoxRef;
         private string path;
+        #endregion
 
+        /// <summary>
+        /// Constructor del form. Recibe la referencia de la lista de pilotos en memoria.
+        /// </summary>
+        /// <param name="listaPilotos"></param>
         public FrmPiloto(List<Piloto> listaPilotos)
         {
             InitializeComponent();
@@ -37,6 +43,11 @@ namespace Formularios
         }
 
         #region Generar Piloto
+        /// <summary>
+        /// Genera un formulario para crear un piloto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGenerarPiloto_Click(object sender, EventArgs e)
         {
             frmGenerarPiloto = new FrmGenerarPiloto(pilotosCargados);
@@ -45,6 +56,11 @@ namespace Formularios
         #endregion
 
         #region Estadisticas
+        /// <summary>
+        /// Genera un formulario para realizar trabajos estadisticos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
             if(pilotosCargados.Count > 0)
@@ -60,6 +76,11 @@ namespace Formularios
         #endregion
 
         #region Guardar pilotos
+        /// <summary>
+        /// Guarda la lista de pilotos que se encuentra actualmente cargada en memoria
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarLista_Click(object sender, EventArgs e)
         {
             if (pilotosCargados.Count > 0)
@@ -91,6 +112,11 @@ namespace Formularios
         #endregion
 
         #region Cargar Pilotos
+        /// <summary>
+        /// Carga una lista de pilotos que el usuario seleccione. Si la lista actual tiene pilotos en memoria se borra al cargar la nueva lista.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCargarLista_Click(object sender, EventArgs e)
         {
             openFileDialog = new OpenFileDialog();
@@ -125,6 +151,11 @@ namespace Formularios
         #endregion
 
         #region Borrar Piloto
+        /// <summary>
+        /// Haciendo doble click sobre la lista borra de la memoria un piloto.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstPilotos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if(pilotosCargados.Count < 1)
@@ -157,6 +188,10 @@ namespace Formularios
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Refresca la lista de pilotos del form
+        /// </summary>
+        /// <param name="pilotos">Lista de pilotos que queremos mostrar ene l form</param>
         public static void Refrescar(List<Piloto> pilotos)
         {
             FrmPiloto.ListBoxRef.Items.Clear();

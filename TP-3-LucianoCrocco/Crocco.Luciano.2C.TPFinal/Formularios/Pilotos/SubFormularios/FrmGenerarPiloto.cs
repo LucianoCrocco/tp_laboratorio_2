@@ -15,6 +15,11 @@ namespace Formularios
     public partial class FrmGenerarPiloto : Form
     {
         private List<Piloto> pilotosLista;
+
+        /// <summary>
+        /// Constructor del form. Recibe la referencia de la lista de pilotos en memoria.
+        /// </summary>
+        /// <param name="pilotos"></param>
         public FrmGenerarPiloto(List<Piloto> pilotos)
         {
             InitializeComponent();
@@ -22,6 +27,11 @@ namespace Formularios
         }
 
         #region Agregar Piloto
+        /// <summary>
+        /// Agrega un piloto a la lista de pilotos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCrear_Click(object sender, EventArgs e)
         {
             bool nacionalidad = false;
@@ -57,6 +67,11 @@ namespace Formularios
         }
         #endregion
 
+        /// <summary>
+        /// Si al cargar esta seccion se supero el cupo maximo de pilotos se mostrara un mensaje y se cerrara el form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmGenerarPiloto_Load(object sender, EventArgs e)
         {
             if(pilotosLista.Count > nroCompeticion.Maximum)
