@@ -33,6 +33,9 @@ namespace Consola
             SerializacionXML<Piloto> serializacionXML = new SerializacionXML<Piloto>();
             SerializacionJSON<Piloto> serializacionJSON = new SerializacionJSON<Piloto>();
             Piloto pilotoDeserializado;
+
+            EstadisticasTC estadisticasTC = new EstadisticasTC(escuderia);
+            EstadisticasPilotos estadisticasPilotos = new EstadisticasPilotos(pilotos);
             #endregion
 
             #region Agregar piloto a Escuderia
@@ -124,6 +127,16 @@ namespace Consola
             {
                 Console.WriteLine(ex.Message);
             }
+            #endregion
+
+            #region Estadisticas Generales Escuderias
+            Console.WriteLine(estadisticasTC.PromedioAutosUtilizados());
+            Console.WriteLine(estadisticasTC.MaximoAsientosDisponiblesPiloto());
+            #endregion
+
+            #region Estadisticas Pilotos
+            Console.WriteLine(estadisticasPilotos.PromedioNacionalidad());
+            Console.WriteLine(estadisticasPilotos.PromedioSexo());
             #endregion
 
             Console.ReadKey();
