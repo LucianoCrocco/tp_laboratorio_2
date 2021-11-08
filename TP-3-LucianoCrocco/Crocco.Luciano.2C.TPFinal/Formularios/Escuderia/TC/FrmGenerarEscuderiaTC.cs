@@ -15,12 +15,21 @@ namespace Formularios
     public partial class FrmGenerarEscuderiaTC : Form
     {
         private List<Escuderia> escuderias;
+        /// <summary>
+        /// Consturctor del form. Recibe por parametros la lista de escuderias cargada en memoria
+        /// </summary>
+        /// <param name="escuderias"></param>
         public FrmGenerarEscuderiaTC(List<Escuderia> escuderias)
         {
             InitializeComponent();
             this.escuderias = escuderias;
         }
 
+        /// <summary>
+        /// Crea la escuderia con los datos proveidos por el usuario y la añade a la lista de escuderias.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCrear_Click(object sender, EventArgs e)
         {
             if (txtBoxNombre.Text is not null && nroAsientos is not null && cmbFabricante.SelectedIndex is not -1)

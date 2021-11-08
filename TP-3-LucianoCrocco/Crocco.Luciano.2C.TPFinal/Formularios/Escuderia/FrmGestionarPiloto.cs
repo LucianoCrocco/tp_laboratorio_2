@@ -17,6 +17,12 @@ namespace Formularios
         private List<Piloto> pilotos;
         private int index;
 
+        /// <summary>
+        /// Constructor del form. Recibe por parametros una lista de escuderias, el index de la lista de escuderias y todos los pilotos cargados en memoria.
+        /// </summary>
+        /// <param name="escuderias"></param>
+        /// <param name="pilotos"></param>
+        /// <param name="index"></param>
         public FrmGestionarPiloto(List<Escuderia> escuderias, List<Piloto> pilotos, int index)
         {
             InitializeComponent();
@@ -31,6 +37,9 @@ namespace Formularios
             this.ListaPilotosEscuderia();
         }
 
+        /// <summary>
+        /// Carga todos los pilotos de la escuderia seleccionada.
+        /// </summary>
         public void ListaPilotosEscuderia()
         {
             lstPilotosDeLaEscuderia.Items.Clear();
@@ -40,6 +49,9 @@ namespace Formularios
             }
             
         }
+        /// <summary>
+        /// Carga todos los pilotos en memoeria.
+        /// </summary>
         public void ListaPilotosDisponibles()
         {
             lstPilotosDisponibles.Items.Clear();
@@ -48,7 +60,11 @@ namespace Formularios
                 lstPilotosDisponibles.Items.Add(item.MostrarDatos());
             }
         }
-
+        /// <summary>
+        /// Añade un piloto de mi lista de pilotos a la lista de pilotos de la escuderia
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstPilotosDisponibles_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if(this.escuderias[index].CantidadPilotos > this.escuderias[index].Pilotos.Count)
@@ -93,6 +109,11 @@ namespace Formularios
 
         }
 
+        /// <summary>
+        /// Borra el piloto seleccionado de la lista de pilotos de la escuderia seleccionada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstPilotosDeLaEscuderia_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try

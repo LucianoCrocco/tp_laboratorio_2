@@ -16,6 +16,11 @@ namespace Formularios
     {
         private EstadisticasTC promedio;
         private List<Escuderia> escuderia;
+
+        /// <summary>
+        /// Constructor del form. Recibe la lista de escuderias cargadas en el sistema.
+        /// </summary>
+        /// <param name="escuderia"></param>
         public FrmEscuderiaEstadisticaTC(List<Escuderia> escuderia)
         {
             InitializeComponent();
@@ -23,6 +28,11 @@ namespace Formularios
             promedio = new EstadisticasTC(this.escuderia);
         }
 
+        /// <summary>
+        /// Muestra en el RichTextBox la estadistica maxima de los atributos de todas las escuderias del tipo TC cargadas en el sistema.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMaximo_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -30,23 +40,30 @@ namespace Formularios
 
         }
 
+        /// <summary>
+        /// Muestra en el RichTextBox la estadistica promedio de los atributos de todas las escuderias del tipo TC cargadas en el sistema.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPromedio_Click(object sender, EventArgs e)
         {
             rchEstadisticas.Text = promedio.PromedioAsientosDisponiblesPiloto() + "\n" + promedio.PromedioAsientosOcupadosPiloto() + "\n" + promedio.PromedioAutosUtilizados();
         }
+        /// <summary>
+        /// Muestra en el RichTextBox la estadistica minima de los atributos de todas las escuderias del tipo TC cargadas en el sistema.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMinimo_Click(object sender, EventArgs e)
         {
             rchEstadisticas.Text = promedio.MinimoAsientosDisponiblesPiloto() + "\n" + promedio.MinimoAsientosOcupadosPiloto() + "\n" + promedio.AutosMenosUtilizado();
         }
 
-        #region Metodos
-        public void Limpiar()
-        {
-            rchEstadisticas.Clear();
-        }
-
-        #endregion
-
+        /// <summary>
+        /// Guarda en un TXT las estadisticas mostradas en el RichTextBox, si el checkbox sobrescribir esta sin el tick hace un append al texto que ya se encuentra en el .txt. De lo contrario borra la informacion y carga la ultima informacion desplegada en el RichTextBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string path;
@@ -67,5 +84,16 @@ namespace Formularios
                 MessageBox.Show(ex.Message);
             }
         }
+
+        #region Metodos
+        /// <summary>
+        /// Limpia el texto del RichTextBox
+        /// </summary>
+        public void Limpiar()
+        {
+            rchEstadisticas.Clear();
+        }
+
+        #endregion
     }
 }
