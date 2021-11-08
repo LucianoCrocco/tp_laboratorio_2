@@ -9,4 +9,3 @@ D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\ref\Excepciones.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.pdb
-D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.csproj.AssemblyReference.cache

@@ -14,3 +14,4 @@ D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ref\ArchivosYSerializacion.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.pdb
+D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.csproj.CopyComplete
