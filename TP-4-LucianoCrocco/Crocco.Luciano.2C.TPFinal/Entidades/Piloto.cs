@@ -183,7 +183,7 @@ namespace Entidades
                 {
                     if(item == p1)
                     {
-                        throw new PilotoRepetidoException("El piloto ya se encuentra en la lista");
+                        throw new PilotoRepetidoException("El numero del piloto ya se encuentra en la lista");
                     }
                 }
                 pilotos.Add(p1);

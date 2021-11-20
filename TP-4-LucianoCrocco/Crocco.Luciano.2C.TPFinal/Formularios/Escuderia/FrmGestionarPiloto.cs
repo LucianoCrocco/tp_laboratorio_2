@@ -79,7 +79,7 @@ namespace Formularios
                             if (item == this.pilotos[lstPilotosDisponibles.SelectedIndex])
                             {
                                 ocupado = true;
-                                MessageBox.Show("El piloto seleccionado ya se encuentra compitiendo en una escudera", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("El numero de competicion del piloto seleccionado ya se encuentra compitiendo en una escudera", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                             }
                         }
