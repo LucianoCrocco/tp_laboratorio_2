@@ -196,9 +196,9 @@ namespace Formularios
         /// </summary>
         public void ListarPilotos()
         {
-            while (!cancellationToken.IsCancellationRequested)
+            while (!this.cancellationToken.IsCancellationRequested)
             {
-                Refrescar();
+                this.Refrescar();
                 Thread.Sleep(2000);
             }
         }
@@ -227,7 +227,7 @@ namespace Formularios
 
         private void FrmPiloto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            cancellationTokenSource.Cancel();
+            this.cancellationTokenSource.Cancel();
         }
     }
 }
