@@ -46,7 +46,6 @@ namespace Formularios
                 {
                     Piloto piloto = new Piloto(txtBoxNombre.Text, txtBoxApellido.Text, (int)nroEdad.Value, (ESexo)cmbSexo.SelectedIndex, (int)nroCompeticion.Value, nacionalidad);
                     pilotosLista += piloto;
-                    FrmPiloto.Refrescar(pilotosLista);
                 }
                 catch (CaracteresInvalidoException ex)
                 {

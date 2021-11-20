@@ -11,6 +11,7 @@ using Entidades;
 using Excepciones;
 using ArchivosYSerializacion;
 using System.IO;
+using System.Threading;
 
 namespace Formularios
 {
@@ -22,7 +23,8 @@ namespace Formularios
         private FrmPilotoEstadistica frmEstadisticaPiloto;
         private SerializacionXML<List<Piloto>> serializacion;
         private OpenFileDialog openFileDialog;
-        public static ListBox ListBoxRef;
+        private CancellationToken cancellationToken;
+        private CancellationTokenSource cancellationTokenSource;
         private string path;
         #endregion
 
@@ -34,12 +36,13 @@ namespace Formularios
         {
             InitializeComponent();
             pilotosCargados = listaPilotos;
-            ListBoxRef = this.lstPilotos;
             serializacion = new SerializacionXML<List<Piloto>>();
+            cancellationTokenSource = new CancellationTokenSource();
+            cancellationToken = cancellationTokenSource.Token;
         }
         private void FrmPiloto_Load(object sender, EventArgs e)
         {
-            Refrescar(pilotosCargados);
+            Task.Run(ListarPilotos, cancellationToken);
         }
 
         #region Generar Piloto
@@ -138,7 +141,7 @@ namespace Formularios
                         {
                             this.pilotosCargados.Add(item);
                         }
-                        Refrescar(pilotosCargados);
+                        //Refrescar(pilotosCargados);
                         MessageBox.Show("Archivo cargado correctamente");
                     }
                     catch (Exception ex)
@@ -167,7 +170,6 @@ namespace Formularios
                 try
                 {
                     pilotosCargados -= pilotosCargados[lstPilotos.SelectedIndex];
-                    Refrescar(pilotosCargados);
                 }
                 catch (PilotoNoEncontradoException ex)
                 {
@@ -188,19 +190,44 @@ namespace Formularios
         #endregion
 
         #region Metodos
+
+        /// <summary>
+        /// Llama al metodo Refrescar Lista y paraliza el hilo 2 segundos.
+        /// </summary>
+        public void ListarPilotos()
+        {
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                Refrescar();
+                Thread.Sleep(2000);
+            }
+        }
+
         /// <summary>
         /// Refresca la lista de pilotos del form
         /// </summary>
         /// <param name="pilotos">Lista de pilotos que queremos mostrar ene l form</param>
-        public static void Refrescar(List<Piloto> pilotos)
+        public void Refrescar()
         {
-            FrmPiloto.ListBoxRef.Items.Clear();
-            foreach (Piloto item in pilotos)
+            if (this.lstPilotos.InvokeRequired)
             {
-                FrmPiloto.ListBoxRef.Items.Add(item.MostrarDatos());
+                RefrescarListaDelegate callback = new RefrescarListaDelegate(Refrescar);
+                this.Invoke(callback);
+            }
+            else
+            {
+                this.lstPilotos.Items.Clear();
+                foreach (Piloto item in this.pilotosCargados)
+                {
+                    this.lstPilotos.Items.Add(item.MostrarDatos());
+                }
             }
         }
         #endregion
 
+        private void FrmPiloto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cancellationTokenSource.Cancel();
+        }
     }
 }
