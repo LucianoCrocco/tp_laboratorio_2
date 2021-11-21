@@ -35,6 +35,9 @@ namespace Formularios
             this.btnGuardarLista = new System.Windows.Forms.Button();
             this.btnCargarLista = new System.Windows.Forms.Button();
             this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.btnHistorial = new System.Windows.Forms.Button();
+            this.btnBorrarPiloto = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGenerarPiloto
@@ -49,13 +52,13 @@ namespace Formularios
             // 
             // lstPilotos
             // 
+            this.lstPilotos.Font = new System.Drawing.Font("Arial", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lstPilotos.FormattingEnabled = true;
-            this.lstPilotos.ItemHeight = 15;
+            this.lstPilotos.ItemHeight = 16;
             this.lstPilotos.Location = new System.Drawing.Point(12, 42);
             this.lstPilotos.Name = "lstPilotos";
-            this.lstPilotos.Size = new System.Drawing.Size(647, 214);
+            this.lstPilotos.Size = new System.Drawing.Size(647, 212);
             this.lstPilotos.TabIndex = 2;
-            this.lstPilotos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPilotos_MouseDoubleClick);
             // 
             // lblListaPilotos
             // 
@@ -97,11 +100,42 @@ namespace Formularios
             this.btnEstadisticas.UseVisualStyleBackColor = true;
             this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
+            // btnHistorial
+            // 
+            this.btnHistorial.Location = new System.Drawing.Point(809, 181);
+            this.btnHistorial.Name = "btnHistorial";
+            this.btnHistorial.Size = new System.Drawing.Size(138, 45);
+            this.btnHistorial.TabIndex = 7;
+            this.btnHistorial.Text = "Historial de Pilotos";
+            this.btnHistorial.UseVisualStyleBackColor = true;
+            // 
+            // btnBorrarPiloto
+            // 
+            this.btnBorrarPiloto.Location = new System.Drawing.Point(809, 126);
+            this.btnBorrarPiloto.Name = "btnBorrarPiloto";
+            this.btnBorrarPiloto.Size = new System.Drawing.Size(138, 45);
+            this.btnBorrarPiloto.TabIndex = 8;
+            this.btnBorrarPiloto.Text = "Borrar Piloto";
+            this.btnBorrarPiloto.UseVisualStyleBackColor = true;
+            this.btnBorrarPiloto.Click += new System.EventHandler(this.btnBorrarPiloto_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(809, 72);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(138, 45);
+            this.btnEditar.TabIndex = 9;
+            this.btnEditar.Text = "Editar Piloto";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
             // FrmPiloto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 269);
+            this.ClientSize = new System.Drawing.Size(954, 266);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnBorrarPiloto);
+            this.Controls.Add(this.btnHistorial);
             this.Controls.Add(this.btnEstadisticas);
             this.Controls.Add(this.btnCargarLista);
             this.Controls.Add(this.btnGuardarLista);
@@ -128,5 +162,8 @@ namespace Formularios
         private System.Windows.Forms.Button btnGuardarLista;
         private System.Windows.Forms.Button btnCargarLista;
         private System.Windows.Forms.Button btnEstadisticas;
+        private System.Windows.Forms.Button btnHistorial;
+        private System.Windows.Forms.Button btnBorrarPiloto;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

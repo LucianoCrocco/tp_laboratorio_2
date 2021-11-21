@@ -25,6 +25,7 @@ namespace Formularios
         private OpenFileDialog openFileDialog;
         private CancellationToken cancellationToken;
         private CancellationTokenSource cancellationTokenSource;
+        private bool usarHilo;
         private string path;
         #endregion
 
@@ -39,6 +40,7 @@ namespace Formularios
             serializacion = new SerializacionXML<List<Piloto>>();
             cancellationTokenSource = new CancellationTokenSource();
             cancellationToken = cancellationTokenSource.Token;
+            usarHilo = false;
         }
         private void FrmPiloto_Load(object sender, EventArgs e)
         {
@@ -54,7 +56,9 @@ namespace Formularios
         private void btnGenerarPiloto_Click(object sender, EventArgs e)
         {
             frmGenerarPiloto = new FrmGenerarPiloto(pilotosCargados);
+            this.usarHilo = true;
             frmGenerarPiloto.ShowDialog();
+            this.usarHilo = false;
         }
         #endregion
 
@@ -155,18 +159,20 @@ namespace Formularios
 
         #region Borrar Piloto
         /// <summary>
-        /// Haciendo doble click sobre la lista borra de la memoria un piloto.
+        /// Borra de la memoria el piloto seleccionado.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lstPilotos_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void btnBorrarPiloto_Click(object sender, EventArgs e)
         {
-            if(pilotosCargados.Count < 1)
+            if (pilotosCargados.Count < 1)
             {
                 MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            } else
+            }
+            else
             {
+                this.usarHilo = true;
                 try
                 {
                     pilotosCargados -= pilotosCargados[lstPilotos.SelectedIndex];
@@ -184,8 +190,8 @@ namespace Formularios
                 {
                     MessageBox.Show(ex.Message);
                 }
+                this.usarHilo = false;
             }
-           
         }
         #endregion
 
@@ -198,8 +204,10 @@ namespace Formularios
         {
             while (!this.cancellationToken.IsCancellationRequested)
             {
-                this.Refrescar();
-                Thread.Sleep(2000);
+                if (this.usarHilo) {
+                    this.Refrescar();
+                    Thread.Sleep(300);
+                }
             }
         }
 
@@ -229,5 +237,7 @@ namespace Formularios
         {
             this.cancellationTokenSource.Cancel();
         }
+
+       
     }
 }
