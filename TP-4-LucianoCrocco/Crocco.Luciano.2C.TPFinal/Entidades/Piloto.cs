@@ -179,12 +179,9 @@ namespace Entidades
         {
             if(pilotos is not null && p1 is not null)
             {
-                foreach(Piloto item in pilotos)
+                if(pilotos == p1)
                 {
-                    if(item == p1)
-                    {
-                        throw new PilotoRepetidoException("El numero del piloto ya se encuentra en la lista");
-                    }
+                    throw new PilotoRepetidoException("El numero del piloto ya se encuentra en la lista");
                 }
                 pilotos.Add(p1);
             }
@@ -201,18 +198,35 @@ namespace Entidades
         {
             if (pilotos is not null && p1 is not null)
             {
-                foreach (Piloto item in pilotos)
+                if(pilotos == p1)
                 {
-                    if (item == p1)
-                    {
-                        pilotos.Remove(item);
-                        return pilotos;
-                    }
+                    pilotos.Remove(p1);
+                    return pilotos;
                 }
                 throw new PilotoNoEncontradoException("El piloto no se encuentra en la lista");
             }
 
             return pilotos;
+        }
+
+        public static bool operator ==(List<Piloto> pilotos, Piloto p1)
+        {
+            if (pilotos is not null && p1 is not null)
+            {
+                foreach (Piloto item in pilotos)
+                {
+                    if (item == p1)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public static bool operator !=(List<Piloto> pilotos, Piloto p1)
+        {
+            return !(pilotos == p1);
         }
         #endregion
 

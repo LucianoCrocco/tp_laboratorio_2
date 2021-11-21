@@ -19,6 +19,7 @@ namespace Formularios
     {
         #region Atributos
         private List<Piloto> pilotosCargados;
+        private FrmEditarPiloto frmEditarPiloto;
         private FrmGenerarPiloto frmGenerarPiloto;
         private FrmPilotoEstadistica frmEstadisticaPiloto;
         private SerializacionXML<List<Piloto>> serializacion;
@@ -195,6 +196,40 @@ namespace Formularios
         }
         #endregion
 
+        #region Editar Piloto
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (pilotosCargados.Count < 1)
+            {
+                MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                this.usarHilo = true;
+                try
+                {
+                    frmEditarPiloto = new FrmEditarPiloto(this.pilotosCargados, this.pilotosCargados[lstPilotos.SelectedIndex]);
+                    frmEditarPiloto.ShowDialog();
+                }
+                catch (PilotoNoEncontradoException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("El index seleccionado se encuentra fuera del rango de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                this.usarHilo = false;
+            }
+        }
+        #endregion
+
         #region Metodos
 
         /// <summary>
@@ -238,6 +273,5 @@ namespace Formularios
             this.cancellationTokenSource.Cancel();
         }
 
-       
     }
 }

@@ -240,3 +240,4 @@ D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Formularios\obj\Debug\net5.0-windows\ref\Formularios.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Formularios\obj\Debug\net5.0-windows\Formularios.pdb
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Formularios\obj\Debug\net5.0-windows\Formularios.genruntimeconfig.cache
+D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Formularios\obj\Debug\net5.0-windows\Formularios.FrmEditarPiloto.resources
