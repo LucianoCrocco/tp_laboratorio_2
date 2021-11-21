@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [TorneoDataBase]    Script Date: 21/11/2021 15:49:35 ******/
+/****** Object:  Database [TorneoDataBase]    Script Date: 21/11/2021 20:11:40 ******/
 CREATE DATABASE [TorneoDataBase]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,18 +82,7 @@ ALTER DATABASE [TorneoDataBase] SET QUERY_STORE = OFF
 GO
 USE [TorneoDataBase]
 GO
-/****** Object:  Table [dbo].[Escuderia]    Script Date: 21/11/2021 15:49:35 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Escuderia](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[nombre] [varchar](100) NOT NULL,
-	[cantidadDePilotos] [int] NOT NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Pilotos]    Script Date: 21/11/2021 15:49:35 ******/
+/****** Object:  Table [dbo].[Pilotos]    Script Date: 21/11/2021 20:11:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
