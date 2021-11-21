@@ -55,7 +55,7 @@ namespace Entidades
             {
                 try 
                 {
-                    if (Piloto.ValidarNombre(value))
+                    if (Piloto.ValidarNombre(value) && value.Length < 60)
                     {
                         this.nombre = value;
                     }
@@ -77,7 +77,7 @@ namespace Entidades
             {
                 try
                 {
-                    if (Piloto.ValidarNombre(value))
+                    if (Piloto.ValidarNombre(value) && value.Length < 60) 
                     {
                         this.apellido = value;
                     }
