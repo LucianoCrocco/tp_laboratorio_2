@@ -42,7 +42,13 @@ namespace Entidades
             }
             set
             {
-                this.nombreEscuderia = value;
+                if(value.Length > 100)
+                {
+                    throw new CaracteresInvalidoException("El maximo de caracteres para ingresar es de 100 caracteres");
+                } else
+                {
+                    this.nombreEscuderia = value;
+                }
             }
         }
         public int CantidadPilotos
@@ -146,7 +152,6 @@ namespace Entidades
                 {
                     throw new EscuderiaRepetidaException("La escuderia ya se encuentra en la lista");
                 }
-                
                 escuderias.Add(e1);
             }
 

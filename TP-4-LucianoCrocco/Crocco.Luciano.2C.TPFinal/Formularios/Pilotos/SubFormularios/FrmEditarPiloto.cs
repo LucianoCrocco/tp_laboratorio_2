@@ -57,7 +57,8 @@ namespace Formularios
                 if(this.pilotos == aux && aux != this.piloto)
                 {
                     MessageBox.Show("El numero de piloto seleccionado ya se encuentra en uso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } else
+                } 
+                else
                 {
                     this.piloto.Nombre = this.txtBoxNombre.Text;
                     this.piloto.Apellido = this.txtBoxApellido.Text;

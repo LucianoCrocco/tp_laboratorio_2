@@ -15,6 +15,7 @@ namespace Formularios
     public partial class FrmGenerarPiloto : Form
     {
         private List<Piloto> pilotosLista;
+        private PilotoBDD pilotoBDD; 
 
         /// <summary>
         /// Constructor del form. Recibe la referencia de la lista de pilotos en memoria.
@@ -24,6 +25,7 @@ namespace Formularios
         {
             InitializeComponent();
             pilotosLista = pilotos;
+            pilotoBDD = new PilotoBDD();
         }
 
         #region Agregar Piloto
@@ -46,6 +48,7 @@ namespace Formularios
                 {
                     Piloto piloto = new Piloto(txtBoxNombre.Text, txtBoxApellido.Text, (int)nroEdad.Value, (ESexo)cmbSexo.SelectedIndex, (int)nroCompeticion.Value, nacionalidad);
                     pilotosLista += piloto;
+                    pilotoBDD.GuardarPiloto(piloto);
                 }
                 catch (CaracteresInvalidoException ex)
                 {
@@ -55,7 +58,11 @@ namespace Formularios
                 {
                     MessageBox.Show(ex.Message);
                 }
-                catch(Exception ex)
+                catch (BaseDeDatosException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

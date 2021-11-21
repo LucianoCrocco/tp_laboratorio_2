@@ -13,7 +13,10 @@
     <Compile Update="Escuderia\TC\FrmEscuderiaEstadisticaTC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmEditarPiloto.cs">
+    <Compile Update="FrmHistorialPilotos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pilotos\SubFormularios\FrmEditarPiloto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pilotos\SubFormularios\FrmPilotoEstadistica.cs">

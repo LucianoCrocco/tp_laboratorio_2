@@ -108,6 +108,7 @@ namespace Formularios
             this.btnHistorial.TabIndex = 7;
             this.btnHistorial.Text = "Historial de Pilotos";
             this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // btnBorrarPiloto
             // 

@@ -19,6 +19,7 @@ namespace Formularios
     {
         #region Atributos
         private List<Piloto> pilotosCargados;
+        private FrmHistorialPilotos frmHistorialPilotos;
         private FrmEditarPiloto frmEditarPiloto;
         private FrmGenerarPiloto frmGenerarPiloto;
         private FrmPilotoEstadistica frmEstadisticaPiloto;
@@ -268,10 +269,20 @@ namespace Formularios
         }
         #endregion
 
+        #region Historial Pilotos
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            frmHistorialPilotos = new FrmHistorialPilotos(this.pilotosCargados);
+            frmHistorialPilotos.ShowDialog();
+        }
+        #endregion
+
+
         private void FrmPiloto_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.cancellationTokenSource.Cancel();
         }
+
 
     }
 }

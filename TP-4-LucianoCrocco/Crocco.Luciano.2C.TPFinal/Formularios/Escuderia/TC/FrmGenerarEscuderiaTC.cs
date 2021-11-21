@@ -44,6 +44,10 @@ namespace Formularios
                 {
                     MessageBox.Show(ex.Message);
                 }
+                catch (CaracteresInvalidoException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
