@@ -16,9 +16,15 @@ namespace Entidades
         protected ESexo sexo;
         protected int numeroCompeticion;
         protected bool competidorNacional;
+        private static int maximoCaracteres;
         #endregion
 
         #region Constructores
+        static Piloto()
+        {
+            maximoCaracteres = 65;
+        }
+
         /// <summary>
         /// Constructor por defecto
         /// </summary>
@@ -253,6 +259,10 @@ namespace Entidades
             {
                 throw new CaracteresInvalidoException("Los cadena de caracteres ingresados se encuentra vacia");
             } 
+            else if(value.Length > maximoCaracteres)
+            {
+                throw new CaracteresInvalidoException($"Los cadena de caracteres ingresados excede el maximo permitido de {maximoCaracteres} caracteres");
+            }
             else
             {
                 foreach(char caracter in value)

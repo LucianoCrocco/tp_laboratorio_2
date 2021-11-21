@@ -58,19 +58,20 @@ namespace Formularios
                 {
                     nacionalidad = true;
                 }
-                Piloto aux = new Piloto(txtBoxNombre.Text, txtBoxApellido.Text, (int)nroEdad.Value, (ESexo)cmbSexo.SelectedIndex, (int)nroCompeticion.Value, nacionalidad);
-                
-                if(this.pilotos == aux && aux != this.piloto)
+                try
                 {
-                    MessageBox.Show("El numero de piloto seleccionado ya se encuentra en uso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } 
-                else
-                {
-                    string nombre = String.Empty;
-                    string apellido = String.Empty;
-                    int nroCompeticion = -1;
-                    try
+                    Piloto aux = new Piloto(txtBoxNombre.Text, txtBoxApellido.Text, (int)nroEdad.Value, (ESexo)cmbSexo.SelectedIndex, (int)nroCompeticion.Value, nacionalidad);
+
+                    if (this.pilotos == aux && aux != this.piloto)
                     {
+                        MessageBox.Show("El numero de piloto seleccionado ya se encuentra en uso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        string nombre = String.Empty;
+                        string apellido = String.Empty;
+                        int nroCompeticion = -1;
+
                         nombre = this.piloto.Nombre;
                         apellido = this.piloto.Apellido;
                         nroCompeticion = this.piloto.NumeroCompeticion;
@@ -82,22 +83,22 @@ namespace Formularios
                         this.piloto.CompetidorNacional = nacionalidad;
                         this.pilotoBDD.EditarPiloto(piloto, nombre, apellido, nroCompeticion);
                     }
-                    catch (CaracteresInvalidoException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    catch (PilotoRepetidoException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    catch (BaseDeDatosException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                }
+                catch (CaracteresInvalidoException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (PilotoRepetidoException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (BaseDeDatosException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

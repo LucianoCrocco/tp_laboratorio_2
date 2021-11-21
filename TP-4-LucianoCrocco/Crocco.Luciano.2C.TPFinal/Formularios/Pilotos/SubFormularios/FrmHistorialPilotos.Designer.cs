@@ -51,7 +51,7 @@ namespace Formularios
             // 
             this.lblListaPilotos.AutoSize = true;
             this.lblListaPilotos.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblListaPilotos.Location = new System.Drawing.Point(164, 7);
+            this.lblListaPilotos.Location = new System.Drawing.Point(312, 9);
             this.lblListaPilotos.Name = "lblListaPilotos";
             this.lblListaPilotos.Size = new System.Drawing.Size(231, 30);
             this.lblListaPilotos.TabIndex = 4;
@@ -114,6 +114,8 @@ namespace Formularios
             this.Name = "FrmHistorialPilotos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial de Pilotos";
+            this.Activated += new System.EventHandler(this.FrmHistorialPilotos_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmHistorialPilotos_FormClosing);
             this.Load += new System.EventHandler(this.FrmHistorialPilotos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

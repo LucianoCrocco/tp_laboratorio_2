@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,17 +16,31 @@ namespace Formularios
 {
     public partial class FrmHistorialPilotos : Form
     {
+
+        #region Atributos
         private FrmPilotoEstadistica frmEstadisticaPiloto;
         private FrmEditarPiloto frmEditarPiloto;
         private List<Piloto> pilotosHistorial;
         private List<Piloto> pilotosActuales;
         private PilotoBDD baseDeDatosPiloto;
+        private CancellationToken cancellationToken;
+        private CancellationTokenSource cancellationTokenSource;
+        private bool usarHilo;
+        #endregion
+
         public FrmHistorialPilotos(List<Piloto> pilotosActuales)
         {
             InitializeComponent();
             this.pilotosHistorial = new List<Piloto>();
             this.baseDeDatosPiloto = new PilotoBDD();
             this.pilotosActuales = pilotosActuales;
+            this.cancellationTokenSource = new CancellationTokenSource();
+            this.cancellationToken = cancellationTokenSource.Token;
+            this.usarHilo = true;
+        }
+        private void FrmHistorialPilotos_Activated(object sender, EventArgs e)
+        {
+            this.usarHilo = false;
         }
 
         #region Cargar historial
@@ -34,25 +49,54 @@ namespace Formularios
             try
             {
                 this.pilotosHistorial = this.baseDeDatosPiloto.LeerPilotos();
-                Refrescar();
+                Task.Run(ListarPilotos, cancellationToken);
             }
             catch(BaseDeDatosException ex)
             {
                 MessageBox.Show(ex.Message);
+                this.Close();
             }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            } 
+                this.Close();
+            }
         }
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Llama al metodo Refrescar Lista y paraliza el hilo 2 segundos.
+        /// </summary>
+        public void ListarPilotos()
+        {
+            while (!this.cancellationToken.IsCancellationRequested)
+            {
+                if (this.usarHilo)
+                {
+                    this.Refrescar();
+                    Thread.Sleep(300);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Refresca la lista de pilotos del form
+        /// </summary>
+        /// <param name="pilotos">Lista de pilotos que queremos mostrar ene l form</param>
         public void Refrescar()
         {
-            this.lstPilotos.Items.Clear();
-            foreach (Piloto item in this.pilotosHistorial)
+            if (this.lstPilotos.InvokeRequired)
             {
-                this.lstPilotos.Items.Add(item.MostrarDatos());
+                RefrescarListaDelegate callback = new RefrescarListaDelegate(Refrescar);
+                this.Invoke(callback);
+            }
+            else
+            {
+                this.lstPilotos.Items.Clear();
+                foreach (Piloto item in this.pilotosHistorial)
+                {
+                    this.lstPilotos.Items.Add(item.MostrarDatos());
+                }
             }
         }
         #endregion
@@ -104,7 +148,8 @@ namespace Formularios
         #region Editar Piloto
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if(this.pilotosHistorial.Count < 1)
+            this.usarHilo = true;
+            if (this.pilotosHistorial.Count < 1)
             {
                 MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -114,7 +159,6 @@ namespace Formularios
                 {
                     frmEditarPiloto = new FrmEditarPiloto(pilotosHistorial, this.pilotosHistorial[lstPilotos.SelectedIndex]);
                     frmEditarPiloto.ShowDialog();
-                    Refrescar();
                 }
                 catch (PilotoNoEncontradoException ex)
                 {
@@ -129,6 +173,7 @@ namespace Formularios
                     MessageBox.Show(ex.Message);
                 }
             }
+            this.usarHilo = false;
         }
 
         #endregion
@@ -136,6 +181,7 @@ namespace Formularios
         #region Borrar Piloto
         private void btnBorrar_Click(object sender, EventArgs e)
         {
+            this.usarHilo = true;
             if (this.pilotosHistorial.Count < 1)
             {
                 MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -146,7 +192,6 @@ namespace Formularios
                 {
                     this.baseDeDatosPiloto.BorrarPiloto(this.pilotosHistorial[lstPilotos.SelectedIndex]);
                     this.pilotosHistorial -= this.pilotosHistorial[lstPilotos.SelectedIndex];
-                    Refrescar();
                 }
                 catch (PilotoNoEncontradoException ex)
                 {
@@ -161,8 +206,14 @@ namespace Formularios
                     MessageBox.Show(ex.Message);
                 }
             }
+            this.usarHilo = false;
         }
+
         #endregion
 
+        private void FrmHistorialPilotos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.cancellationTokenSource.Cancel();
+        }
     }
 }

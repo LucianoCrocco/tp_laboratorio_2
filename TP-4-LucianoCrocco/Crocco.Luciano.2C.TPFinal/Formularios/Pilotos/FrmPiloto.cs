@@ -38,11 +38,11 @@ namespace Formularios
         public FrmPiloto(List<Piloto> listaPilotos)
         {
             InitializeComponent();
-            pilotosCargados = listaPilotos;
-            serializacion = new SerializacionXML<List<Piloto>>();
-            cancellationTokenSource = new CancellationTokenSource();
-            cancellationToken = cancellationTokenSource.Token;
-            usarHilo = true;
+            this.pilotosCargados = listaPilotos;
+            this.serializacion = new SerializacionXML<List<Piloto>>();
+            this.cancellationTokenSource = new CancellationTokenSource();
+            this.cancellationToken = cancellationTokenSource.Token;
+            this.usarHilo = true;
         }
         private void FrmPiloto_Load(object sender, EventArgs e)
         { 

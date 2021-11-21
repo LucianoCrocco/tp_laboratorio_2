@@ -42,7 +42,7 @@ namespace Entidades
             }
             set
             {
-                if(value.Length > 100)
+                if(value.Length > 95)
                 {
                     throw new CaracteresInvalidoException("El maximo de caracteres para ingresar es de 100 caracteres");
                 } else
