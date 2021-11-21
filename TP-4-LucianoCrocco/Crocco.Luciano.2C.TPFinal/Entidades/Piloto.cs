@@ -150,7 +150,7 @@ namespace Entidades
         {
             if(p1 is not null && p2 is not null)
             {
-                if(p1.NumeroCompeticion == p2.NumeroCompeticion)
+                if(p1.NumeroCompeticion == p2.NumeroCompeticion || (p1.Nombre == p2.Nombre && p1.Apellido == p2.Apellido && p1.NumeroCompeticion == p2.NumeroCompeticion))
                 {
                     return true;
                 }

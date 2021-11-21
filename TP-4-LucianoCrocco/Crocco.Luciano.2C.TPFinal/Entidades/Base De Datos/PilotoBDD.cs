@@ -44,7 +44,7 @@ namespace Entidades
                 }
                 catch (Exception ex)
                 {
-                    throw new BaseDeDatosException("Error al guardar el pilot en la base de datos", ex);
+                    throw new BaseDeDatosException("Error al guardar el piloto en la base de datos", ex);
                 }
                 finally
                 {
@@ -97,10 +97,10 @@ namespace Entidades
             {
                 try
                 {
-                    sqlCommand.CommandText = $"UPDATE Pilotos AS P SET P.nombre = @Nombre, P.apellido = @Apellido, P.edad = @Edad, P.sexo = @Sexo, P.numeroCompeticion = @NumeroCompeticion, P.competidorNacional = @CompetidorNacional WHERE P.nombre = @nombreSinEdiar AND P.apellido = apellidoSinEdiar AND P.numeroCompeticion = @nroSinEditar";
+                    sqlCommand.CommandText = $"UPDATE Pilotos SET nombre = @Nombre, apellido = @Apellido, edad = @Edad, sexo = @Sexo, numeroCompeticion = @NumeroCompeticion, competidorNacional = @CompetidorNacional WHERE nombre = @nombreSinEditar AND apellido = @apellidoSinEditar AND numeroCompeticion = @nroSinEditar";
                     sqlCommand.Connection.Open();
-                    sqlCommand.Parameters.AddWithValue("nombreSinEdiar", nombre);
-                    sqlCommand.Parameters.AddWithValue("apellidoSinEdiar", apellido);
+                    sqlCommand.Parameters.AddWithValue("nombreSinEditar", nombre);
+                    sqlCommand.Parameters.AddWithValue("apellidoSinEditar", apellido);
                     sqlCommand.Parameters.AddWithValue("nroSinEditar", numeroCompeticion);
 
                     sqlCommand.Parameters.AddWithValue("Nombre", piloto.Nombre);
@@ -114,6 +114,34 @@ namespace Entidades
                 catch (Exception ex)
                 {
                     throw new BaseDeDatosException("Error al editar el piloto en la base de datos", ex);
+                }
+                finally
+                {
+                    sqlCommand.Connection.Close();
+                    sqlCommand.Parameters.Clear();
+                }
+            }
+        }
+        #endregion
+
+        #region Borrrar Piloto
+        public void BorrarPiloto(Piloto piloto)
+        {
+            if (piloto is not null)
+            {
+                try
+                {
+                    sqlCommand.CommandText = $"DELETE FROM Pilotos WHERE nombre = @Nombre AND apellido = @Apellido AND numeroCompeticion = @NumeroCompeticion AND edad = @Edad";
+                    sqlCommand.Connection.Open();
+                    sqlCommand.Parameters.AddWithValue("Nombre", piloto.Nombre);
+                    sqlCommand.Parameters.AddWithValue("Apellido", piloto.Apellido);
+                    sqlCommand.Parameters.AddWithValue("Edad", piloto.Edad);
+                    sqlCommand.Parameters.AddWithValue("NumeroCompeticion", piloto.NumeroCompeticion);
+                    sqlCommand.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new BaseDeDatosException("Error al borrar el piloto en la base de datos", ex);
                 }
                 finally
                 {

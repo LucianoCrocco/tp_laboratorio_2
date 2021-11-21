@@ -150,6 +150,7 @@ namespace Formularios
             this.Name = "FrmPiloto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informacion de Pilotos";
+            this.Activated += new System.EventHandler(this.FrmPiloto_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPiloto_FormClosing);
             this.Load += new System.EventHandler(this.FrmPiloto_Load);
             this.ResumeLayout(false);

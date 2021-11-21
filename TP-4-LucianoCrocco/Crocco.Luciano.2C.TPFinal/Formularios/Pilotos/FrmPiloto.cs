@@ -42,11 +42,15 @@ namespace Formularios
             serializacion = new SerializacionXML<List<Piloto>>();
             cancellationTokenSource = new CancellationTokenSource();
             cancellationToken = cancellationTokenSource.Token;
-            usarHilo = false;
+            usarHilo = true;
         }
         private void FrmPiloto_Load(object sender, EventArgs e)
-        {
+        { 
             Task.Run(ListarPilotos, cancellationToken);
+        }
+        private void FrmPiloto_Activated(object sender, EventArgs e)
+        {
+            this.usarHilo = false;
         }
 
         #region Generar Piloto
@@ -147,7 +151,6 @@ namespace Formularios
                         {
                             this.pilotosCargados.Add(item);
                         }
-                        //Refrescar(pilotosCargados);
                         MessageBox.Show("Archivo cargado correctamente");
                     }
                     catch (Exception ex)
@@ -272,8 +275,10 @@ namespace Formularios
         #region Historial Pilotos
         private void btnHistorial_Click(object sender, EventArgs e)
         {
+            this.usarHilo = true;
             frmHistorialPilotos = new FrmHistorialPilotos(this.pilotosCargados);
             frmHistorialPilotos.ShowDialog();
+            this.usarHilo = false;
         }
         #endregion
 

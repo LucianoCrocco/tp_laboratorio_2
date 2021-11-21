@@ -9,20 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Entidades;
+using Excepciones;
 
 namespace Formularios
 {
     public partial class FrmEditarPiloto : Form
     {
+        #region Atributos
+        private PilotoBDD pilotoBDD;
         private Piloto piloto;
         private List<Piloto> pilotos;
+        #endregion
+
         public FrmEditarPiloto(List<Piloto> pilotos, Piloto piloto)
         {
             InitializeComponent();
             this.piloto = piloto;
             this.pilotos = pilotos;
+            this.pilotoBDD = new PilotoBDD();
         }
 
+        #region Carga de datos
         private void FrmEditarPiloto_Load(object sender, EventArgs e)
         {
             this.txtBoxNombre.Text = this.piloto.Nombre;
@@ -38,10 +45,10 @@ namespace Formularios
             {
                 this.cmbNacionalidad.SelectedIndex = 1;
             }
-            
         }
+        #endregion
 
-
+        #region Editar Piloto
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (cmbNacionalidad.SelectedItem is not null && cmbSexo.SelectedItem is not null && txtBoxNombre.Text is not null && txtBoxApellido.Text is not null)
@@ -51,7 +58,6 @@ namespace Formularios
                 {
                     nacionalidad = true;
                 }
-
                 Piloto aux = new Piloto(txtBoxNombre.Text, txtBoxApellido.Text, (int)nroEdad.Value, (ESexo)cmbSexo.SelectedIndex, (int)nroCompeticion.Value, nacionalidad);
                 
                 if(this.pilotos == aux && aux != this.piloto)
@@ -60,14 +66,41 @@ namespace Formularios
                 } 
                 else
                 {
-                    this.piloto.Nombre = this.txtBoxNombre.Text;
-                    this.piloto.Apellido = this.txtBoxApellido.Text;
-                    this.piloto.Edad = (int)this.nroEdad.Value;
-                    this.piloto.Sexo = (ESexo)cmbSexo.SelectedIndex;
-                    this.piloto.NumeroCompeticion = (int)this.nroCompeticion.Value;
-                    this.piloto.CompetidorNacional = nacionalidad;
+                    string nombre = String.Empty;
+                    string apellido = String.Empty;
+                    int nroCompeticion = -1;
+                    try
+                    {
+                        nombre = this.piloto.Nombre;
+                        apellido = this.piloto.Apellido;
+                        nroCompeticion = this.piloto.NumeroCompeticion;
+                        this.piloto.Nombre = this.txtBoxNombre.Text;
+                        this.piloto.Apellido = this.txtBoxApellido.Text;
+                        this.piloto.Edad = (int)this.nroEdad.Value;
+                        this.piloto.Sexo = (ESexo)cmbSexo.SelectedIndex;
+                        this.piloto.NumeroCompeticion = (int)this.nroCompeticion.Value;
+                        this.piloto.CompetidorNacional = nacionalidad;
+                        this.pilotoBDD.EditarPiloto(piloto, nombre, apellido, nroCompeticion);
+                    }
+                    catch (CaracteresInvalidoException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch (PilotoRepetidoException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch (BaseDeDatosException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }
+        #endregion
     }
 }

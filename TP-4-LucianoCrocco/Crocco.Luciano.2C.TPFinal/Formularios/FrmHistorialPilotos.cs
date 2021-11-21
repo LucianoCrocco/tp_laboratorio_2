@@ -16,6 +16,7 @@ namespace Formularios
     public partial class FrmHistorialPilotos : Form
     {
         private FrmPilotoEstadistica frmEstadisticaPiloto;
+        private FrmEditarPiloto frmEditarPiloto;
         private List<Piloto> pilotosHistorial;
         private List<Piloto> pilotosActuales;
         private PilotoBDD baseDeDatosPiloto;
@@ -101,7 +102,67 @@ namespace Formularios
         #endregion
 
         #region Editar Piloto
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if(this.pilotosHistorial.Count < 1)
+            {
+                MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    frmEditarPiloto = new FrmEditarPiloto(pilotosHistorial, this.pilotosHistorial[lstPilotos.SelectedIndex]);
+                    frmEditarPiloto.ShowDialog();
+                    Refrescar();
+                }
+                catch (PilotoNoEncontradoException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("El index seleccionado se encuentra fuera del rango de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
 
         #endregion
+
+        #region Borrar Piloto
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (this.pilotosHistorial.Count < 1)
+            {
+                MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    this.baseDeDatosPiloto.BorrarPiloto(this.pilotosHistorial[lstPilotos.SelectedIndex]);
+                    this.pilotosHistorial -= this.pilotosHistorial[lstPilotos.SelectedIndex];
+                    Refrescar();
+                }
+                catch (PilotoNoEncontradoException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("El index seleccionado se encuentra fuera del rango de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        #endregion
+
     }
 }
