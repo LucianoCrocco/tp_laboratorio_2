@@ -147,7 +147,7 @@ namespace Entidades
 
         #region Sobrecargas
         /// <summary>
-        /// Compara dos pilotos. Dos pilotos son iguales si comparten el mismo numero de competicion.
+        /// Compara dos pilotos. Dos pilotos son iguales si comparten el mismo numero de competicion o el mismo numero, nombre y apellido.
         /// </summary>
         /// <param name="p1"></param>
         /// <param name="p2"></param>
@@ -233,6 +233,24 @@ namespace Entidades
         public static bool operator !=(List<Piloto> pilotos, Piloto p1)
         {
             return !(pilotos == p1);
+        }
+
+        /// <summary>
+        /// Compara dos pilotos. Dos pilotos son iguales si comparten el mismo numero de competicion, nombre y apellido.
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <returns>True si son iguales, false si no lo son.</returns>
+        public static bool operator ^(Piloto p1, Piloto p2)
+        {
+            if (p1 is not null && p2 is not null)
+            {
+                if (p1.Nombre == p2.Nombre && p1.Apellido == p2.Apellido && p1.NumeroCompeticion == p2.NumeroCompeticion)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         #endregion
 

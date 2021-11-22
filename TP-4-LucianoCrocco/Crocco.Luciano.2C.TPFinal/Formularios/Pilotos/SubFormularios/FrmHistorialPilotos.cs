@@ -18,6 +18,7 @@ namespace Formularios
     {
 
         #region Atributos
+        private Piloto auxPiloto;
         private FrmPilotoEstadistica frmEstadisticaPiloto;
         private FrmEditarPiloto frmEditarPiloto;
         private List<Piloto> pilotosHistorial;
@@ -122,8 +123,8 @@ namespace Formularios
             if (pilotosHistorial.Count < 1)
             {
                 MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            } else
+            } 
+            else
             {
                 try
                 {
@@ -157,8 +158,12 @@ namespace Formularios
             {
                 try
                 {
+                    //Genero este piloto para que si edito la DB y el piloto este en memoria pueda editarlo tambien al de la lista.
+                    int index = lstPilotos.SelectedIndex;
+                    auxPiloto = new Piloto(this.pilotosHistorial[index].Nombre, this.pilotosHistorial[index].Apellido, this.pilotosHistorial[index].Edad, this.pilotosHistorial[index].Sexo, this.pilotosHistorial[index].NumeroCompeticion, this.pilotosHistorial[index].CompetidorNacional);
                     frmEditarPiloto = new FrmEditarPiloto(pilotosHistorial, this.pilotosHistorial[lstPilotos.SelectedIndex]);
                     frmEditarPiloto.ShowDialog();
+                    this.EditarListaPrincipal(auxPiloto, index);
                 }
                 catch (PilotoNoEncontradoException ex)
                 {
@@ -209,6 +214,34 @@ namespace Formularios
             this.usarHilo = false;
         }
 
+        #endregion
+
+
+        #region Metodos
+        //No encontre una mejor manera de hacerlo sin tener que generar otro hilo que haga lo mismo que hace el hilo que refresca el lst.
+        /// <summary>
+        /// Si el piloto recien agregado a la BD es editado, edita ese piloto en particular. Corrige el error que permite editarlo de la DB pero no de la lista principal.
+        /// </summary>
+        /// <param name="piloto"></param>
+        /// <param name="index"></param>
+        public void EditarListaPrincipal(Piloto piloto, int index)
+        {
+            if(piloto is not null)
+            {
+                foreach(Piloto item in this.pilotosActuales)
+                {
+                    if(item ^ piloto)
+                    {
+                        item.Nombre = this.pilotosHistorial[index].Nombre;
+                        item.Apellido = this.pilotosHistorial[index].Apellido;
+                        item.Edad = this.pilotosHistorial[index].Edad;
+                        item.NumeroCompeticion = this.pilotosHistorial[index].NumeroCompeticion;
+                        item.Sexo = this.pilotosHistorial[index].Sexo;
+                        item.CompetidorNacional = this.pilotosHistorial[index].CompetidorNacional;
+                    }
+                }
+            }
+        }
         #endregion
 
         private void FrmHistorialPilotos_FormClosing(object sender, FormClosingEventArgs e)

@@ -218,10 +218,33 @@ namespace Formularios
         {
             if (typeof(T) == typeof(EscuderiaTC))
             {
-                this.usarHilo = true;
-                frmEditarEscuderiaTC = new FrmEditarEscuderiaTC(this.escuderias, this.FiltrarUnaEscuderia(lstEscuderias.SelectedIndex));
-                frmEditarEscuderiaTC.ShowDialog();
-                this.usarHilo = false;
+                if (escuderias.Count < 1)
+                {
+                    MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    try
+                    {
+                        this.usarHilo = true;
+                        frmEditarEscuderiaTC = new FrmEditarEscuderiaTC(this.escuderias, this.FiltrarUnaEscuderia(lstEscuderias.SelectedIndex));
+                        frmEditarEscuderiaTC.ShowDialog();
+                        this.usarHilo = false;
+                    }
+                    catch (EscuderiaNoEncontradaException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        MessageBox.Show("El index seleccionado se encuentra fuera del rango de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
             }
         }
         #endregion
