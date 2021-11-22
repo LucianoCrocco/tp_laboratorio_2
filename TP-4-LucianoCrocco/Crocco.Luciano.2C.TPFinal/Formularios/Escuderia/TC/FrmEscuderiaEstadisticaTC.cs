@@ -16,6 +16,7 @@ namespace Formularios
     {
         private EstadisticasTC promedio;
         private List<Escuderia> escuderia;
+        private List<Escuderia> auxList;
 
         /// <summary>
         /// Constructor del form. Recibe la lista de escuderias cargadas en el sistema.
@@ -25,7 +26,9 @@ namespace Formularios
         {
             InitializeComponent();
             this.escuderia = escuderia;
-            promedio = new EstadisticasTC(this.escuderia);
+            this.auxList = new List<Escuderia>();
+            FiltrarEscuderias();
+            promedio = new EstadisticasTC(this.auxList);
         }
 
         /// <summary>
@@ -94,6 +97,16 @@ namespace Formularios
             rchEstadisticas.Clear();
         }
 
+        public void FiltrarEscuderias()
+        {
+            if(this.escuderia is not null)
+            {
+                foreach(EscuderiaTC item in this.escuderia)
+                {
+                    this.auxList.Add(item);
+                }
+            }
+        }
         #endregion
     }
 }

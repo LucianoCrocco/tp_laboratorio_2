@@ -45,7 +45,7 @@ namespace Formularios
             this.escuderias = escuderias;
             this.pilotos = pilotos;
             this.serializacion = new SerializacionJSON<List<T>>();
-            escuderiasActuales = new List<T>();
+            this.escuderiasActuales = new List<T>();
             this.cancellationTokenSource = new CancellationTokenSource();
             this.cancellationToken = cancellationTokenSource.Token;
             this.usarHilo = true;
