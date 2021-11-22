@@ -28,7 +28,7 @@ namespace Formularios
         private void btnPromedio_Click(object sender, EventArgs e)
         {
             Limpiar();
-            rchEstadisticas.Text = promedio.PromedioEdad() + "\n" + promedio.PromedioSexo() + "\n" + promedio.PromedioNacionalidad() + "\n" + promedio.PromedioNumeroElegido();
+            rchEstadisticas.Text = promedio.PromedioEdad() + "\n" + promedio.PromedioSexo() + "\n" + promedio.PromedioNacionalidad() + "\n" + promedio.PromedioNumeroElegido() + "\n" + promedio.PromedioNombreYApellido();
 
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace Formularios
         private void btnMaximo_Click(object sender, EventArgs e)
         {
             Limpiar();
-            rchEstadisticas.Text = promedio.MaximoEdad() + "\n" + promedio.MaximoNacionalidad() + "\n" + promedio.MaximoSexo() + "\n" + promedio.MaximoNroCompeticion();
+            rchEstadisticas.Text = promedio.MaximoEdad() + "\n" + promedio.MaximoNacionalidad() + "\n" + promedio.MaximoSexo() + "\n" + promedio.MaximoNroCompeticion() + "\n" + promedio.MaximoNombreYApellido();
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Formularios
         private void btnMinimo_Click(object sender, EventArgs e)
         {
             Limpiar();
-            rchEstadisticas.Text = promedio.MinimoEdad() + "\n" + promedio.MinimoNacionalidad() + "\n" + promedio.MinimoSexo() + "\n" + promedio.MinimoNroCompeticion();
+            rchEstadisticas.Text = promedio.MinimoEdad() + "\n" + promedio.MinimoNacionalidad() + "\n" + promedio.MinimoSexo() + "\n" + promedio.MinimoNroCompeticion() + "\n" + promedio.MinimoNombreYApellido();
         }
 
         /// <summary>

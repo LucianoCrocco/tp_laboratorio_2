@@ -130,6 +130,27 @@ namespace Entidades
             }
             return retorno;
         }
+
+        /// <summary>
+        /// Busca el maximo de caracteres de nombre y apellido entre los pilotos de la lista.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
+        public string MaximoNombreYApellido()
+        {
+            int maximo = 0;
+            int aux; 
+            foreach (Piloto item in lista)
+            {
+                aux = item.Nombre.ContadorDeLetras();
+                aux += item.Apellido.ContadorDeLetras();
+                if (aux > maximo)
+                {
+                    maximo = aux;
+                }
+                aux = 0;
+            }
+            return $"El nombre y apellido mas largo registrado consta de {maximo} caracteres";
+        }
         #endregion
 
             #region Minimos
@@ -245,7 +266,28 @@ namespace Entidades
             }
             return retorno;
         }
-        #endregion
+
+        /// <summary>
+        /// Busca el minimo de caracteres de nombre y apellido entre los pilotos de la lista.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
+        public string MinimoNombreYApellido()
+        {
+            int minimo = int.MaxValue;
+            int aux;
+            foreach (Piloto item in lista)
+            {
+                aux = item.Nombre.ContadorDeLetras();
+                aux += item.Apellido.ContadorDeLetras();
+                if (aux < minimo)
+                {
+                    minimo = aux;
+                }
+                aux = 0;
+            }
+            return $"El nombre y apellido mas corto registrado consta de {minimo} caracteres";
+        }
+            #endregion
 
             #region Promedio
 
@@ -348,6 +390,23 @@ namespace Entidades
 
             }
             return $"La lista se encuentra vacia, no se puede realizar el promedio del numero de competicion elegido entre los pilotos.";
+        }
+
+        /// <summary>
+        /// Busca el promedio de caracteres de nombre y apellido entre los pilotos de la lista.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
+        public string PromedioNombreYApellido()
+        {
+            int acumulador = 0;
+            int contador = 0;
+            foreach (Piloto item in lista)
+            {
+                acumulador += item.Nombre.ContadorDeLetras();
+                acumulador += item.Apellido.ContadorDeLetras();
+                contador++;
+            }
+            return $"El promedio de caracteres utilizados para el nombre y apellido es de {acumulador/contador} caracteres";
         }
         #endregion
 
