@@ -146,7 +146,7 @@ namespace Formularios
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 52);
             this.button2.TabIndex = 16;
-            this.button2.Text = "Estadisticas Individuales";
+            this.button2.Text = "EVENTO";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmEscuderia

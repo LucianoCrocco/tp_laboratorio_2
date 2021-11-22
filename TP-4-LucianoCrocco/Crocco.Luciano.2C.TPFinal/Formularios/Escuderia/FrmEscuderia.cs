@@ -26,7 +26,7 @@ namespace Formularios
         private List<Escuderia> escuderias;
         private List<Piloto> pilotos;
         private OpenFileDialog openFileDialog;
-        private List<T> escuderiasActuales;
+        private List<T> auxList;
         private SerializacionJSON<List<T>> serializacion;
         private string path;
         private CancellationToken cancellationToken;
@@ -45,7 +45,7 @@ namespace Formularios
             this.escuderias = escuderias;
             this.pilotos = pilotos;
             this.serializacion = new SerializacionJSON<List<T>>();
-            this.escuderiasActuales = new List<T>();
+            this.auxList = new List<T>();
             this.cancellationTokenSource = new CancellationTokenSource();
             this.cancellationToken = cancellationTokenSource.Token;
             this.usarHilo = true;
@@ -76,12 +76,12 @@ namespace Formularios
                     path = $"{Environment.CurrentDirectory}\\Lista{typeof(T).Name}.json";
                     if ((File.Exists(path) && MessageBox.Show("Ya se encuentra creado un archivo de escuderias, ¿desea sobreescribirlo?", "Cuidado", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) || !File.Exists(path))
                     {
-                        this.escuderiasActuales.Clear();
+                        this.auxList.Clear();
                         foreach (T escuderia in this.escuderias)
                         {
-                            this.escuderiasActuales.Add(escuderia);
+                            this.auxList.Add(escuderia);
                         }
-                        ((IArchivo<List<T>>)serializacion).Guardar(this.escuderiasActuales, path,false);
+                        ((IArchivo<List<T>>)serializacion).Guardar(this.auxList, path,false);
                         MessageBox.Show($"Archivo correctamente guardado en: {path}", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -103,18 +103,16 @@ namespace Formularios
 
         #region Cargar escuderia
         /// <summary>
-        /// Carga una lista de escuderias que el usuario tenga en un archivo XML. Si hay en memoria cargada una lista de escuderias esta se reemplaza por la que el usuario elija.
+        /// Carga una lista de escuderias que el usuario tenga en un archivo JSON. Si hay en memoria cargada una lista de escuderias esta se reemplaza por la que el usuario elija.
         /// La lista a cargar es de tipo generica, y va a cargar el tipo que se le especifico al lanzar este formulario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnCargarLista_Click(object sender, EventArgs e)
         {
-            this.usarHilo = true;
             openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Seleccione el archivo a abrir";
             openFileDialog.Filter = "Archivos Json (.json) |*.json||*.*";
-            List<T> auxList = null;
 
             if ((escuderias.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || escuderias.Count == 0)
             {
@@ -123,12 +121,14 @@ namespace Formularios
                     path = openFileDialog.FileName;
                     try
                     {
+                        auxList.Clear();
                         auxList = ((IArchivo<List<T>>)serializacion).Leer(path);
                         FrmEscuderia<T>.BorrarEscuderiaActules(escuderias);
                         foreach (T item in auxList)
                         {
                             this.escuderias.Add(item);
                         }
+                        this.usarHilo = true;
                         MessageBox.Show("Archivo cargado correctamente");
                     }
                     catch (Exception ex)

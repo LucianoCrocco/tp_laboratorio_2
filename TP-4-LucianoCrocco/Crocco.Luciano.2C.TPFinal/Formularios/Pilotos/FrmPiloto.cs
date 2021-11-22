@@ -137,7 +137,7 @@ namespace Formularios
             openFileDialog.Filter = "Archivos XML (.xml) |*.xml||*.*";
             List<Piloto> auxList;
 
-            if((pilotosCargados.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || pilotosCargados.Count == 0) 
+            if ((pilotosCargados.Count > 0 && MessageBox.Show("Si no se guardo la lista con la cual se encuentra trabajando esta se borrara y se cargara la lista que usted elija.\n ¿Desea continuar?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) || pilotosCargados.Count == 0) 
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -151,14 +151,16 @@ namespace Formularios
                         {
                             this.pilotosCargados.Add(item);
                         }
+                        this.usarHilo = true;
                         MessageBox.Show("Archivo cargado correctamente");
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                }            
+                }
             }
+            this.usarHilo = false;
         }
         #endregion
 
