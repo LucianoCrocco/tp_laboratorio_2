@@ -30,7 +30,7 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.lstPilotos = new System.Windows.Forms.ListBox();
-            this.lblListaPilotos = new System.Windows.Forms.Label();
+            this.lblHistorialDePilotos = new System.Windows.Forms.Label();
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.btnAgregarPiloto = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -47,15 +47,15 @@ namespace Formularios
             this.lstPilotos.Size = new System.Drawing.Size(799, 372);
             this.lstPilotos.TabIndex = 3;
             // 
-            // lblListaPilotos
+            // lblHistorialDePilotos
             // 
-            this.lblListaPilotos.AutoSize = true;
-            this.lblListaPilotos.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblListaPilotos.Location = new System.Drawing.Point(312, 9);
-            this.lblListaPilotos.Name = "lblListaPilotos";
-            this.lblListaPilotos.Size = new System.Drawing.Size(231, 30);
-            this.lblListaPilotos.TabIndex = 4;
-            this.lblListaPilotos.Text = "HISTORIAL DE PILOTOS";
+            this.lblHistorialDePilotos.AutoSize = true;
+            this.lblHistorialDePilotos.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHistorialDePilotos.Location = new System.Drawing.Point(300, 9);
+            this.lblHistorialDePilotos.Name = "lblHistorialDePilotos";
+            this.lblHistorialDePilotos.Size = new System.Drawing.Size(231, 30);
+            this.lblHistorialDePilotos.TabIndex = 4;
+            this.lblHistorialDePilotos.Text = "HISTORIAL DE PILOTOS";
             // 
             // btnEstadisticas
             // 
@@ -106,7 +106,7 @@ namespace Formularios
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregarPiloto);
             this.Controls.Add(this.btnEstadisticas);
-            this.Controls.Add(this.lblListaPilotos);
+            this.Controls.Add(this.lblHistorialDePilotos);
             this.Controls.Add(this.lstPilotos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -125,7 +125,7 @@ namespace Formularios
         #endregion
 
         private System.Windows.Forms.ListBox lstPilotos;
-        private System.Windows.Forms.Label lblListaPilotos;
+        private System.Windows.Forms.Label lblHistorialDePilotos;
         private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Button btnAgregarPiloto;
         private System.Windows.Forms.Button btnEditar;
