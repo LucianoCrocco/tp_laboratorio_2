@@ -21,6 +21,12 @@ namespace Formularios
         private List<Piloto> pilotos;
         #endregion
 
+        /// <summary>
+        /// Constructor del form. Recibe por parametros la referencia a la lista de pilotos y el pilto a editar cargado en memoria.
+        /// </summary>
+        /// <param name="pilotos">Lista de pilotos actual</param>
+        /// <param name="piloto">Piloto a editar</param>
+       
         public FrmEditarPiloto(List<Piloto> pilotos, Piloto piloto)
         {
             InitializeComponent();
@@ -30,6 +36,11 @@ namespace Formularios
         }
 
         #region Carga de datos
+        /// <summary>
+        /// Carga los datos del piloto que se paso por argumentos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmEditarPiloto_Load(object sender, EventArgs e)
         {
             this.txtBoxNombre.Text = this.piloto.Nombre;
@@ -49,6 +60,11 @@ namespace Formularios
         #endregion
 
         #region Editar Piloto
+        /// <summary>
+        /// Renueva los datos del actual piloto con los ingresados en el form y del mismo piloto en la base de datos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (cmbNacionalidad.SelectedItem is not null && cmbSexo.SelectedItem is not null && txtBoxNombre.Text is not null && txtBoxApellido.Text is not null)

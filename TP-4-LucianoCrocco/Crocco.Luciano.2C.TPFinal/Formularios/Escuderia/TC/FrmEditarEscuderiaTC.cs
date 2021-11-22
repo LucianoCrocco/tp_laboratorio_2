@@ -19,10 +19,10 @@ namespace Formularios
         private EscuderiaTC escuderiaTC;
         private List<Escuderia> escuderias;
         /// <summary>
-        /// Constructor del formulario para editar una escuderia del TC
+        /// Constructor del form. Recibe por parametros la referencia a la lista de escuderias y la escuderia a editar cargada en memoria.
         /// </summary>
-        /// <param name="escuderias">Lista de escuderias actual</param>
-        /// <param name="escuderia">Escuderia a editar</param>
+        /// <param name="escuderias">Lista de escuderias actual.</param>
+        /// <param name="escuderia">Escuderia a editar.</param>
         public FrmEditarEscuderiaTC(List<Escuderia> escuderias, Escuderia escuderia)
         {
             InitializeComponent();

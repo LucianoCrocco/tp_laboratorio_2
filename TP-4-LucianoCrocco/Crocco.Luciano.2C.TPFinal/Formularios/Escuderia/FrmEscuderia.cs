@@ -16,7 +16,7 @@ using System.Threading;
 namespace Formularios
 {
     public partial class FrmEscuderia<T> : Form
-        where T : Escuderia
+        where T : EscuderiaTC
     {
         #region Atributos
         private FrmGenerarEscuderiaTC frmGenerarEscuderiaTC;
@@ -36,7 +36,7 @@ namespace Formularios
         #endregion
 
         /// <summary>
-        /// Constructo del form. Recibe por parametros la referencia a la lista de escuderias y pilotos cargadas en memoria.
+        /// Constructor del form. Recibe por parametros la referencia a la lista de escuderias y pilotos cargadas en memoria.
         /// </summary>
         /// <param name="escuderias"></param>
         /// <param name="pilotos"></param>
@@ -214,6 +214,11 @@ namespace Formularios
         #endregion
 
         #region Editar Escuderia
+        /// <summary>
+        /// Lanza un formulario que permite editar los datos de la escuderia seleccionada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (typeof(T) == typeof(EscuderiaTC))
@@ -307,6 +312,12 @@ namespace Formularios
         }
 
 
+        /// <summary>
+        /// Filtra una escuderia por el tipo que se le pide y devuelve una lista generica los elementos solo del tipo seleccionado.
+        /// </summary>
+        /// <typeparam name="R"></typeparam>
+        /// <param name="escuderias"></param>
+        /// <returns></returns>
         public static List<Escuderia> FiltrarEscuderias<R>(List<Escuderia> escuderias)
             where R : Escuderia
         {
@@ -321,6 +332,11 @@ namespace Formularios
             return listaGenerica;
         }
 
+        /// <summary>
+        /// Filtra una escuderia por index de la lista de escuderias actualmente cargadas en memoria.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public Escuderia FiltrarUnaEscuderia(int index)
         {
             List<Escuderia> auxListEscuderias = new List<Escuderia>();

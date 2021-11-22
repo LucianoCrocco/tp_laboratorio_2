@@ -29,6 +29,10 @@ namespace Formularios
         private bool usarHilo;
         #endregion
 
+        /// <summary>
+        /// Constructor del form. Recibe por referencia la lista de pilotos actualmente cargada en memoria.
+        /// </summary>
+        /// <param name="pilotosActuales"></param>
         public FrmHistorialPilotos(List<Piloto> pilotosActuales)
         {
             InitializeComponent();
@@ -45,6 +49,11 @@ namespace Formularios
         }
 
         #region Cargar historial
+        /// <summary>
+        /// Carga el historial de pilotos conectandose a la base de datos a través de la clase Piloto BDD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmHistorialPilotos_Load(object sender, EventArgs e)
         {
             try
@@ -103,6 +112,11 @@ namespace Formularios
         #endregion
 
         #region Estadisticas
+        /// <summary>
+        /// Genera estadisticas del historial de pilotos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
             if (this.pilotosHistorial.Count > 0)
@@ -118,6 +132,11 @@ namespace Formularios
         #endregion
 
         #region Agregar Piloto
+        /// <summary>
+        /// Agrega un piloto a la lista actual de pilotos desde el historial.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarPiloto_Click(object sender, EventArgs e)
         {
             if (pilotosHistorial.Count < 1)
@@ -147,6 +166,11 @@ namespace Formularios
         #endregion
 
         #region Editar Piloto
+        /// <summary>
+        /// Edito un piloto del el historial lanzado un formulario para ello.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             this.usarHilo = true;
@@ -184,6 +208,11 @@ namespace Formularios
         #endregion
 
         #region Borrar Piloto
+        /// <summary>
+        /// Borra del historial un piloto conectandose a la base de datos a través de la clase Piloto BDD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             this.usarHilo = true;
@@ -215,7 +244,6 @@ namespace Formularios
         }
 
         #endregion
-
 
         #region Metodos
         //No encontre una mejor manera de hacerlo sin tener que generar otro hilo que haga lo mismo que hace el hilo que refresca el lst.

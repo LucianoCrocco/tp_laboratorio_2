@@ -30,7 +30,7 @@ namespace Formularios
 
         #region Agregar Piloto
         /// <summary>
-        /// Agrega un piloto a la lista de pilotos.
+        /// Agrega un piloto a la lista de pilotos y al historial de la base de datos.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

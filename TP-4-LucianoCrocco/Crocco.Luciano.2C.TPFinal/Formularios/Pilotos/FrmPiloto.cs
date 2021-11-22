@@ -44,6 +44,7 @@ namespace Formularios
             this.cancellationToken = cancellationTokenSource.Token;
             this.usarHilo = true;
         }
+
         private void FrmPiloto_Load(object sender, EventArgs e)
         { 
             Task.Run(ListarPilotos, cancellationToken);
@@ -203,6 +204,11 @@ namespace Formularios
         #endregion
 
         #region Editar Piloto
+        /// <summary>
+        /// Lanza un formulario para editar el piloto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (pilotosCargados.Count < 1)
@@ -274,6 +280,11 @@ namespace Formularios
         #endregion
 
         #region Historial Pilotos
+        /// <summary>
+        /// Lanza un formulario que muestra el historial de los pilotos cargados.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHistorial_Click(object sender, EventArgs e)
         {
             this.usarHilo = true;
@@ -282,7 +293,6 @@ namespace Formularios
             this.usarHilo = false;
         }
         #endregion
-
 
         private void FrmPiloto_FormClosing(object sender, FormClosingEventArgs e)
         {

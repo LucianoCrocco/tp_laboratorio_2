@@ -16,7 +16,7 @@ namespace Formularios
     {
         private List<Escuderia> escuderias;
         /// <summary>
-        /// Consturctor del form. Recibe por parametros la lista de escuderias cargada en memoria
+        /// Constructor del form. Recibe por parametros la lista de escuderias cargada en memoria.
         /// </summary>
         /// <param name="escuderias"></param>
         public FrmGenerarEscuderiaTC(List<Escuderia> escuderias)
