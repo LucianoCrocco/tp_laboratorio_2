@@ -4,6 +4,9 @@
     <Compile Update="Escuderia\FrmEscuderia.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Escuderia\TC\FrmEditarEscuderiaTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Escuderia\TC\FrmGenerarEscuderiaTC.cs">
       <SubType>Form</SubType>
     </Compile>

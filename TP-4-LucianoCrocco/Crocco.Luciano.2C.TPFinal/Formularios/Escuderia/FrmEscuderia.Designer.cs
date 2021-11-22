@@ -169,6 +169,8 @@ namespace Formularios
             this.Name = "FrmEscuderia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escuderias";
+            this.Activated += new System.EventHandler(this.FrmEscuderia_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEscuderia_FormClosing);
             this.Load += new System.EventHandler(this.FrmEscuderia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

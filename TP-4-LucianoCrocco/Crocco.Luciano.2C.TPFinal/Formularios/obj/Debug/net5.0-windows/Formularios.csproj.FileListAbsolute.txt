@@ -248,3 +248,4 @@ D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Formularios\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Formularios\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Formularios\obj\Debug\net5.0-windows\Formularios.FrmHistorialPilotos.resources
+D:\1. Cursos Programacion\tp_laboratorio_2\TP-4-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Formularios\obj\Debug\net5.0-windows\Formularios.FrmEditarEscuderiaTC.resources

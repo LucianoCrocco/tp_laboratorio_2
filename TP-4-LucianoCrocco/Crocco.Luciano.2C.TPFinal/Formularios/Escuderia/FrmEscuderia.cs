@@ -11,6 +11,7 @@ using Entidades;
 using ArchivosYSerializacion;
 using Excepciones;
 using System.IO;
+using System.Threading;
 
 namespace Formularios
 {
@@ -24,11 +25,13 @@ namespace Formularios
         private FrmEscuderiaEstadisticaTC frmEscuderiaEstadisticaTC;
         private List<Escuderia> escuderias;
         private List<Piloto> pilotos;
-        private static ListBox ListBoxRef;
         private OpenFileDialog openFileDialog;
         private List<T> escuderiasActuales;
         private SerializacionJSON<List<T>> serializacion;
         private string path;
+        private CancellationToken cancellationToken;
+        private CancellationTokenSource cancellationTokenSource;
+        private bool usarHilo;
         #endregion
 
         /// <summary>
@@ -43,12 +46,18 @@ namespace Formularios
             this.pilotos = pilotos;
             this.serializacion = new SerializacionJSON<List<T>>();
             escuderiasActuales = new List<T>();
-            ListBoxRef = this.lstEscuderias;
+            this.cancellationTokenSource = new CancellationTokenSource();
+            this.cancellationToken = cancellationTokenSource.Token;
+            this.usarHilo = true;
         }
 
         private void FrmEscuderia_Load(object sender, EventArgs e)
         {
-            Refrescar(this.escuderias);
+           Task.Run(ListarEscuderias, cancellationToken);
+        }
+        private void FrmEscuderia_Activated(object sender, EventArgs e)
+        {
+            this.usarHilo = false;
         }
 
         #region Guardar escuderia
@@ -101,6 +110,7 @@ namespace Formularios
         /// <param name="e"></param>
         private void btnCargarLista_Click(object sender, EventArgs e)
         {
+            this.usarHilo = true;
             openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Seleccione el archivo a abrir";
             openFileDialog.Filter = "Archivos Json (.json) |*.json||*.*";
@@ -119,7 +129,6 @@ namespace Formularios
                         {
                             this.escuderias.Add(item);
                         }
-                        Refrescar(escuderias);
                         MessageBox.Show("Archivo cargado correctamente");
                     }
                     catch (Exception ex)
@@ -128,6 +137,7 @@ namespace Formularios
                     }
                 }
             }
+            this.usarHilo = false;
         }
         #endregion
 
@@ -139,8 +149,10 @@ namespace Formularios
         /// <param name="e"></param>
         private void btnGenerarEscuderia_Click(object sender, EventArgs e)
         {
+            this.usarHilo = true;
             frmGenerarEscuderiaTC = new FrmGenerarEscuderiaTC(escuderias);
             frmGenerarEscuderiaTC.ShowDialog();
+            this.usarHilo = false;
         }
         #endregion
 
@@ -171,6 +183,7 @@ namespace Formularios
         /// <param name="e"></param>
         private void btnBorrarEscuderia_Click(object sender, EventArgs e)
         {
+            this.usarHilo = true;
             if (escuderias.Count < 1)
             {
                 MessageBox.Show("La lista se encuentra vacia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -180,7 +193,6 @@ namespace Formularios
                 try
                 {
                     escuderias -= escuderias[lstEscuderias.SelectedIndex];
-                    Refrescar(escuderias);
                 }
                 catch (EscuderiaNoEncontradaException ex)
                 {
@@ -196,22 +208,44 @@ namespace Formularios
                     MessageBox.Show(ex.Message);
                 }
             }
+            this.usarHilo = false;
         }
         #endregion
 
         #region Metodos
+
+
         /// <summary>
-        /// Carga el listbox con las escuderias del tipo generico con el cual se lanzo el formulario
+        /// Llama al metodo Refrescar Lista y paraliza el hilo 2 segundos.
         /// </summary>
-        /// <param name="escuderias"></param>
-        public static void Refrescar(List<Escuderia> escuderias)
+        public void ListarEscuderias()
         {
-            if (escuderias is not null && ListBoxRef is not null)
+            while (!this.cancellationToken.IsCancellationRequested)
             {
-                ListBoxRef.Items.Clear();
-                foreach (T item in escuderias)
+                if (this.usarHilo)
                 {
-                    ListBoxRef.Items.Add(item.MostrarDatos());
+                    this.Refrescar();
+                    Thread.Sleep(300);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Refresca la lista de escuderias del form
+        /// </summary>
+        public void Refrescar()
+        {
+            if (this.lstEscuderias.InvokeRequired)
+            {
+                RefrescarListaDelegate callback = new RefrescarListaDelegate(Refrescar);
+                this.Invoke(callback);
+            }
+            else
+            {
+                this.lstEscuderias.Items.Clear();
+                foreach (T item in this.escuderias)
+                {
+                    this.lstEscuderias.Items.Add(item.MostrarDatos());
                 }
             }
         }
@@ -283,6 +317,12 @@ namespace Formularios
                 MessageBox.Show("No hay escuderias cargadas para generar estadisticas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         #endregion
+
+        private void FrmEscuderia_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.cancellationTokenSource.Cancel();
+        }
     }
 }

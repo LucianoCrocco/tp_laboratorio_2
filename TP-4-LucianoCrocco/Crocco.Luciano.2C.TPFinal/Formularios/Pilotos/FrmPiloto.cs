@@ -253,7 +253,6 @@ namespace Formularios
         /// <summary>
         /// Refresca la lista de pilotos del form
         /// </summary>
-        /// <param name="pilotos">Lista de pilotos que queremos mostrar ene l form</param>
         public void Refrescar()
         {
             if (this.lstPilotos.InvokeRequired)
