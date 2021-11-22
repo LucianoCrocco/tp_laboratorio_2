@@ -13,6 +13,10 @@ namespace Entidades
         }
 
         #region Maximo
+        /// <summary>
+        /// Busca el auto de Turismo Carretera mas utilizado dentro de una lista del Turismo Carretera.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string AutosMasUtilizado()
         {
             string retorno = String.Empty;
@@ -69,6 +73,10 @@ namespace Entidades
         #endregion
 
         #region Minimo
+        /// <summary>
+        /// Busca el auto de Turismo Carretera menos utilizado dentro de una lista del Turismo Carretera.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string AutosMenosUtilizado()
         {
             string retorno = String.Empty;
@@ -125,6 +133,10 @@ namespace Entidades
         #endregion
 
         #region Promedio
+        /// <summary>
+        /// Genera un promedio porcentual entre todos los autos utilizados dentro de la lista del Turismo Carretera.
+        /// </summary>
+        /// <returns>Mensaje con el resultado.</returns>
         public string PromedioAutosUtilizados()
         {
             StringBuilder sb = new StringBuilder();

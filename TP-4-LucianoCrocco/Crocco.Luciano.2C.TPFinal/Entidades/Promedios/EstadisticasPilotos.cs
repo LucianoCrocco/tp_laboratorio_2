@@ -141,8 +141,8 @@ namespace Entidades
             int aux; 
             foreach (Piloto item in lista)
             {
-                aux = item.Nombre.ContadorDeLetras();
-                aux += item.Apellido.ContadorDeLetras();
+                aux = item.Nombre.ContadorDeCaracteres();
+                aux += item.Apellido.ContadorDeCaracteres();
                 if (aux > maximo)
                 {
                     maximo = aux;
@@ -277,8 +277,8 @@ namespace Entidades
             int aux;
             foreach (Piloto item in lista)
             {
-                aux = item.Nombre.ContadorDeLetras();
-                aux += item.Apellido.ContadorDeLetras();
+                aux = item.Nombre.ContadorDeCaracteres();
+                aux += item.Apellido.ContadorDeCaracteres();
                 if (aux < minimo)
                 {
                     minimo = aux;
@@ -402,8 +402,8 @@ namespace Entidades
             int contador = 0;
             foreach (Piloto item in lista)
             {
-                acumulador += item.Nombre.ContadorDeLetras();
-                acumulador += item.Apellido.ContadorDeLetras();
+                acumulador += item.Nombre.ContadorDeCaracteres();
+                acumulador += item.Apellido.ContadorDeCaracteres();
                 contador++;
             }
             return $"El promedio de caracteres utilizados para el nombre y apellido es de {acumulador/contador} caracteres";

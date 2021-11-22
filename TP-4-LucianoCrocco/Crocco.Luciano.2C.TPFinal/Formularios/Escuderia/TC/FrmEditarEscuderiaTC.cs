@@ -18,7 +18,11 @@ namespace Formularios
 
         private EscuderiaTC escuderiaTC;
         private List<Escuderia> escuderias;
-
+        /// <summary>
+        /// Constructor del formulario para editar una escuderia del TC
+        /// </summary>
+        /// <param name="escuderias">Lista de escuderias actual</param>
+        /// <param name="escuderia">Escuderia a editar</param>
         public FrmEditarEscuderiaTC(List<Escuderia> escuderias, Escuderia escuderia)
         {
             InitializeComponent();
@@ -27,6 +31,11 @@ namespace Formularios
         }
 
         #region Carga de Datos
+        /// <summary>
+        /// Precarga la informacion 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmEditarEscuderiaTC_Load(object sender, EventArgs e)
         {
             txtBoxNombre.Text = this.escuderiaTC.NombreEscuderia;
@@ -36,6 +45,11 @@ namespace Formularios
         #endregion
 
         #region Editar Datos
+        /// <summary>
+        /// Cambia los datos de la escuderia por los ingresados en el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (txtBoxNombre.Text is not null && nroAsientos is not null && cmbFabricante.SelectedIndex is not -1)

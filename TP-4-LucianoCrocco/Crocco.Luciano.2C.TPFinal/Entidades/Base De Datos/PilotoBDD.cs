@@ -15,6 +15,9 @@ namespace Entidades
         private List<Piloto> pilotos;
         private string connectionStr;
 
+        /// <summary>
+        /// Constructor por defecto para manipular la base de datos.
+        /// </summary>
         public PilotoBDD()
         {
             this.pilotos = new List<Piloto>();
@@ -26,6 +29,10 @@ namespace Entidades
         }
 
         #region Guardar Piloto
+        /// <summary>
+        /// Guarda un piloto en la base de datos
+        /// </summary>
+        /// <param name="piloto">Piloto a guardar</param>
         public void GuardarPiloto(Piloto piloto)
         {
             if (piloto is not null)
@@ -56,6 +63,10 @@ namespace Entidades
         #endregion
 
         #region Leer Pilotos
+        /// <summary>
+        /// Lee todos los pilotos cargados en la base de datos
+        /// </summary>
+        /// <returns>Lista de pilotos en la base datos</returns>
         public List<Piloto> LeerPilotos()
         {
             this.pilotos.Clear();
@@ -91,6 +102,13 @@ namespace Entidades
         #endregion
 
         #region Editar Piloto
+        /// <summary>
+        /// Edita un piloto de la lista de la base de datos.
+        /// </summary>
+        /// <param name="piloto">Piloto editado.</param>
+        /// <param name="nombre">Nombre del piloto sin editar.</param>
+        /// <param name="apellido">Apellido del piloto sin editar.</param>
+        /// <param name="numeroCompeticion">Numero de competicion del piloto sin editar.</param>
         public void EditarPiloto(Piloto piloto, string nombre, string apellido, int numeroCompeticion)
         {
             if (piloto is not null)
@@ -125,6 +143,10 @@ namespace Entidades
         #endregion
 
         #region Borrrar Piloto
+        /// <summary>
+        /// Borra un piloto de la base de datos, coincidiendo nombre, apellido y numero de competicion.
+        /// </summary>
+        /// <param name="piloto">Piloto a borrar</param>
         public void BorrarPiloto(Piloto piloto)
         {
             if (piloto is not null)

@@ -20,6 +20,9 @@ namespace Entidades
         #endregion
 
         #region Constructores
+        /// <summary>
+        /// Constructor estatico que inicializa el maximo de caracteres disponibles para asignar a un nombre.
+        /// </summary>
         static Piloto()
         {
             maximoCaracteres = 65;
@@ -199,7 +202,7 @@ namespace Entidades
         /// </summary>
         /// <param name="pilotos"></param>
         /// <param name="p1"></param>
-        /// <returns>La lista con los cambios realizados</returns>
+        /// <returns>La lista con los cambios realizados.</returns>
         public static List<Piloto> operator -(List<Piloto> pilotos, Piloto p1)
         {
             if (pilotos is not null && p1 is not null)
@@ -215,6 +218,12 @@ namespace Entidades
             return pilotos;
         }
 
+        /// <summary>
+        /// Compara una lista de pilotos con un piloto. Busca si el piloto esta contenido dentro de la lista.
+        /// </summary>
+        /// <param name="pilotos">Lista de pilotos.</param>
+        /// <param name="p1">Piloto a buscar.</param>
+        /// <returns>True si esta contenido, false si no lo esta.</returns>
         public static bool operator ==(List<Piloto> pilotos, Piloto p1)
         {
             if (pilotos is not null && p1 is not null)
@@ -230,6 +239,12 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Compara una lista de pilotos con un piloto. Busca si NO el piloto esta contenido dentro de la lista.
+        /// </summary>
+        /// <param name="pilotos">Lista de pilotos.</param>
+        /// <param name="p1">Piloto a buscar.</param>
+        /// <returns>False si esta contenido, True si no lo esta.</returns>
         public static bool operator !=(List<Piloto> pilotos, Piloto p1)
         {
             return !(pilotos == p1);

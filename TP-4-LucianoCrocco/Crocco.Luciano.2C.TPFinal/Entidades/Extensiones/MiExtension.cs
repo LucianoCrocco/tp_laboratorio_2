@@ -8,7 +8,12 @@ namespace Entidades
 {
     public static class MiExtension
     {
-        public static int ContadorDeLetras(this String str)
+        /// <summary>
+        /// Cuenta los caracteres del string.
+        /// </summary>
+        /// <param name="str">String a contar caracteres.</param>
+        /// <returns>El total de caracteres que contiene el string.</returns>
+        public static int ContadorDeCaracteres(this String str)
         {
             int contador = 0;
             foreach(char caracter in str)
