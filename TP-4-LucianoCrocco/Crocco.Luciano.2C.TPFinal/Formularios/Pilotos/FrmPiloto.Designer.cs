@@ -38,6 +38,7 @@ namespace Formularios
             this.btnHistorial = new System.Windows.Forms.Button();
             this.btnBorrarPiloto = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.lblPilotosCargados = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnGenerarPiloto
@@ -130,11 +131,22 @@ namespace Formularios
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // lblPilotosCargados
+            // 
+            this.lblPilotosCargados.AutoSize = true;
+            this.lblPilotosCargados.Font = new System.Drawing.Font("Segoe UI", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPilotosCargados.Location = new System.Drawing.Point(665, 9);
+            this.lblPilotosCargados.Name = "lblPilotosCargados";
+            this.lblPilotosCargados.Size = new System.Drawing.Size(212, 25);
+            this.lblPilotosCargados.TabIndex = 10;
+            this.lblPilotosCargados.Text = "Cargados Actualmente: ";
+            // 
             // FrmPiloto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 266);
+            this.Controls.Add(this.lblPilotosCargados);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBorrarPiloto);
             this.Controls.Add(this.btnHistorial);
@@ -168,5 +180,6 @@ namespace Formularios
         private System.Windows.Forms.Button btnHistorial;
         private System.Windows.Forms.Button btnBorrarPiloto;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Label lblPilotosCargados;
     }
 }

@@ -39,7 +39,6 @@ namespace Formularios
             this.btnEstadisticasIndividuales = new System.Windows.Forms.Button();
             this.btnBorrarEscuderia = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.BtnSimular = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstEscuderias
@@ -63,7 +62,7 @@ namespace Formularios
             // 
             // btnEstadisticasGenerales
             // 
-            this.btnEstadisticasGenerales.Location = new System.Drawing.Point(721, 52);
+            this.btnEstadisticasGenerales.Location = new System.Drawing.Point(721, 61);
             this.btnEstadisticasGenerales.Name = "btnEstadisticasGenerales";
             this.btnEstadisticasGenerales.Size = new System.Drawing.Size(83, 52);
             this.btnEstadisticasGenerales.TabIndex = 7;
@@ -103,7 +102,7 @@ namespace Formularios
             // 
             // btnGestionarPilotos
             // 
-            this.btnGestionarPilotos.Location = new System.Drawing.Point(721, 227);
+            this.btnGestionarPilotos.Location = new System.Drawing.Point(721, 177);
             this.btnGestionarPilotos.Name = "btnGestionarPilotos";
             this.btnGestionarPilotos.Size = new System.Drawing.Size(83, 73);
             this.btnGestionarPilotos.TabIndex = 11;
@@ -113,7 +112,7 @@ namespace Formularios
             // 
             // btnEstadisticasIndividuales
             // 
-            this.btnEstadisticasIndividuales.Location = new System.Drawing.Point(721, 110);
+            this.btnEstadisticasIndividuales.Location = new System.Drawing.Point(721, 119);
             this.btnEstadisticasIndividuales.Name = "btnEstadisticasIndividuales";
             this.btnEstadisticasIndividuales.Size = new System.Drawing.Size(83, 52);
             this.btnEstadisticasIndividuales.TabIndex = 13;
@@ -141,22 +140,11 @@ namespace Formularios
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // BtnSimular
-            // 
-            this.BtnSimular.Location = new System.Drawing.Point(721, 168);
-            this.BtnSimular.Name = "BtnSimular";
-            this.BtnSimular.Size = new System.Drawing.Size(83, 52);
-            this.BtnSimular.TabIndex = 16;
-            this.BtnSimular.Text = "Simulacion";
-            this.BtnSimular.UseVisualStyleBackColor = true;
-            this.BtnSimular.Click += new System.EventHandler(this.BtnEvento_Click);
-            // 
             // FrmEscuderia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 324);
-            this.Controls.Add(this.BtnSimular);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBorrarEscuderia);
             this.Controls.Add(this.btnEstadisticasIndividuales);
@@ -191,6 +179,5 @@ namespace Formularios
         private System.Windows.Forms.Button btnEstadisticasIndividuales;
         private System.Windows.Forms.Button btnBorrarEscuderia;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button BtnSimular;
     }
 }

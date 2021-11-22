@@ -27,8 +27,9 @@ namespace Formularios
         private OpenFileDialog openFileDialog;
         private CancellationToken cancellationToken;
         private CancellationTokenSource cancellationTokenSource;
-        private bool usarHilo;
+        private bool usarHiloListarPilotos;
         private string path;
+        private ContadorLista contadorListaPilotos;
         #endregion
 
         /// <summary>
@@ -42,16 +43,19 @@ namespace Formularios
             this.serializacion = new SerializacionXML<List<Piloto>>();
             this.cancellationTokenSource = new CancellationTokenSource();
             this.cancellationToken = cancellationTokenSource.Token;
-            this.usarHilo = true;
+            this.usarHiloListarPilotos = true;
+            this.contadorListaPilotos = new ContadorLista(this.cancellationToken);
         }
 
         private void FrmPiloto_Load(object sender, EventArgs e)
         { 
             Task.Run(ListarPilotos, cancellationToken);
+            this.contadorListaPilotos.EventoContadorLista += ContadorPilotos;
+            this.contadorListaPilotos.Activar = true;
         }
         private void FrmPiloto_Activated(object sender, EventArgs e)
         {
-            this.usarHilo = false;
+            this.usarHiloListarPilotos = false;
         }
 
         #region Generar Piloto
@@ -63,9 +67,9 @@ namespace Formularios
         private void btnGenerarPiloto_Click(object sender, EventArgs e)
         {
             frmGenerarPiloto = new FrmGenerarPiloto(pilotosCargados);
-            this.usarHilo = true;
+            this.usarHiloListarPilotos = true;
             frmGenerarPiloto.ShowDialog();
-            this.usarHilo = false;
+            this.usarHiloListarPilotos = false;
         }
         #endregion
 
@@ -152,7 +156,7 @@ namespace Formularios
                         {
                             this.pilotosCargados.Add(item);
                         }
-                        this.usarHilo = true;
+                        this.usarHiloListarPilotos = true;
                         MessageBox.Show("Archivo cargado correctamente");
                     }
                     catch (Exception ex)
@@ -161,7 +165,7 @@ namespace Formularios
                     }
                 }
             }
-            this.usarHilo = false;
+            this.usarHiloListarPilotos = false;
         }
         #endregion
 
@@ -180,7 +184,7 @@ namespace Formularios
             }
             else
             {
-                this.usarHilo = true;
+                this.usarHiloListarPilotos = true;
                 try
                 {
                     pilotosCargados -= pilotosCargados[lstPilotos.SelectedIndex];
@@ -198,7 +202,7 @@ namespace Formularios
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.usarHilo = false;
+                this.usarHiloListarPilotos = false;
             }
         }
         #endregion
@@ -218,7 +222,7 @@ namespace Formularios
             }
             else
             {
-                this.usarHilo = true;
+                this.usarHiloListarPilotos = true;
                 try
                 {
                     frmEditarPiloto = new FrmEditarPiloto(this.pilotosCargados, this.pilotosCargados[lstPilotos.SelectedIndex]);
@@ -237,13 +241,47 @@ namespace Formularios
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.usarHilo = false;
+                this.usarHiloListarPilotos = false;
             }
         }
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Llama al metodo Asignar Contador y paraliza el hilo 1 segundos.
+        /// </summary>
+        public void ContadorPilotos()
+        {
+            while (!this.cancellationToken.IsCancellationRequested)
+            {
+                AsignarContador();
+                Thread.Sleep(1000);
+            }
+        }
 
+        /// <summary>
+        /// Asigna el contador en el label pilotos cargados
+        /// </summary>
+        public void AsignarContador()
+        {
+            try
+            {
+
+                if (lblPilotosCargados.InvokeRequired)
+                {
+                    ContadorListaDelegate callback = new ContadorListaDelegate(AsignarContador);
+                    this.Invoke(callback);
+                }
+                else
+                {
+                    this.lblPilotosCargados.Text = $"Pilotos cargados actualmente {this.pilotosCargados.Count}";
+                }
+            }
+            catch (Exception)
+            {
+                //Si hago un dispose el callback continua funcionando y rompe el formulario, hago un try catch para manejar la excepcion ya que no encontre como solucionarlo.
+            }
+        }
         /// <summary>
         /// Llama al metodo Refrescar Lista y paraliza el hilo 2 segundos.
         /// </summary>
@@ -251,7 +289,7 @@ namespace Formularios
         {
             while (!this.cancellationToken.IsCancellationRequested)
             {
-                if (this.usarHilo) {
+                if (this.usarHiloListarPilotos) {
                     this.Refrescar();
                     Thread.Sleep(300);
                 }
@@ -287,10 +325,10 @@ namespace Formularios
         /// <param name="e"></param>
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-            this.usarHilo = true;
+            this.usarHiloListarPilotos = true;
             frmHistorialPilotos = new FrmHistorialPilotos(this.pilotosCargados);
             frmHistorialPilotos.ShowDialog();
-            this.usarHilo = false;
+            this.usarHiloListarPilotos = false;
         }
         #endregion
 
