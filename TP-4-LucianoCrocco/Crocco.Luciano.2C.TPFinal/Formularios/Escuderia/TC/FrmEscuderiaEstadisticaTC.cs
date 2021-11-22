@@ -26,8 +26,7 @@ namespace Formularios
         {
             InitializeComponent();
             this.escuderia = escuderia;
-            this.auxList = new List<Escuderia>();
-            FiltrarEscuderias();
+            this.auxList = FrmEscuderia<EscuderiaTC>.FiltrarEscuderias<EscuderiaTC>(this.escuderia);
             promedio = new EstadisticasTC(this.auxList);
         }
 
@@ -95,17 +94,6 @@ namespace Formularios
         public void Limpiar()
         {
             rchEstadisticas.Clear();
-        }
-
-        public void FiltrarEscuderias()
-        {
-            if(this.escuderia is not null)
-            {
-                foreach(EscuderiaTC item in this.escuderia)
-                {
-                    this.auxList.Add(item);
-                }
-            }
         }
         #endregion
     }

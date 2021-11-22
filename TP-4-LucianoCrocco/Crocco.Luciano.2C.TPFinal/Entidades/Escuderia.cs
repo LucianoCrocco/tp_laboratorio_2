@@ -44,8 +44,13 @@ namespace Entidades
             {
                 if(value.Length > 95)
                 {
-                    throw new CaracteresInvalidoException("El maximo de caracteres para ingresar es de 100 caracteres");
-                } else
+                    throw new CaracteresInvalidoException("El maximo de caracteres para ingresar es de 100 caracteres.");
+                }
+                else if (String.IsNullOrWhiteSpace(value))
+                {
+                    throw new CaracteresInvalidoException("Ingrese un nombre valido.");
+                } 
+                else
                 {
                     this.nombreEscuderia = value;
                 }

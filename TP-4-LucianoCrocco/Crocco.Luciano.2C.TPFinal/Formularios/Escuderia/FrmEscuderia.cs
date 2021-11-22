@@ -23,6 +23,7 @@ namespace Formularios
         private FrmGestionarPiloto frmCargarPiloto;
         private FrmPilotoEstadistica frmEstadisticasIndividuales;
         private FrmEscuderiaEstadisticaTC frmEscuderiaEstadisticaTC;
+        private FrmEditarEscuderiaTC frmEditarEscuderiaTC;
         private List<Escuderia> escuderias;
         private List<Piloto> pilotos;
         private OpenFileDialog openFileDialog;
@@ -212,9 +213,20 @@ namespace Formularios
         }
         #endregion
 
+        #region Editar Escuderia
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (typeof(T) == typeof(EscuderiaTC))
+            {
+                this.usarHilo = true;
+                frmEditarEscuderiaTC = new FrmEditarEscuderiaTC(this.escuderias, this.FiltrarUnaEscuderia(lstEscuderias.SelectedIndex));
+                frmEditarEscuderiaTC.ShowDialog();
+                this.usarHilo = false;
+            }
+        }
+        #endregion
+
         #region Metodos
-
-
         /// <summary>
         /// Llama al metodo Refrescar Lista y paraliza el hilo 2 segundos.
         /// </summary>
@@ -270,6 +282,35 @@ namespace Formularios
                 escuderias.Remove(item);
             }
         }
+
+
+        public static List<Escuderia> FiltrarEscuderias<R>(List<Escuderia> escuderias)
+            where R : Escuderia
+        {
+            List<Escuderia> listaGenerica = new List<Escuderia>();
+            if (escuderias is not null)
+            {
+                foreach (R item in escuderias)
+                {
+                    listaGenerica.Add(item);
+                }
+            }
+            return listaGenerica;
+        }
+
+        public Escuderia FiltrarUnaEscuderia(int index)
+        {
+            List<Escuderia> auxListEscuderias = new List<Escuderia>();
+            auxListEscuderias = FiltrarEscuderias<T>(this.escuderias);
+            return auxListEscuderias[index];
+        }
+        #endregion
+
+        #region Simulacion
+        private void BtnEvento_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region Estadisticas individuales de las escuderias
@@ -324,5 +365,6 @@ namespace Formularios
         {
             this.cancellationTokenSource.Cancel();
         }
+
     }
 }
