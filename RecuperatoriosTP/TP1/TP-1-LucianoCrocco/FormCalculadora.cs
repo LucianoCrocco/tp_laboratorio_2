@@ -136,7 +136,7 @@ namespace TP_1_LucianoCrocco
         /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Esta seguro de querer salir?", "Salir",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if(MessageBox.Show("¿Esta seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Dispose();
             }
@@ -156,6 +156,16 @@ namespace TP_1_LucianoCrocco
             {
                 e.Cancel = true;
             }
+        }
+
+        /// <summary>
+        /// Carga el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormCalculadora_Load(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

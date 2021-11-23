@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj": {}
+    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj": {}
   },
   "projects": {
-    "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\Entidades\\Entidades.csproj": {
+    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\Entidades\\Entidades.csproj",
+        "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-        "outputPath": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\Entidades\\obj\\",
+        "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,25 +54,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj": {
+    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj",
+        "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj",
         "projectName": "TP-1-LucianoCrocco",
-        "projectPath": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj",
+        "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco.csproj",
         "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-        "outputPath": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\TP-1-LucianoCrocco\\obj\\",
+        "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\TP-1-LucianoCrocco\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,8 +82,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\Entidades\\Entidades.csproj": {
-                "projectPath": "D:\\Cursos\\tp_laboratorio_2\\TP-1-LucianoCrocco\\Entidades\\Entidades.csproj"
+              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -123,7 +115,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

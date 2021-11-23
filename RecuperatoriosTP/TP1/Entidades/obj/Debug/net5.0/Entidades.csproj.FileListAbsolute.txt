@@ -10,3 +10,15 @@ D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\Entidades\obj\Debug\net5.0\Entidad
 D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\Entidades\obj\Debug\net5.0\Entidades.dll
 D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\Entidades\obj\Debug\net5.0\ref\Entidades.dll
 D:\Cursos\tp_laboratorio_2\TP-1-LucianoCrocco\Entidades\obj\Debug\net5.0\Entidades.pdb
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.deps.json
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.dll
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\ref\Entidades.dll
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.pdb
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.dll
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\ref\Entidades.dll
+D:\1. Cursos Programacion\tp_laboratorio_2\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.pdb

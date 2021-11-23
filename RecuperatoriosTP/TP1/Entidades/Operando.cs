@@ -16,17 +16,13 @@ namespace Entidades
         /// <summary>
         /// Constructor por defecto de la clase operando, inicializa el numero en 0
         /// </summary>
-        public Operando() : this(0)
-        {
-            /*this.Numero = "0";*/ //Error.. Se tiene que reutilizar el constructor. Es valido poner this(0) o simplemente el constructor vacio, es preferible el constructor vacio.
-        }
+        public Operando() : this(0){}
         /// <summary>
         /// Constructor de un la clase Operando, recibe un numero de tipo double
         /// </summary>
         /// <param name="numero"></param>
         public Operando(double numero)
         {
-            //this.Numero = numero.ToString(); -> Mas optimizado con el ejemplo debajo.
             this.numero = numero;
         }
         /// <summary>
