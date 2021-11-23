@@ -170,13 +170,14 @@ namespace Entidades
         public static string DecimalBinario(double numero)
         {
             string retorno = "";
-            if(numero < 0)
+            int resultado;
+            int aux;
+            if (numero < 0)
             {
                 numero = numero * -1;
             }
 
-            int resultado = (int)numero;
-            int aux;
+            resultado = (int)numero;
             do
             {
                 aux = resultado % 2;

@@ -34,7 +34,7 @@ namespace TP_1_LucianoCrocco
             {
                 MessageBox.Show("Los numeros ingresados son invalidos o la casilla se encuentra vacia. Por favor revea los numeros ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 operar = false;
-            }  else if(cmbOperador.SelectedItem == null)
+            }  else if(cmbOperador.SelectedItem == null || cmbOperador.SelectedIndex == 0)
             {
                 cmbOperador.Text = "+";
                 operador = "+";
