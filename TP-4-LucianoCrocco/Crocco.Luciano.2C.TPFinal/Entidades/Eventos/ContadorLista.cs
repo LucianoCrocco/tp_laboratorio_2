@@ -45,9 +45,13 @@ namespace Entidades
         /// </summary>
         public void Corriendo()
         {
-            if (this.EventoContadorLista is not null)
+            while (!this.tokenCancelar.IsCancellationRequested)
             {
-                this.EventoContadorLista.Invoke();
+                if (this.EventoContadorLista is not null)
+                {
+                    this.EventoContadorLista.Invoke();
+                    Thread.Sleep(1000);
+                }
             }
         }
     }

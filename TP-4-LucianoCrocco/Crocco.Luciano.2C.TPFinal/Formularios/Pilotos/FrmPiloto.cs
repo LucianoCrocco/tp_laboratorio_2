@@ -248,39 +248,21 @@ namespace Formularios
 
         #region Metodos
         /// <summary>
-        /// Llama al metodo Asignar Contador y paraliza el hilo 1 segundos.
+        /// Refresca el mensaje de contar pilotos. Se utiliza a traves de un evento en un hilo secundario.
         /// </summary>
         public void ContadorPilotos()
         {
-            while (!this.cancellationToken.IsCancellationRequested)
+            
+            if (lblPilotosCargados.InvokeRequired)
             {
-                AsignarContador();
-                Thread.Sleep(1000);
+                ContadorListaDelegate callback = new ContadorListaDelegate(ContadorPilotos);
+                this.Invoke(callback);
             }
-        }
-
-        /// <summary>
-        /// Asigna el contador en el label pilotos cargados
-        /// </summary>
-        public void AsignarContador()
-        {
-            try
+            else
             {
-
-                if (lblPilotosCargados.InvokeRequired)
-                {
-                    ContadorListaDelegate callback = new ContadorListaDelegate(AsignarContador);
-                    this.Invoke(callback);
-                }
-                else
-                {
-                    this.lblPilotosCargados.Text = $"Pilotos cargados actualmente {this.pilotosCargados.Count}";
-                }
+                this.lblPilotosCargados.Text = $"Pilotos cargados actualmente {this.pilotosCargados.Count}";
             }
-            catch (Exception)
-            {
-                //Si hago un dispose el callback continua funcionando y rompe el formulario, hago un try catch para manejar la excepcion ya que no encontre como solucionarlo.
-            }
+            
         }
         /// <summary>
         /// Llama al metodo Refrescar Lista y paraliza el hilo 2 segundos.
