@@ -11,7 +11,11 @@ namespace ArchivosYSerializacion
 {
     public class SerializacionJSON<T> : IArchivo<T>
     {
-        ArchivoTexto archivoTexto = new ArchivoTexto();
+        ArchivoTexto archivoTexto;
+        public SerializacionJSON()
+        {
+            this.archivoTexto = new ArchivoTexto();
+        }
         /// <summary>
         /// Serializa un archivo JSON.
         /// </summary>

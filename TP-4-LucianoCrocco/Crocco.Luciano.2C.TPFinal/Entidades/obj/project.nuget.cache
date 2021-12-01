@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9QxRlzcOu60FebMrZZzAOfIax4/Mw5XwJ3g0HuZm3jxqlGEtzDP6T3+oy9n/wWLmHTWjtCRsCPKrf9jF3F7+ag==",
+  "dgSpecHash": "A8YRi0Ue3nYIEHfulJmb7NS+2LPoKyRONvvHCp837kkrvmMw/wYniaODdEzAteJxYSDhKBcCOOiQMzsTVuev3w==",
   "success": true,
-  "projectFilePath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj",
+  "projectFilePath": "C:\\Users\\Lucia\\Desktop\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucia\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Lucia\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
