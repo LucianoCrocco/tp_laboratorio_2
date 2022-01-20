@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucia\\Desktop\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
+      "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
       "projectName": "Excepciones",
-      "projectPath": "C:\\Users\\Lucia\\Desktop\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
+      "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
       "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucia\\Desktop\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\obj\\",
+      "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
