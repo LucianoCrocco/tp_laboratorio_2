@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\Consola.csproj": {}
+    "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\Consola.csproj": {}
   },
   "projects": {
-    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj": {
+    "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj",
+        "projectUniqueName": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj",
         "projectName": "ArchivosYSerializacion",
-        "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj",
+        "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj",
         "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-        "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\obj\\",
+        "outputPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj": {
-                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj"
+              "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj"
               },
-              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
-                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj"
+              "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
+                "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj"
               }
             }
           }
@@ -61,18 +61,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\Consola.csproj": {
+    "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\Consola.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\Consola.csproj",
+        "projectUniqueName": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\Consola.csproj",
         "projectName": "Consola",
-        "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\Consola.csproj",
+        "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\Consola.csproj",
         "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-        "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\obj\\",
+        "outputPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Consola\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,14 +89,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj": {
-                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj"
+              "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj": {
+                "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\ArchivosYSerializacion\\ArchivosYSerializacion.csproj"
               },
-              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj": {
-                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj"
+              "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj"
               },
-              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
-                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj"
+              "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
+                "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj"
               }
             }
           }
@@ -125,18 +125,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj": {
+    "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj",
+        "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-        "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\obj\\",
+        "outputPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -153,8 +153,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
-                "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj"
+              "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
+                "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj"
               }
             }
           }
@@ -183,18 +183,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
+    "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
+        "projectUniqueName": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
         "projectName": "Excepciones",
-        "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
+        "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
         "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-        "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\obj\\",
+        "outputPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -237,7 +237,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

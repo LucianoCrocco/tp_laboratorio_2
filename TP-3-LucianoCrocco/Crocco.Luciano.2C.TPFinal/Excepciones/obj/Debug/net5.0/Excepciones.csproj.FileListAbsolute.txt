@@ -10,3 +10,15 @@ D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\ref\Excepciones.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.pdb
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.csproj.AssemblyReference.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\bin\Debug\net5.0\Excepciones.deps.json
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\bin\Debug\net5.0\Excepciones.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\bin\Debug\net5.0\Excepciones.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.csproj.AssemblyReference.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.AssemblyInfoInputs.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.AssemblyInfo.cs
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.csproj.CoreCompileInputs.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\refint\Excepciones.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Excepciones\obj\Debug\net5.0\ref\Excepciones.dll

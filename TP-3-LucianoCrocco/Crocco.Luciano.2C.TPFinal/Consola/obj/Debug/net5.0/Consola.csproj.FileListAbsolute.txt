@@ -37,3 +37,26 @@ D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\ArchivosYSerializacion.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\ArchivosYSerializacion.pdb
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.csproj.CopyComplete
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.exe
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.deps.json
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.runtimeconfig.json
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.runtimeconfig.dev.json
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Consola.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\ArchivosYSerializacion.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Entidades.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Excepciones.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\ArchivosYSerializacion.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Entidades.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\bin\Debug\net5.0\Excepciones.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.csproj.AssemblyReference.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.AssemblyInfoInputs.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.AssemblyInfo.cs
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.csproj.CoreCompileInputs.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.csproj.CopyComplete
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\refint\Consola.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\Consola.genruntimeconfig.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\Consola\obj\Debug\net5.0\ref\Consola.dll

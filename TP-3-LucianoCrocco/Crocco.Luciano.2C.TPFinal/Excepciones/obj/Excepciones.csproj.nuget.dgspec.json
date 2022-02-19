@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {}
+    "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {}
   },
   "projects": {
-    "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
+    "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
+        "projectUniqueName": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
         "projectName": "Excepciones",
-        "projectPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
+        "projectPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\Excepciones.csproj",
         "packagesPath": "C:\\Users\\Lucia\\.nuget\\packages\\",
-        "outputPath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\obj\\",
+        "outputPath": "D:\\Proyectos\\tp_laboratorio_2\\TP-3-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Excepciones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

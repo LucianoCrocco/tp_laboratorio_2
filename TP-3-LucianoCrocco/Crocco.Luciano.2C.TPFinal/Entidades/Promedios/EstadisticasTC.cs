@@ -15,12 +15,14 @@ namespace Entidades
         #region Maximo
         public string AutosMasUtilizado()
         {
-            string retorno = String.Empty;
             int contadorFord = 0;
             int contadorChevrolet = 0;
             int contadorTorino = 0;
             int contadorDodge = 0;
             int contadorToyota = 0;
+            Dictionary<EMarcaVehiculoTC, int> keyValues = new Dictionary<EMarcaVehiculoTC, int>();
+            int maximo = int.MinValue;
+            EMarcaVehiculoTC marca = EMarcaVehiculoTC.Ford;
 
             foreach (EscuderiaTC item in Lista)
             {
@@ -44,39 +46,57 @@ namespace Entidades
                 }
             }
 
-            if (contadorFord >= contadorChevrolet && contadorFord >= contadorTorino && contadorFord >= contadorDodge && contadorFord >= contadorToyota)
+            foreach (EscuderiaTC item in Lista)
             {
-                retorno = $"La marca predominante entre las escuderias es Ford con un total de {contadorFord} coincidencias.";
+                switch (item.MarcaVehiculoTC)
+                {
+                    case EMarcaVehiculoTC.Ford:
+                        contadorFord++;
+                        break;
+                    case EMarcaVehiculoTC.Chevrolet:
+                        contadorChevrolet++;
+                        break;
+                    case EMarcaVehiculoTC.Torino:
+                        contadorTorino++;
+                        break;
+                    case EMarcaVehiculoTC.Dodge:
+                        contadorDodge++;
+                        break;
+                    default:
+                        contadorToyota++;
+                        break;
+                }
             }
-            else if (contadorChevrolet > contadorFord && contadorChevrolet > contadorTorino && contadorChevrolet > contadorDodge && contadorChevrolet > contadorToyota)
+            keyValues.Add(EMarcaVehiculoTC.Ford, contadorFord);
+            keyValues.Add(EMarcaVehiculoTC.Chevrolet, contadorChevrolet);
+            keyValues.Add(EMarcaVehiculoTC.Torino, contadorTorino);
+            keyValues.Add(EMarcaVehiculoTC.Dodge, contadorDodge);
+            keyValues.Add(EMarcaVehiculoTC.Toyota, contadorToyota);
+
+            foreach (KeyValuePair<EMarcaVehiculoTC, int> keyValue in keyValues)
             {
-                retorno = $"La marca predominante entre las escuderias es Chevrolet con un total de {contadorChevrolet} coincidencias.";
+                if (maximo < keyValue.Value)
+                {
+                    maximo = keyValue.Value;
+                    marca = keyValue.Key;
+                }
             }
-            else if (contadorTorino > contadorFord && contadorTorino > contadorChevrolet && contadorTorino > contadorDodge && contadorTorino > contadorToyota)
-            {
-                retorno = $"La marca predominante entre las escuderias es Torino con un total de {contadorTorino} coincidencias.";
-            }
-            else if (contadorDodge > contadorFord && contadorDodge > contadorChevrolet && contadorDodge > contadorTorino && contadorDodge > contadorToyota)
-            {
-                retorno = $"La marca predominante entre las escuderias es Dodge con un total de {contadorDodge} coincidencias.";
-            }
-            else
-            {
-                retorno = $"La marca predominante entre las escuderias es Toyota con un total de {contadorToyota} coincidencias.";
-            }
-            return retorno;
+
+            return $"La marca predominante entre las escuderias es {marca} con un total de {maximo} coincidencias.";
         }
         #endregion
 
         #region Minimo
         public string AutosMenosUtilizado()
         {
-            string retorno = String.Empty;
             int contadorFord = 0;
             int contadorChevrolet = 0;
             int contadorTorino = 0;
             int contadorDodge = 0;
             int contadorToyota = 0;
+            Dictionary<EMarcaVehiculoTC, int> keyValues = new Dictionary<EMarcaVehiculoTC, int>();
+            int minimo = int.MaxValue;
+            EMarcaVehiculoTC marca = EMarcaVehiculoTC.Ford;
 
             foreach (EscuderiaTC item in Lista)
             {
@@ -99,28 +119,21 @@ namespace Entidades
                         break;
                 }
             }
+            keyValues.Add(EMarcaVehiculoTC.Ford, contadorFord);
+            keyValues.Add(EMarcaVehiculoTC.Chevrolet, contadorChevrolet);
+            keyValues.Add(EMarcaVehiculoTC.Torino, contadorTorino);
+            keyValues.Add(EMarcaVehiculoTC.Dodge, contadorDodge);
+            keyValues.Add(EMarcaVehiculoTC.Toyota, contadorToyota);
 
-            if (contadorFord <= contadorChevrolet && contadorFord <= contadorTorino && contadorFord <= contadorDodge && contadorFord <= contadorToyota)
+            foreach (KeyValuePair<EMarcaVehiculoTC, int> keyValue in keyValues)
             {
-                retorno = $"La marca menos predominante entre las escuderias es Ford con un total de {contadorFord} coincidencias.";
-            }
-            else if (contadorChevrolet < contadorFord && contadorChevrolet < contadorTorino && contadorChevrolet < contadorDodge && contadorChevrolet < contadorToyota)
-            {
-                retorno = $"La marca menos predominante entre las escuderias es Chevrolet con un total de {contadorChevrolet} coincidencias.";
-            }
-            else if (contadorTorino < contadorFord && contadorTorino < contadorChevrolet && contadorTorino < contadorDodge && contadorTorino < contadorToyota)
-            {
-                retorno = $"La marca menos predominante entre las escuderias es Torino con un total de {contadorTorino} coincidencias.";
-            }
-            else if (contadorDodge < contadorFord && contadorDodge < contadorChevrolet && contadorDodge < contadorTorino && contadorDodge < contadorToyota)
-            {
-                retorno = $"La marca menos predominante entre las escuderias es Dodge con un total de {contadorDodge} coincidencias.";
-            }
-            else
-            {
-                retorno = $"La marca menos predominante entre las escuderias es Toyota con un total de {contadorToyota} coincidencias.";
-            }
-            return retorno;
+                if(minimo > keyValue.Value)
+                {
+                    minimo = keyValue.Value;
+                    marca = keyValue.Key;
+                }
+            }   
+            return $"La marca menos predominante entre las escuderias es {marca} con un total de {minimo} coincidencias";
         }
         #endregion
 

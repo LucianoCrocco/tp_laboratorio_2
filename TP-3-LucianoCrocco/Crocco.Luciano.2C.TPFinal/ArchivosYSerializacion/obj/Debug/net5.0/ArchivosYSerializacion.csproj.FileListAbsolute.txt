@@ -15,3 +15,20 @@ D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ref\ArchivosYSerializacion.dll
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.pdb
 D:\1. Cursos Programacion\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.csproj.CopyComplete
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\bin\Debug\net5.0\ArchivosYSerializacion.deps.json
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\bin\Debug\net5.0\ArchivosYSerializacion.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\bin\Debug\net5.0\ArchivosYSerializacion.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\bin\Debug\net5.0\Entidades.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\bin\Debug\net5.0\Excepciones.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\bin\Debug\net5.0\Entidades.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\bin\Debug\net5.0\Excepciones.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.csproj.AssemblyReference.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.AssemblyInfoInputs.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.AssemblyInfo.cs
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.csproj.CoreCompileInputs.cache
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.csproj.CopyComplete
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\refint\ArchivosYSerializacion.dll
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ArchivosYSerializacion.pdb
+D:\Proyectos\tp_laboratorio_2\TP-3-LucianoCrocco\Crocco.Luciano.2C.TPFinal\ArchivosYSerializacion\obj\Debug\net5.0\ref\ArchivosYSerializacion.dll
