@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w1GeWhoLJoBaIWfC0XRSZx7IjDdIsDSdSuHK1HJbalFgGxLxcbOZSe+aXJTHPrkRdt9APTd9zqffuJuQvl0uQg==",
+  "dgSpecHash": "Gjy/G3eY/SR7rgcVDCFjadJrSWNfBikEksvqolvXrczwkQ4Ym6C/9ZXD+hDRT50GgvxHZhlHHla7tKoUvW5WSw==",
   "success": true,
-  "projectFilePath": "D:\\1. Cursos Programacion\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Formularios\\Formularios.csproj",
+  "projectFilePath": "D:\\Proyectos\\tp_laboratorio_2\\TP-4-LucianoCrocco\\Crocco.Luciano.2C.TPFinal\\Formularios\\Formularios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucia\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Lucia\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

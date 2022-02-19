@@ -64,6 +64,9 @@ namespace Entidades
             int contadorMasc = 0;
             int contadorFem = 0;
             int contadorOtro = 0;
+            Dictionary<ESexo, int> keyValues = new Dictionary<ESexo, int>();
+            int maximo = int.MinValue;
+            ESexo eSexo = ESexo.Otro;
 
             foreach (Piloto item in lista)
             {
@@ -80,20 +83,20 @@ namespace Entidades
                         break;
                 }
             }
+            keyValues.Add(ESexo.Masculino, contadorMasc);
+            keyValues.Add(ESexo.Femenino, contadorFem);
+            keyValues.Add(ESexo.Otro, contadorOtro);
 
-            if (contadorMasc >= contadorFem && contadorMasc >= contadorOtro)
+            foreach (KeyValuePair<ESexo, int> keyValue in keyValues)
             {
-                retorno = $"El genero predominante entre los pilotos es el masculino con un total de {contadorMasc} coincidencias";
+                if (maximo < keyValue.Value)
+                {
+                    eSexo = keyValue.Key;
+                    maximo = keyValue.Value;
+                }
             }
-            else if (contadorFem > contadorMasc && contadorFem > contadorOtro)
-            {
-                retorno = $"El genero predominante entre los pilotos es el femenino con un total de {contadorFem} coincidencias";
-            }
-            else
-            {
-                retorno = $"El genero predominante entre los pilotos es otro con un total de {contadorOtro} coincidencias";
-            }
-            return retorno;
+
+            return $"El genero predominante entre los pilotos es {eSexo} con un total de {maximo} coincidencias";
         }
 
         /// <summary>
@@ -118,15 +121,15 @@ namespace Entidades
                         contadorNoNac++;
                         break;
                 }
+            }
 
-                if (contadorNac >= contadorNoNac)
-                {
-                    retorno = $"La mayor parte de los pilotos son pilotos nacionales con un total de {contadorNac} coincidencias";
-                }
-                else
-                {
-                    retorno = $"La mayor parte de los pilotos son pilotos internacionales con un total de {contadorNoNac} coincidencias";
-                }
+            if (contadorNac >= contadorNoNac)
+            {
+                retorno = $"La mayor parte de los pilotos son pilotos nacionales con un total de {contadorNac} coincidencias";
+            }
+            else
+            {
+                retorno = $"La mayor parte de los pilotos son pilotos internacionales con un total de {contadorNoNac} coincidencias";
             }
             return retorno;
         }
@@ -199,6 +202,9 @@ namespace Entidades
             int contadorMasc = 0;
             int contadorFem = 0;
             int contadorOtro = 0;
+            Dictionary<ESexo, int> keyValues = new Dictionary<ESexo, int>();
+            int minimo = int.MaxValue;
+            ESexo eSexo = ESexo.Otro;
 
             foreach (Piloto item in lista)
             {
@@ -216,19 +222,19 @@ namespace Entidades
                 }
             }
 
-            if (contadorMasc <= contadorFem && contadorMasc <= contadorOtro)
+            keyValues.Add(ESexo.Masculino, contadorMasc);
+            keyValues.Add(ESexo.Femenino, contadorFem);
+            keyValues.Add(ESexo.Otro, contadorOtro);
+
+            foreach (KeyValuePair<ESexo, int> keyValue in keyValues)
             {
-                retorno = $"El genero menos predominante entre los pilotos es el masculino con un total de {contadorMasc} coincidencias";
+                if (minimo > keyValue.Value)
+                {
+                    eSexo = keyValue.Key;
+                    minimo = keyValue.Value;
+                }
             }
-            else if (contadorFem < contadorMasc && contadorFem <= contadorOtro)
-            {
-                retorno = $"El genero menos predominante entre los pilotos es el femenino con un total de {contadorFem} coincidencias";
-            }
-            else
-            {
-                retorno = $"El genero menos predominante entre los pilotos es otro con un total de {contadorOtro} coincidencias";
-            }
-            return retorno;
+            return $"El genero menos predominante entre los pilotos es {eSexo} con un total de {minimo} coincidencias";
         }
 
 
@@ -254,16 +260,17 @@ namespace Entidades
                         contadorNoNac++;
                         break;
                 }
-
-                if (contadorNac <= contadorNoNac)
-                {
-                    retorno = $"La menor parte de los pilotos son pilotos nacionales con un total de {contadorNac} coincidencias";
-                }
-                else
-                {
-                    retorno = $"La menor parte de los pilotos son pilotos internacionales con un total de {contadorNoNac} coincidencias";
-                }
             }
+
+            if (contadorNac <= contadorNoNac)
+            {
+                retorno = $"La menor parte de los pilotos son pilotos nacionales con un total de {contadorNac} coincidencias";
+            }
+            else
+            {
+                retorno = $"La menor parte de los pilotos son pilotos internacionales con un total de {contadorNoNac} coincidencias";
+            }
+
             return retorno;
         }
 
